@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-18 09:17+0300\n"
+"POT-Creation-Date: 2026-05-18 10:30+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -766,6 +766,7 @@ msgstr ""
 #: .\templates\core\staff.html:21
 msgid "Meet the people representing and supporting WRPF Romania."
 msgstr ""
+"Faceți cunoștință cu persoanele care reprezintă și susțin WRPF România."
 
 #: .\templates\core\staff.html:28
 msgid "Leadership"
@@ -781,7 +782,11 @@ msgid ""
 "competitive experience since 2018. He competed in the Romanian Powerlifting "
 "Federation, becoming National Champion in 2021, 2022, and 2023 in the -74 kg "
 "category."
-msgstr "Campion național la powerlifting, antrenor, arbitru și oficial sportiv, cu experiență competițională începând din anul 2018. A concurat în cadrul Federației Române de Powerlifting, devenind Campion Național în anii 2021, 2022 și 2023 la categoria -74 kg."
+msgstr ""
+"Campion național la powerlifting, antrenor, arbitru și oficial sportiv, cu "
+"experiență competițională începând din anul 2018. A concurat în cadrul "
+"Federației Române de Powerlifting, devenind Campion Național în anii 2021, "
+"2022 și 2023 la categoria -74 kg."
 
 #: .\templates\core\staff.html:51
 msgid ""
@@ -789,51 +794,70 @@ msgid ""
 "-100 kg category and set a world record with a 290 kg squat. He is actively "
 "involved in developing powerlifting as an athlete, coach, referee, and "
 "President of WRPF Romania."
-msgstr "În anul 2026, s-a alăturat WRPF, unde a obținut locul 1 la proba de genuflexiuni în categoria -100 kg și a stabilit un record mondial cu o genuflexiune de 290 kg. Este implicat activ în dezvoltarea powerliftingului ca sportiv, antrenor, arbitru și Președinte WRPF România."
+msgstr ""
+"În anul 2026, s-a alăturat WRPF, unde a obținut locul 1 la proba de "
+"genuflexiuni în categoria -100 kg și a stabilit un record mondial cu o "
+"genuflexiune de 290 kg. Este implicat activ în dezvoltarea powerliftingului "
+"ca sportiv, antrenor, arbitru și Președinte WRPF România."
 
-#: .\templates\core\staff.html:67 .\templates\core\staff.html:91
+#: .\templates\core\staff.html:74 .\templates\core\staff.html:105
 msgid "Vice President"
 msgstr "Vice Președinte"
 
-#: .\templates\core\staff.html:75
+#: .\templates\core\staff.html:82
 msgid ""
 "Former athlete in the Romanian Powerlifting Federation and the Romanian "
 "Bodybuilding and Fitness Federation, champion and vice-champion in "
 "powerlifting and natural bodybuilding competitions."
-msgstr "Fostă sportivă în cadrul Federației Române de Powerlifting și al Federației Române de Culturism și Fitness, campioană și vicecampioană în competiții de powerlifting și bodybuilding natural."
+msgstr ""
+"Fostă sportivă în cadrul Federației Române de Powerlifting și al Federației "
+"Române de Culturism și Fitness, campioană și vicecampioană în competiții de "
+"powerlifting și bodybuilding natural."
 
-#: .\templates\core\staff.html:79
+#: .\templates\core\staff.html:86
 msgid ""
 "Through her experience as a performance athlete, she actively promotes "
 "sport, discipline, and a balanced lifestyle. She currently serves as Vice "
 "President of WRPF Romania, while also working as a nutrition and fitness "
 "coach."
-msgstr "Prin experiența acumulată ca sportivă de performanță, promovează activ sportul, disciplina și un stil de viață echilibrat. În prezent, este Vicepreședinte WRPF România și activează ca nutrition și fitness coach."
+msgstr ""
+"Prin experiența acumulată ca sportivă de performanță, promovează activ "
+"sportul, disciplina și un stil de viață echilibrat. În prezent, este "
+"Vicepreședinte WRPF România și activează ca nutrition și fitness coach."
 
-#: .\templates\core\staff.html:99
+#: .\templates\core\staff.html:113
 msgid ""
 "Competitive powerlifter with over 5 years of experience in national and "
 "international competitions, across multiple weight categories. He has "
 "competed in raw with sleeves and wraps divisions, representing federations "
 "such as the International Powerlifting Federation, UAE Powerlifting "
 "Federation, RAW Iceland, and WRPF."
-msgstr "Powerlifter competitiv cu peste 5 ani de experiență în competiții naționale și internaționale, în mai multe categorii de greutate. A concurat în divizii raw cu sleeves și wraps, reprezentând federații precum International Powerlifting Federation, UAE Powerlifting Federation, RAW Iceland și WRPF."
+msgstr ""
+"Powerlifter competitiv cu peste 5 ani de experiență în competiții naționale "
+"și internaționale, în mai multe categorii de greutate. A concurat în divizii "
+"raw cu sleeves și wraps, reprezentând federații precum International "
+"Powerlifting Federation, UAE Powerlifting Federation, RAW Iceland și WRPF."
 
-#: .\templates\core\staff.html:103
+#: .\templates\core\staff.html:117
 msgid ""
 "He currently competes in the -110 kg category, with personal bests of 250 kg "
 "in the squat with wraps, 170 kg in the bench press, and 270 kg in the "
 "deadlift. He is motivated by progress, competitiveness, and continuous "
 "development in powerlifting."
-msgstr "În prezent concurează la categoria -110 kg, cu recorduri personale de 250 kg la genuflexiuni cu wraps, 170 kg la împins la piept și 270 kg la îndreptări. Este motivat de progres, competitivitate și dezvoltare constantă în powerlifting."
+msgstr ""
+"În prezent concurează la categoria -110 kg, cu recorduri personale de 250 kg "
+"la genuflexiuni cu wraps, 170 kg la împins la piept și 270 kg la îndreptări. "
+"Este motivat de progres, competitivitate și dezvoltare constantă în "
+"powerlifting."
 
-#: .\templates\core\staff.html:114
+#: .\templates\core\staff.html:135
 msgid ""
 "WRPF Romania is committed to developing and promoting powerlifting through "
 "professionalism, fairness, and respect for athletes."
 msgstr ""
-"WRPF Romania are ca obiectiv susținerea și promovarea powerliftingului în România prin "
-"competiții organizate profesionist și prin respect față de fiecare sportiv."
+"WRPF Romania are ca obiectiv susținerea și promovarea powerliftingului în "
+"România prin competiții organizate profesionist și prin respect față de "
+"fiecare sportiv."
 
 #: .\templates\emails\registration_confirmation.html:6
 msgid "WRPF Romania Registration Confirmation"
@@ -940,7 +964,7 @@ msgstr "Vezi competiția"
 msgid "No competitions found."
 msgstr "Nu există competiții momentan."
 
-#: .\templates\meets\register_success.html:5f
+#: .\templates\meets\register_success.html:5
 msgid "Registration successful"
 msgstr "Înscriere cu success"
 
