@@ -1,0 +1,83 @@
+.rulebook-wrap {
+  position: relative;
+  overflow: hidden;
+  background-color: #111; /* main background around the PDF */
+}
+
+body {
+  background-color: #111 !important; /* ensures the full page matches */
+}
+
+#rulebookViewer {
+  display: block;
+  width: 100%;
+  height: calc(100vh - 150px);
+  border: 0;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity .2s ease-in;
+}
+
+.pdf-footer {
+  position: static;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 0 16px;
+  color: #e6e6e6;
+  font-size: 0.95rem;
+  background: transparent;
+}
+
+.pdf-footer a {
+  color: #ff3333;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.pdf-footer a:hover {
+  text-decoration: underline;
+  color: #ff6666;
+}
+
+.pdf-indicator {
+  color: #e50914;
+  font-weight: 600;
+}
+
+.pdf-nav.is-hidden { visibility: hidden; }
+
+.rulebook-heading {
+  letter-spacing: 1px;
+  font-size: 1.1rem;
+  text-align: left;
+  margin-left: 0;
+}
+
+.rulebook-divider {
+  width: 100%;
+  max-width: 95%;
+  border: none;
+  border-top: 4px solid #e50914;
+  margin-top: 0.5rem;
+  margin-left: 0;
+}
+
+.pdf-footer a.pdf-nav {
+  color: #ff3333 !important;
+  text-decoration: none;
+}
+.pdf-footer a.pdf-nav:hover {
+  text-decoration: underline;
+  color: #ff6666 !important;
+}
+
+.nav-over-hero {
+  background-color: rgba(255, 0, 0, 0.05) !important;  /* subtle glassy layer */
+  backdrop-filter: blur(4px);
+}
+.nav-over-hero.scrolled {
+  background-color: rgba(0, 0, 0, 0.6) !important;
+}

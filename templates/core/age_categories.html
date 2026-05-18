@@ -1,0 +1,120 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Age Categories" %}{% endblock %}
+{% block body_class %}blur-bg{% endblock %}
+
+{% block content %}
+<section class="about-page py-5 text-light">
+  <div class="container">
+
+    <!-- HERO -->
+    <div class="about-hero mb-5">
+      <div class="about-kicker text-uppercase small fw-semibold mb-2">
+        {% trans "World Raw Powerlifting Federation Romania" %}
+      </div>
+
+      <h1 class="about-title mb-3">{% trans "Age Categories" %}</h1>
+
+      <p class="about-lead mb-0">
+        {% trans "WRPF defines age categories to ensure fair competition and proper classification of athletes based on age." %}
+      </p>
+    </div>
+
+    <!-- AGE CATEGORIES -->
+    <div class="about-panel mb-4">
+      <h2 class="about-section-title">{% trans "Competition Age Categories" %}</h2>
+
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-4">
+          <div class="category-item">
+            <strong>{% trans "Teenage" %}</strong><br>
+            14–16
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="category-item">
+            <strong>{% trans "Sub-Junior" %}</strong><br>
+            17–19
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="category-item">
+            <strong>{% trans "Junior" %}</strong><br>
+            20–23
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="category-item">
+            <strong>{% trans "Open" %}</strong><br>
+            24–39
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="category-item">
+            <strong>{% trans "Masters M1" %}</strong><br>
+            40–49
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="category-item">
+            <strong>{% trans "Masters M2" %}</strong><br>
+            50–59
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="category-item">
+            <strong>{% trans "Masters M3" %}</strong><br>
+            60–69
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="category-item">
+            <strong>{% trans "Masters M4" %}</strong><br>
+            70–79
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="category-item">
+            <strong>{% trans "Masters M5" %}</strong><br>
+            80+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- IMPORTANT RULES -->
+    <div class="about-panel mb-4">
+      <h2 class="about-section-title">{% trans "Important Rules" %}</h2>
+
+      <ul class="about-list mb-0">
+        <li>
+          {% trans "When an athlete turns 24 years old, they are no longer eligible for the Junior category." %}
+        </li>
+        <li>
+          {% trans "Professional athletes compete in the Open category, without age-based classification (only by sex)." %}
+        </li>
+        <li>
+          {% trans "Results from Teenagers, Sub-Junior, Junior, and Masters categories may also be included in the Open category." %}
+        </li>
+      </ul>
+    </div>
+
+    <!-- CLOSING -->
+    <div class="about-closing text-center mt-5">
+      <p class="about-closing-text mb-0">
+        {% trans "Athletes are responsible for registering in the correct age category according to the official WRPF rules." %}
+      </p>
+    </div>
+
+  </div>
+</section>
+{% endblock %}

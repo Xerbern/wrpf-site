@@ -1,0 +1,93 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Equipment Standards" %}{% endblock %}
+{% block body_class %}blur-bg{% endblock %}
+
+{% block content %}
+<section class="about-page py-5 text-light">
+  <div class="container">
+
+    <div class="about-hero mb-5">
+      <div class="about-kicker text-uppercase small fw-semibold mb-2">
+        {% trans "World Raw Powerlifting Federation Romania" %}
+      </div>
+
+      <h1 class="about-title mb-3">{% trans "Equipment Standards" %}</h1>
+
+      <p class="about-lead mb-0">
+        {% trans "WRPF defines clear equipment standards for each division. The main distinction presented here is between RAW and CLASSIC competition categories." %}
+      </p>
+    </div>
+
+    <div class="row g-4 mb-4">
+      <div class="col-lg-6">
+        <div class="about-panel h-100">
+          <h2 class="about-section-title">{% trans "RAW Division" %}</h2>
+          <p>
+            {% trans "RAW refers to non-supportive equipment and is intended to preserve a more classic expression of strength performance." %}
+          </p>
+
+          <h3 class="about-mini-title mt-4">{% trans "Allowed Equipment" %}</h3>
+          <ul class="about-list mb-0">
+            <li>{% trans "One-piece lifting singlet" %}</li>
+            <li>{% trans "T-shirt" %}</li>
+            <li>{% trans "Shorts (optional)" %}</li>
+            <li>{% trans "Socks" %}</li>
+            <li>{% trans "Belt (optional)" %}</li>
+            <li>{% trans "Shoes" %}</li>
+            <li>{% trans "Wrist wraps (optional, single-ply)" %}</li>
+            <li>{% trans "Knee sleeves (optional)" %}</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-lg-6">
+        <div class="about-panel h-100">
+          <h2 class="about-section-title">{% trans "CLASSIC Division" %}</h2>
+          <p>
+            {% trans "CLASSIC includes the same equipment allowed in RAW, with one important difference: knee wraps are permitted." %}
+          </p>
+
+          <h3 class="about-mini-title mt-4">{% trans "Allowed Equipment" %}</h3>
+          <ul class="about-list mb-0">
+            <li>{% trans "One-piece lifting singlet" %}</li>
+            <li>{% trans "T-shirt" %}</li>
+            <li>{% trans "Shorts (optional)" %}</li>
+            <li>{% trans "Socks" %}</li>
+            <li>{% trans "Belt (optional)" %}</li>
+            <li>{% trans "Shoes" %}</li>
+            <li>{% trans "Wrist wraps (optional, single-ply)" %}</li>
+            <li>{% trans "Knee sleeves (optional)" %}</li>
+            <li>{% trans "Knee wraps" %}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="about-panel mb-4">
+      <h2 class="about-section-title">{% trans "Important Distinction" %}</h2>
+      <p>
+        {% trans "Knee wraps of any length are not permitted in the RAW division." %}
+      </p>
+      <p class="mb-0">
+        {% trans "Apart from this distinction, the technical execution rules remain the same for Squat, Bench Press, and Deadlift in both RAW and CLASSIC divisions." %}
+      </p>
+    </div>
+
+    <div class="about-panel mb-4">
+      <h2 class="about-section-title">{% trans "Competition Rule Consistency" %}</h2>
+      <p class="mb-0">
+        {% trans "The standards of execution for the three main lifts — Squat, Bench Press, and Deadlift — are applied consistently across both divisions in accordance with the official WRPF technical rules." %}
+      </p>
+    </div>
+
+    <div class="about-closing text-center mt-5">
+      <p class="about-closing-text mb-0">
+        {% trans "Athletes, coaches, and officials are expected to understand and respect the official equipment requirements applicable to their division." %}
+      </p>
+    </div>
+
+  </div>
+</section>
+{% endblock %}

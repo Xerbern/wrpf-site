@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="{{ LANGUAGE_CODE }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>{% block title %}Powerlifting Federation{% endblock %}</title>
+
+  <!-- Bootstrap 5 CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+  {% load static i18n %}
+  {% get_current_language as LANGUAGE_CODE %}
+  <link rel="stylesheet" href="{% static 'css/site.css' %}?v=6">
+  {% block head %}{% endblock %}
+</head>
+
+<body class="d-flex flex-column min-vh-100 {% block body_class %}{% endblock %}">
+
+{% with current=request.resolver_match.url_name %}
+<nav class="navbar navbar-expand-lg navbar-dark nav-over-hero fixed-top">
+  <div class="container-fluid px-4 position-relative">
+
+    <!-- MOBILE TOGGLER -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainnav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-between" id="mainnav">
+      <!-- LEFT SIDE NAV -->
+      <ul class="navbar-nav align-items-lg-center me-auto gap-lg-3">
+
+        <!-- HOME -->
+        <li class="nav-item">
+          <a class="nav-link {% if current == 'home' %}active{% endif %}" href="{% url 'home' %}">
+            {% trans "Home" %}
+          </a>
+        </li>
+
+        <!-- OVERVIEW -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle
+            {% if current == 'about' or current == 'equipment' or current == 'disciplines' or current == 'age_categories' %}
+              active
+            {% endif %}"
+            href="#"
+            data-bs-toggle="dropdown">
+            {% trans "Overview" %}
+          </a>
+
+          <ul class="dropdown-menu dropdown-menu-dark">
+            <li>
+              <a class="dropdown-item {% if current == 'age_categories' %}active{% endif %}"
+                href="{% url 'age_categories' %}">
+                {% trans "Age Categories" %}
+              </a>
+            </li>
+
+            <li>
+              <a class="dropdown-item {% if current == 'about' %}active{% endif %}"
+                href="{% url 'about' %}">
+                {% trans "About WRPF Romania" %}
+              </a>
+            </li>
+
+            <li>
+              <a class="dropdown-item {% if current == 'disciplines' %}active{% endif %}"
+                href="{% url 'disciplines' %}">
+                {% trans "Disciplines" %}
+              </a>
+            </li>
+
+            <li>
+              <a class="dropdown-item {% if current == 'equipment' %}active{% endif %}"
+                href="{% url 'equipment' %}">
+                {% trans "Equipment Standards" %}
+              </a>
+            </li>
+          </ul>
+        </li>
+
+        <!-- RESOURCES -->
+        <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle
+          {% if current == 'rulebook' or current == 'banned_substances' or current == 'drug_testing_policies' %}
+            active
+          {% endif %}"
+          href="#" data-bs-toggle="dropdown">
+            {% trans "Resources" %}
+          </a>
+          <ul class="dropdown-menu dropdown-menu-dark">
+            <li>
+              <a class="dropdown-item {% if current == 'rulebook' %}active{% endif %}"
+                 href="{% url 'rulebook' %}">
+                {% trans "Rulebook" %}
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item {% if current == 'drug_testing_policies' %}active{% endif %}"
+                 href="{% url 'drug_testing_policies' %}">
+                {% trans "Drug Testing Policies" %}
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item {% if current == 'banned_substances' %}active{% endif %}"
+                 href="{% url 'banned_substances' %}">
+                {% trans "Banned Substances" %}
+              </a>
+            </li>
+          </ul>
+        </li>
+      </ul>  {# ← IMPORTANT: close the left UL before the brand #}
+
+      <!-- CENTER BRAND -->
+      <a class="navbar-brand text-uppercase fw-semibold center-brand d-none d-lg-block mx-lg-4"
+         href="{% url 'home' %}">
+        {% trans "World Raw & Equipped Powerlifting Romania" %}
+      </a>
+
+      <!-- RIGHT SIDE NAV -->
+      <ul class="navbar-nav align-items-lg-center ms-auto gap-lg-3">
+        <li class="nav-item dropdown">
+          <a class="nav-link" href="{% url 'meet_list' %}">
+            {% trans "Competition Calendar" %}
+          </a>
+        </li>
+
+        <li class="nav-item dropdown">
+            <a class="nav-link {% if current == 'staff' %}active{% endif %}"
+              href="{% url 'staff' %}">
+            {% trans "WRPF RO Staff Members" %}
+          </a>
+          <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end">
+            <li><a class="dropdown-item" href="#">{% trans "Meet Directors" %}</a></li>
+            <li><a class="dropdown-item" href="#">{% trans "Referees" %}</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+            {% trans "More" %}
+          </a>
+          <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end">
+            <li><a class="dropdown-item" href="/news/">{% trans "News" %}</a></li>
+            <li><a class="dropdown-item" href="/gallery/">{% trans "Gallery" %}</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+{% endwith %}
+
+
+
+<main class="flex-grow-1 {% block main_classes %}py-5{% endblock %}">
+  <div class="{% block container_classes %}container{% endblock %}">
+    {% if messages %}
+      <div class="mt-4">
+        {% for message in messages %}
+          <div class="alert {% if message.tags == "error" %}alert-danger{% else %}alert-{{ message.tags }}{% endif %}" role="alert">
+            {{ message }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+    {% block content %}{% endblock %}
+  </div>
+</main>
+
+<footer class="social-footer">
+  <div class="container">
+    <h2 class="social-footer-title">{% trans "Social" %}</h2>
+
+    <div class="social-footer-divider"></div>
+
+    <div class="social-links">
+      <a href="https://www.instagram.com/wrpfromania/"
+         target="_blank"
+         rel="noopener noreferrer"
+         class="social-icon"
+         aria-label="Instagram"
+         title="Instagram">
+        <i class="bi bi-instagram"></i>
+      </a>
+
+      <a href="#"
+         target="_blank"
+         rel="noopener noreferrer"
+         class="social-icon"
+         aria-label="Facebook"
+         title="Facebook">
+        <i class="bi bi-facebook"></i>
+      </a>
+
+      <a href="#"
+         target="_blank"
+         rel="noopener noreferrer"
+         class="social-icon"
+         aria-label="YouTube"
+         title="YouTube">
+        <i class="bi bi-youtube"></i>
+      </a>
+
+      <a href="#"
+         target="_blank"
+         rel="noopener noreferrer"
+         class="social-icon"
+         aria-label="TikTok"
+         title="TikTok">
+        <i class="bi bi-tiktok"></i>
+      </a>
+    </div>
+
+    <p class="social-footer-note">{% trans "Follow us for meet updates" %}</p>
+
+    <div class="social-footer-copy">
+      <small>© {% now "Y" %} WRPF Romania</small>
+    </div>
+  </div>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+{% block scripts %}{% endblock %}
+
+<script>
+window.addEventListener("scroll", function() {
+  const navbar = document.querySelector(".nav-over-hero");
+  if (window.scrollY > 50) {
+    navbar.classList.add("scrolled");
+  } else {
+    navbar.classList.remove("scrolled");
+  }
+});
+</script>
+
+<!-- LANGUAGE SWITCH -->
+<div class="lang-switch">
+  {# English #}
+  <form action="{% url 'set_language' %}" method="post" class="m-0 p-0">
+    {% csrf_token %}
+    <input type="hidden" name="next"
+           value="{% if request.get_full_path|slice:':4' == '/en/' %}{{ request.get_full_path }}{% else %}/en{{ request.get_full_path }}{% endif %}">
+    <button class="lang-btn {% if LANGUAGE_CODE == 'en' %}is-active{% endif %}"
+            name="language" value="en" title="English" aria-label="English">
+      <img src="{% static 'img/flags/gb.svg' %}" alt="English flag">
+    </button>
+  </form>
+
+  {# Romanian #}
+  <form action="{% url 'set_language' %}" method="post" class="m-0 p-0">
+    {% csrf_token %}
+    <input type="hidden" name="next"
+           value="{% if request.get_full_path|slice:':4' == '/en/' %}{{ request.get_full_path|slice:'3:' }}{% else %}{{ request.get_full_path }}{% endif %}">
+    <button class="lang-btn {% if LANGUAGE_CODE == 'ro' %}is-active{% endif %}"
+            name="language" value="ro" title="Română" aria-label="Română">
+      <img src="{% static 'img/flags/ro.svg' %}" alt="Steagul României">
+    </button>
+  </form>
+</div>
+
+<script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+<script src="https://unpkg.com/htmx.org@1.9.12"></script>
+
+</body>
+</html>

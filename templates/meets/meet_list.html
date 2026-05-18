@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Competition Calendar" %}{% endblock %}
+{% block body_class %}blur-bg{% endblock %}
+
+{% block content %}
+<section class="about-page py-5 text-light">
+  <div class="container">
+
+    <div class="about-hero mb-5">
+      <div class="about-kicker text-uppercase small fw-semibold mb-2">
+        {% trans "World Raw Powerlifting Federation Romania" %}
+      </div>
+
+      <h1 class="about-title mb-3">{% trans "Competition Calendar" %}</h1>
+
+      <p class="about-lead mb-0">
+        {% trans "View the official WRPF Romania competition calendar and registration status for upcoming events." %}
+      </p>
+    </div>
+
+    <div class="mb-4 text-center" x-data="{ active: 'all' }">
+      <button
+        type="button"
+        class="btn btn-outline-light me-2 mb-2"
+        :class="{ 'btn-danger active': active === 'all' }"
+        @click="active = 'all'"
+        hx-get="{% url 'meet_list' %}"
+        hx-target="#meet-container"
+        hx-swap="innerHTML">
+        {% trans "All" %}
+      </button>
+
+      <button
+        type="button"
+        class="btn btn-outline-light me-2 mb-2"
+        :class="{ 'btn-danger active': active === 'open' }"
+        @click="active = 'open'"
+        hx-get="{% url 'meet_list' %}?status=open"
+        hx-target="#meet-container"
+        hx-swap="innerHTML">
+        {% trans "Open" %}
+      </button>
+
+      <button
+        type="button"
+        class="btn btn-outline-light mb-2"
+        :class="{ 'btn-danger active': active === 'closed' }"
+        @click="active = 'closed'"
+        hx-get="{% url 'meet_list' %}?status=closed"
+        hx-target="#meet-container"
+        hx-swap="innerHTML">
+        {% trans "Closed" %}
+      </button>
+    </div>
+
+    <div id="meet-container" hx-indicator="#loading">
+      {% include "meets/partials/meet_list.html" %}
+    </div>
+
+    <div id="loading" class="text-center my-4 htmx-indicator">
+      <div class="spinner-border text-light" role="status"></div>
+    </div>
+
+  </div>
+</section>
+{% endblock %}

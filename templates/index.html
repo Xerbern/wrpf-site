@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load static i18n %}
+{% load static %}
+
+{# Make the page full-bleed: no container, no vertical padding #}
+{% block main_classes %}p-0{% endblock %}
+{% block container_classes %}{% endblock %}
+{% block body_class %}blur-bg{% endblock %}
+
+{% block title %}WRPF Romania{% endblock %}
+
+{% block content %}
+
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-copy">
+      <h1 class="hero-title">
+        {% trans "WRPF Romania" %}<br>{% trans "Powerlifting Competitions" %}
+      </h1>
+      <a href="{% url 'meet_list' %}" class="hero-cta">{% trans "View Competitions" %}</a>
+    </div>
+    <div class="hero-logo">
+      <img src="{% static 'img/sigil.png' %}" alt="{% trans 'WRPF Romania Logo' %}">
+    </div>
+  </div>
+</section>
+{% endblock %}

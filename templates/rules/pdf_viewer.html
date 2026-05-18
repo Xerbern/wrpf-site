@@ -1,0 +1,184 @@
+{% extends "base.html" %}
+{% load static i18n %}
+
+{% block title %} {{ title }}{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/rulebook.css' %}">
+{% endblock %}
+
+
+{% block content %}
+{% static pdf_file as PDF_PATH %}
+{% static 'vendor/pdfjs/web/viewer.html' as PDFJS_VIEWER %}
+
+
+<div class="container-fluid px-0 rulebook-wrap">
+  <div class="py-4 px-5">
+    <h1 class="rulebook-heading text-uppercase fw-bold text-light mb-2">
+      {{ title }}
+    </h1>
+    <hr class="rulebook-divider">
+  </div>
+
+  <div class="d-flex justify-content-center py-3">
+    <a class="btn btn-danger btn-sm" href="{{ RULEBOOK_PDF }}" download>
+      {% trans "Download PDF" %}
+    </a>
+  </div>
+
+  <!-- PDF.js viewer (same-origin) -->
+  <iframe
+    id="rulebookViewer"
+    src="{% static 'vendor/pdfjs/web/viewer.html' %}?file={% static pdf_file %}#zoom=page-fit"
+    title="{% trans 'PDF viewer' %}">
+  </iframe>
+
+  <!-- Bottom controls -->
+  <div class="pdf-footer">
+    <a href="#" id="pdfPrev" class="pdf-nav">{% trans "Prev" %}</a>
+    <span id="pdfPageIndicator" class="pdf-indicator">0/0</span>
+    <a href="#" id="pdfNext" class="pdf-nav">{% trans "Next" %}</a>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const iframe = document.getElementById('rulebookViewer');
+  const pageIndicator = document.getElementById('pdfPageIndicator');
+  const prevBtn = document.getElementById('pdfPrev');
+  const nextBtn = document.getElementById('pdfNext');
+
+  // Make the PDF inert & hidden until first render
+  iframe.style.pointerEvents = 'none';
+  iframe.style.opacity = '0';
+
+  iframe.addEventListener('load', () => {
+    const start = performance.now();
+    const TIMEOUT_MS = 8000; // be generous
+
+    function waitForPdfApp() {
+      try {
+        const win = iframe.contentWindow;
+        const doc = iframe.contentDocument;
+        const app = win && win.PDFViewerApplication;
+
+        if (doc && app && app.eventBus && app.pdfViewer) {
+          initViewer(doc, app);
+          return;
+        }
+      } catch (e) {
+        // ignore cross-origin errors (shouldn't happen on same origin)
+      }
+      if (performance.now() - start < TIMEOUT_MS) {
+        requestAnimationFrame(waitForPdfApp);
+      } else {
+        console.warn('PDF viewer not ready in time.');
+      }
+    }
+
+    function initViewer(doc, app) {
+      // Inject CSS inside the viewer to hide chrome + center page
+      const style = doc.createElement('style');
+      style.textContent = `
+        #toolbarContainer, .toolbar, .findbar, .secondaryToolbar, #editorToolbar,
+        .editorParamsToolbar, #sidebarContainer, #sidebarResizer, .loadingBar,
+        #overlayContainer, #scaleSelectContainer, #zoomIn, #zoomOut, #pageNumber,
+        #presentationMode, #viewFind, #secondaryToolbarToggle, .splitToolbarButton,
+        #toolbarViewerLeft, #toolbarViewerRight, #toolbarViewerMiddle {
+          display: none !important;
+        }
+
+        #outerContainer, #mainContainer, #viewerContainer {
+          position: absolute !important;
+          inset: 0 !important;
+          width: 100% !important;
+          height: 100% !important;
+          overflow: hidden !important;
+          background: #111 !important; /* slightly softer background */
+        }
+
+        #viewerContainer {
+          display: flex !important;
+          justify-content: center !important;
+          align-items: center !important; /* center the page */
+          padding: 0 !important;
+        }
+
+        #viewer { width: auto !important; margin: 0 auto !important; }
+
+        .page {
+          margin: 0 auto !important;
+          box-shadow: none !important;
+          background: #fff !important;
+        }
+
+        html, body { overflow: hidden !important; background: #111 !important; }
+      `;
+      doc.head.appendChild(style);
+
+      // Fit entire page; single-page mode; no spreads
+      try {
+        app.pdfViewer.currentScaleValue = 'page-fit';
+        app.pdfViewer.scrollMode = 3; // single page
+        app.pdfViewer.spreadMode = 0;
+      } catch (e) {}
+
+      const bus = app.eventBus;
+
+      // Keep page-fit if viewer tries to change scale
+      bus.on('scalechanging', () => {
+        if (app.pdfViewer.currentScaleValue !== 'page-fit') {
+          app.pdfViewer.currentScaleValue = 'page-fit';
+        }
+      });
+
+      // Fade iframe in after first render (no outline flash)
+      const reveal = () => { iframe.style.opacity = '1'; };
+      bus.on('pagerendered', reveal, { once: true });
+      bus.on('pagesloaded', reveal, { once: true });
+
+      // Footer logic
+      function updateIndicator() {
+        const current = app.pdfViewer?.currentPageNumber || 1;
+        const total   = app.pdfDocument?.numPages || 0;
+        if (pageIndicator) pageIndicator.textContent = `${current}/${total}`;
+
+        if (prevBtn) {
+          if (current <= 1) prevBtn.classList.add('is-hidden');
+          else prevBtn.classList.remove('is-hidden');
+        }
+        if (nextBtn) {
+          if (total && current >= total) nextBtn.classList.add('is-hidden');
+          else nextBtn.classList.remove('is-hidden');
+        }
+      }
+      ['pagesinit','pagesloaded','pagechanging','pagerendered'].forEach(ev =>
+        bus.on(ev, updateIndicator)
+      );
+
+      // Prev / Next
+      prevBtn?.addEventListener('click', (e) => {
+        e.preventDefault();
+        const c = app.pdfViewer.currentPageNumber;
+        app.pdfViewer.currentPageNumber = Math.max(1, c - 1);
+        updateIndicator();
+      });
+      nextBtn?.addEventListener('click', (e) => {
+        e.preventDefault();
+        const total = app.pdfDocument?.numPages || 0;
+        const c = app.pdfViewer.currentPageNumber;
+        app.pdfViewer.currentPageNumber = Math.min(total, c + 1);
+        updateIndicator();
+      });
+
+      updateIndicator();
+    }
+
+    waitForPdfApp();
+  });
+});
+</script>
+
+
+{% endblock %}

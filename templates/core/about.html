@@ -1,0 +1,97 @@
+{% extends "base.html" %}
+{% load i18n static %}
+
+{% block title %}{% trans "About WRPF Romania" %}{% endblock %}
+{% block body_class %}blur-bg{% endblock %}
+
+{% block content %}
+<section class="about-page py-5 text-light">
+  <div class="container">
+
+    <div class="about-hero mb-5">
+      <div class="about-kicker text-uppercase small fw-semibold mb-2">
+        {% trans "World Raw Powerlifting Federation Romania" %}
+      </div>
+
+      <h1 class="about-title mb-3">{% trans "About WRPF Romania" %}</h1>
+
+      <p class="about-lead mb-0">
+        {% trans "WRPF Romania is the national branch of the World Raw Powerlifting Federation, dedicated to developing powerlifting at the highest standards." %}
+      </p>
+    </div>
+
+    <div class="row g-4 mb-4">
+      <div class="col-lg-6">
+        <div class="about-panel h-100">
+          <h2 class="about-section-title">{% trans "Official Launch" %}</h2>
+          <p>
+            {% trans "Starting with October 1st, 2025, WRPF Romania officially begins its activity, with the goal of supporting and promoting powerlifting in Romania through professionally organized competitions and respect for every athlete." %}
+          </p>
+          <p class="mb-0">
+            {% trans "Our objective is to create a competitive environment built on performance, discipline, fairness, and long-term development." %}
+          </p>
+        </div>
+      </div>
+
+      <div class="col-lg-6">
+        <div class="about-panel h-100">
+          <h2 class="about-section-title">{% trans "Divisions" %}</h2>
+          <p>{% trans "WRPF Romania welcomes athletes from multiple competition categories, united by the same passion for strength sport:" %}</p>
+          <ul class="about-list mb-0">
+            <li>{% trans "Classic (Raw)" %}</li>
+            <li>{% trans "Equipped" %}</li>
+            <li>{% trans "Raw with Wraps" %}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="about-panel mb-4">
+      <h2 class="about-section-title">{% trans "Mission" %}</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="about-mini-card">
+            <h3 class="about-mini-title">{% trans "Competitions" %}</h3>
+            <p class="mb-0">
+              {% trans "To organize competitions at high international standards, with professionalism and consistency." %}
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="about-mini-card">
+            <h3 class="about-mini-title">{% trans "Community" %}</h3>
+            <p class="mb-0">
+              {% trans "To help grow and strengthen the Romanian powerlifting community through serious and respected events." %}
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="about-mini-card">
+            <h3 class="about-mini-title">{% trans "Athletes" %}</h3>
+            <p class="mb-0">
+              {% trans "To offer athletes real opportunities to perform in a structured, fair, and competitive environment." %}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="about-panel mb-4">
+      <h2 class="about-section-title">{% trans "Competitions" %}</h2>
+      <p class="mb-0">
+        {% trans "The first official WRPF Romania competition will take place in 2026, with additional details to be announced soon through the federation's official channels." %}
+      </p>
+    </div>
+
+    <div class="about-closing text-center mt-5">
+      <div class="about-motto mb-2">Per Aspera Ad Astra</div>
+      <p class="about-closing-text mb-0">
+        {% trans "Together, we aim to raise standards and carry the passion for this sport forward." %}
+      </p>
+    </div>
+
+  </div>
+</section>
+{% endblock %}

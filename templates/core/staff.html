@@ -1,0 +1,141 @@
+{% extends "base.html" %}
+{% load i18n static %}
+
+{% block title %}{% trans "WRPF RO Staff Members" %}{% endblock %}
+{% block body_class %}blur-bg{% endblock %}
+
+{% block content %}
+<section class="about-page py-5 text-light">
+  <div class="container">
+
+    <div class="about-hero mb-5">
+      <div class="about-kicker text-uppercase small fw-semibold mb-2">
+        {% trans "World Raw Powerlifting Federation Romania" %}
+      </div>
+
+      <h1 class="about-title mb-3">
+        {% trans "WRPF RO Staff Members" %}
+      </h1>
+
+      <p class="about-lead mb-0">
+        {% trans "Meet the people representing and supporting WRPF Romania." %}
+      </p>
+    </div>
+
+    <!-- LEADERSHIP -->
+    <div class="mb-5">
+      <h2 class="about-section-title mb-4">
+        {% trans "Leadership" %}
+      </h2>
+
+      <div class="row g-4">
+
+        <div class="col-lg-4 col-md-6">
+          <div class="staff-card">
+
+            <div class="staff-photo-placeholder">AB</div>
+
+            <div class="staff-role">
+              {% trans "President" %}
+            </div>
+
+            <h2 class="staff-name">
+              Bunea Alexandru
+            </h2>
+
+            <p class="staff-description">
+              {% trans "National powerlifting champion, coach, referee, and sports official, with competitive experience since 2018. He competed in the Romanian Powerlifting Federation, becoming National Champion in 2021, 2022, and 2023 in the -74 kg category." %}
+            </p>
+
+            <p class="staff-description mb-0">
+              {% trans "In 2026, he joined WRPF, where he placed first in the squat event in the -100 kg category and set a world record with a 290 kg squat. He is actively involved in developing powerlifting as an athlete, coach, referee, and President of WRPF Romania." %}
+            </p>
+
+            <a href="https://www.instagram.com/alecsbunea/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="staff-social">
+            <i class="bi bi-instagram"></i> @alecsbunea
+            </a>
+
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6">
+          <div class="staff-card">
+
+            <img
+              src="{% static 'img/staff/magda.png' %}"
+              alt="Maria Magdalena Laura Bunea"
+              class="staff-photo"
+            >
+
+            <div class="staff-role">
+              {% trans "Vice President" %}
+            </div>
+
+            <h2 class="staff-name">
+              Bunea Maria Magdalena Laura
+            </h2>
+
+            <p class="staff-description">
+              {% trans "Former athlete in the Romanian Powerlifting Federation and the Romanian Bodybuilding and Fitness Federation, champion and vice-champion in powerlifting and natural bodybuilding competitions." %}
+            </p>
+
+            <p class="staff-description mb-0">
+              {% trans "Through her experience as a performance athlete, she actively promotes sport, discipline, and a balanced lifestyle. She currently serves as Vice President of WRPF Romania, while also working as a nutrition and fitness coach." %}
+            </p>
+
+            <a href="https://www.instagram.com/magda.buena/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="staff-social">
+            <i class="bi bi-instagram"></i> @magda.buena
+            </a>
+
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6">
+          <div class="staff-card">
+
+            <div class="staff-photo-placeholder">OL</div>
+
+            <div class="staff-role">
+              {% trans "Vice President" %}
+            </div>
+
+            <h2 class="staff-name">
+              Octavian Lutea
+            </h2>
+
+            <p class="staff-description">
+              {% trans "Competitive powerlifter with over 5 years of experience in national and international competitions, across multiple weight categories. He has competed in raw with sleeves and wraps divisions, representing federations such as the International Powerlifting Federation, UAE Powerlifting Federation, RAW Iceland, and WRPF." %}
+            </p>
+
+            <p class="staff-description mb-0">
+              {% trans "He currently competes in the -110 kg category, with personal bests of 250 kg in the squat with wraps, 170 kg in the bench press, and 270 kg in the deadlift. He is motivated by progress, competitiveness, and continuous development in powerlifting." %}
+            </p>
+
+            <a href="https://www.instagram.com/octavianlutea/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="staff-social">
+            <i class="bi bi-instagram"></i> @octavianlutea
+            </a>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="about-closing text-center mt-5">
+      <p class="about-closing-text mb-0">
+        {% trans "WRPF Romania is committed to developing and promoting powerlifting through professionalism, fairness, and respect for athletes." %}
+      </p>
+    </div>
+
+  </div>
+</section>
+{% endblock %}

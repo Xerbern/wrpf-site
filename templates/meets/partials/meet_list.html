@@ -1,0 +1,37 @@
+{% load i18n %}
+
+{% for meet in meets %}
+  <a href="{% url 'meet_details' meet.pk %}" class="meet-card-link text-decoration-none text-reset">
+    <div class="about-panel mb-3 meet-card">
+      <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-start gap-3">
+        <div class="meet-card-main">
+          <h5 class="mb-2 meet-card-title">{{ meet.name }}</h5>
+
+          <p class="mb-2 small meet-meta">
+            {{ meet.date }} — {{ meet.location }}
+          </p>
+
+          {% if meet.registration_open %}
+            <span class="badge rounded-pill bg-success px-3 py-2 meet-status-badge">
+              {% trans "Open" %}
+            </span>
+          {% else %}
+            <span class="badge rounded-pill bg-secondary px-3 py-2 meet-status-badge">
+              {% trans "Closed" %}
+            </span>
+          {% endif %}
+        </div>
+
+        <div class="text-md-end meet-card-actions">
+          <span class="meet-card-cta">
+            {% trans "View competition" %}
+          </span>
+        </div>
+      </div>
+    </div>
+  </a>
+{% empty %}
+  <p class="text-center text-light opacity-75">
+    {% trans "No competitions found." %}
+  </p>
+{% endfor %}

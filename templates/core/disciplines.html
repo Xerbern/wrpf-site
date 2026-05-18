@@ -1,0 +1,147 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Disciplines" %}{% endblock %}
+{% block body_class %}blur-bg{% endblock %}
+
+{% block content %}
+<section class="about-page py-5 text-light">
+  <div class="container" x-data="{ filter: 'all' }">
+
+    <div class="about-hero mb-5">
+      <div class="about-kicker text-uppercase small fw-semibold mb-2">
+        {% trans "World Raw Powerlifting Federation Romania" %}
+      </div>
+
+      <h1 class="about-title mb-3">{% trans "Recognized Disciplines" %}</h1>
+
+      <p class="about-lead mb-0">
+        {% trans "WRPF recognizes a wide range of strength sport disciplines organized under its official competition rules." %}
+      </p>
+    </div>
+
+    <div class="mb-5 text-center">
+      <button
+        type="button"
+        class="btn btn-outline-light me-2 mb-2"
+        :class="{ 'active btn-danger': filter === 'all' }"
+        @click="filter = 'all'">
+        {% trans "All" %}
+      </button>
+
+      <button
+        type="button"
+        class="btn btn-outline-light me-2 mb-2"
+        :class="{ 'active btn-danger': filter === 'power' }"
+        @click="filter = 'power'">
+        {% trans "Powerlifting" %}
+      </button>
+
+      <button
+        type="button"
+        class="btn btn-outline-light me-2 mb-2"
+        :class="{ 'active btn-danger': filter === 'bench' }"
+        @click="filter = 'bench'">
+        {% trans "Bench" %}
+      </button>
+
+      <button
+        type="button"
+        class="btn btn-outline-light me-2 mb-2"
+        :class="{ 'active btn-danger': filter === 'biceps' }"
+        @click="filter = 'biceps'">
+        {% trans "Biceps" %}
+      </button>
+
+      <button
+        type="button"
+        class="btn btn-outline-light mb-2"
+        :class="{ 'active btn-danger': filter === 'other' }"
+        @click="filter = 'other'">
+        {% trans "Other" %}
+      </button>
+    </div>
+
+    <div x-show="filter === 'all' || filter === 'power'" x-transition>
+      <div class="about-panel mb-4">
+        <h2 class="about-section-title">{% trans "Full Power" %}</h2>
+        <ul class="about-list mb-0">
+          <li>{% trans "Raw Powerlifting (Full Power: Squat, Bench Press, Deadlift)" %}</li>
+          <li>{% trans "Classic Powerlifting (Full Power: Squat, Bench Press, Deadlift)" %}</li>
+        </ul>
+      </div>
+    </div>
+
+    <div x-show="filter === 'all' || filter === 'power'" x-transition>
+      <div class="about-panel mb-4">
+        <h2 class="about-section-title">{% trans "Combined Events" %}</h2>
+        <ul class="about-list mb-0">
+          <li>{% trans "Push-Pull (Bench Press + Deadlift)" %}</li>
+          <li>{% trans "Raw Biathlon Bench Press 1x bodyweight (max kg + max reps)" %}</li>
+          <li>{% trans "Raw Biathlon Bench Press 1/2 bodyweight (max kg + max reps)" %}</li>
+          <li>{% trans "Biathlon Biceps Curl (Strict + Extreme)" %}</li>
+          <li>{% trans "Triathlon Biceps Curl (Strict + Classic + Extreme)" %}</li>
+        </ul>
+      </div>
+    </div>
+
+    <div x-show="filter === 'all' || filter === 'power'" x-transition>
+      <div class="about-panel mb-4">
+        <h2 class="about-section-title">{% trans "Squat / Bench / Deadlift" %}</h2>
+        <ul class="about-list mb-0">
+          <li>{% trans "Squat" %}</li>
+          <li>{% trans "Bench Press" %}</li>
+          <li>{% trans "Bench Press for athletes with physical disabilities" %}</li>
+          <li>{% trans "Deadlift" %}</li>
+          <li>{% trans "Deadlift for reps" %}</li>
+        </ul>
+      </div>
+    </div>
+
+    <div x-show="filter === 'all' || filter === 'bench'" x-transition>
+      <div class="about-panel mb-4">
+        <h2 class="about-section-title">{% trans "Bench Variations" %}</h2>
+        <ul class="about-list mb-0">
+          <li>{% trans "Military Bench Press" %}</li>
+          <li>{% trans "Military Bench Press for reps" %}</li>
+          <li>{% trans "Folk Bench Press" %}</li>
+          <li>{% trans "Russian Bench Press" %}</li>
+        </ul>
+      </div>
+    </div>
+
+    <div x-show="filter === 'all' || filter === 'biceps'" x-transition>
+      <div class="about-panel mb-4">
+        <h2 class="about-section-title">{% trans "Biceps Curl Events" %}</h2>
+        <ul class="about-list mb-0">
+          <li>{% trans "Strict Biceps Curl" %}</li>
+          <li>{% trans "Classic Biceps Curl" %}</li>
+          <li>{% trans "Extreme Biceps Curl" %}</li>
+          <li>{% trans "Apollon's Axle Biceps Curl" %}</li>
+          <li>{% trans "Biceps Curl for reps" %}</li>
+          <li>{% trans "Folk Biceps Curl 1/2 bodyweight" %}</li>
+        </ul>
+      </div>
+    </div>
+
+    <div x-show="filter === 'all' || filter === 'other'" x-transition>
+      <div class="about-panel mb-4">
+        <h2 class="about-section-title">{% trans "Other Strength Disciplines" %}</h2>
+        <ul class="about-list mb-0">
+          <li>{% trans "Powersport (Army Press + Strict Biceps Curl)" %}</li>
+          <li>{% trans "Army Press" %}</li>
+          <li>{% trans "Hip Thrust" %}</li>
+          <li>{% trans "Log Lift" %}</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="about-closing text-center mt-5">
+      <p class="about-closing-text mb-0">
+        {% trans "All disciplines are conducted according to the official WRPF technical rules and competition standards." %}
+      </p>
+    </div>
+
+  </div>
+</section>
+{% endblock %}

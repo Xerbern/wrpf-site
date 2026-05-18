@@ -1,0 +1,77 @@
+:root {
+  --primary: #e50914;
+  --secondary: #111111;
+  --accent: #e50914;
+  --link-fg: #ffffff;
+  --link-selected-fg: #e50914;
+}
+
+#header {
+  background: #111111;
+  color: #ffffff;
+  border-bottom: 3px solid #e50914;
+}
+
+#branding h1,
+#branding h1 a {
+  color: #ffffff !important;
+}
+
+.module h2,
+.module caption,
+.inline-group h2 {
+  background: #e50914 !important;
+  color: #ffffff !important;
+}
+
+div.breadcrumbs {
+  background: #1a1a1a;
+  color: #dddddd;
+}
+
+a:link,
+a:visited {
+  color: #e50914;
+}
+
+a:hover {
+  color: #ff4d57;
+}
+
+.button,
+input[type=submit],
+input[type=button],
+.submit-row input,
+a.button {
+  background: #e50914 !important;
+  border: none !important;
+  color: white !important;
+}
+
+.button:hover,
+input[type=submit]:hover,
+input[type=button]:hover,
+.submit-row input:hover,
+a.button:hover {
+  background: #b80710 !important;
+}
+
+#nav-sidebar {
+  background: #111111;
+}
+
+#nav-sidebar .current-app .section:link,
+#nav-sidebar .current-app .section:visited,
+#nav-sidebar .current-model {
+  background: #1c1c1c;
+}
+
+tr.selected td {
+  background: rgba(229, 9, 20, 0.12) !important;
+}
+
+#nav-sidebar .section,
+#nav-sidebar .current-app .section {
+  background: transparent !important;
+  color: #fff !important;
+}

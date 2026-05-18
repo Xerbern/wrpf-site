@@ -1,0 +1,2402 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-05-18 09:17+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1?0:(((n%100>19)||((n%100==0)&&(n!=0)))?"
+"2:1));\n"
+
+#: .\meets\forms.py:7 .\meets\models.py:19
+msgid "59 kg"
+msgstr ""
+
+#: .\meets\forms.py:8 .\meets\models.py:20
+msgid "66 kg"
+msgstr ""
+
+#: .\meets\forms.py:9 .\meets\models.py:21
+msgid "74 kg"
+msgstr ""
+
+#: .\meets\forms.py:10 .\meets\models.py:22
+msgid "83 kg"
+msgstr ""
+
+#: .\meets\forms.py:11 .\meets\models.py:23
+msgid "93 kg"
+msgstr ""
+
+#: .\meets\forms.py:12 .\meets\models.py:24
+msgid "105 kg"
+msgstr ""
+
+#: .\meets\forms.py:13 .\meets\models.py:25
+msgid "120 kg"
+msgstr ""
+
+#: .\meets\forms.py:14 .\meets\models.py:26
+msgid "120+ kg"
+msgstr ""
+
+#: .\meets\forms.py:18 .\meets\models.py:28
+msgid "47 kg"
+msgstr ""
+
+#: .\meets\forms.py:19 .\meets\models.py:29
+msgid "52 kg"
+msgstr ""
+
+#: .\meets\forms.py:20 .\meets\models.py:30
+msgid "57 kg"
+msgstr ""
+
+#: .\meets\forms.py:21 .\meets\models.py:31
+msgid "63 kg"
+msgstr ""
+
+#: .\meets\forms.py:22 .\meets\models.py:32
+msgid "69 kg"
+msgstr ""
+
+#: .\meets\forms.py:23 .\meets\models.py:33
+msgid "76 kg"
+msgstr ""
+
+#: .\meets\forms.py:24 .\meets\models.py:34
+msgid "84 kg"
+msgstr ""
+
+#: .\meets\forms.py:25 .\meets\models.py:35
+msgid "84+ kg"
+msgstr ""
+
+#: .\meets\forms.py:34 .\templates\meets\register_success.html:67
+#: .\templates\meets\registration_verify.html:53
+msgid "Full name"
+msgstr "Nume complet"
+
+#: .\meets\forms.py:35 .\templates\meets\register_success.html:72
+#: .\templates\meets\registration_verify.html:58
+msgid "Email"
+msgstr "Email"
+
+#: .\meets\forms.py:36 .\templates\emails\registration_confirmation.html:50
+#: .\templates\meets\register_success.html:77
+#: .\templates\meets\registration_verify.html:63
+msgid "Division"
+msgstr "Diviza"
+
+#: .\meets\forms.py:37 .\templates\emails\registration_confirmation.html:54
+#: .\templates\meets\register_success.html:82
+#: .\templates\meets\registration_verify.html:68
+msgid "Weight class"
+msgstr "Categoria de greutate"
+
+#: .\meets\forms.py:38 .\templates\emails\registration_confirmation.html:58
+#: .\templates\meets\register_success.html:92
+#: .\templates\meets\registration_verify.html:73
+msgid "Tested division"
+msgstr "Divizie testată"
+
+#: .\meets\forms.py:52
+msgid "Select division"
+msgstr "Selecteaza divizia"
+
+#: .\meets\forms.py:56 .\templates\meets\meet_details.html:70
+#: .\templates\meets\meet_details.html:139
+msgid "Select weight class"
+msgstr "Categoria de greutate"
+
+#: .\meets\forms.py:76 .\meets\forms.py:79
+msgid "Invalid weight class for the selected division."
+msgstr ""
+
+#: .\meets\models.py:6
+msgid "Name"
+msgstr "Nume"
+
+#: .\meets\models.py:7 .\templates\emails\registration_confirmation.html:46
+#: .\templates\meets\register_success.html:114
+#: .\templates\meets\registration_verify.html:95
+msgid "Date"
+msgstr "Data de start"
+
+#: .\meets\models.py:8 .\templates\meets\register_success.html:119
+#: .\templates\meets\registration_verify.html:100
+msgid "Location"
+msgstr "Locaţia"
+
+#: .\meets\models.py:9
+msgid "Registration open"
+msgstr "Înscrieri deschise"
+
+#: .\meets\models.py:15
+msgid "Men"
+msgstr "Masculin"
+
+#: .\meets\models.py:16
+msgid "Women"
+msgstr "Feminin"
+
+#: .\meets\views.py:94
+#, fuzzy
+#| msgid "Registration is closed for this meet."
+msgid "Registration is closed."
+msgstr "Înregistrările sunt închise pentru acest meet"
+
+#: .\meets\views.py:113
+msgid "This email is already registered for this meet."
+msgstr "Există deja o înregistrare cu acest email."
+
+#: .\meets\views.py:125
+#, python-format
+msgid "WRPF Romania Registration Confirmation - %(meet)s"
+msgstr "Confirmare înscriere WRPF România - %(meet)s"
+
+#: .\meets\views.py:153
+msgid "Registration was saved, but the confirmation email could not be sent."
+msgstr ""
+
+#: .\rulebook\views.py:8
+msgid "WRPF Rule Book"
+msgstr "Reguli WRPF"
+
+#: .\rulebook\views.py:12
+msgid "WRPF Banned Substances"
+msgstr "Substanţe Interzise"
+
+#: .\rulebook\views.py:16
+msgid "WRPF Drug Testing Policies"
+msgstr "Politicile Federaţiei"
+
+#: .\templates\base.html:36
+msgid "Home"
+msgstr "Acasă"
+
+#: .\templates\base.html:48
+msgid "Overview"
+msgstr "Generalităţi"
+
+#: .\templates\base.html:55 .\templates\core\age_categories.html:4
+#: .\templates\core\age_categories.html:17
+msgid "Age Categories"
+msgstr "Categorii de vârsta"
+
+#: .\templates\base.html:62 .\templates\core\about.html:4
+#: .\templates\core\about.html:16
+msgid "About WRPF Romania"
+msgstr "Despre WRPF România"
+
+#: .\templates\base.html:69 .\templates\core\disciplines.html:4
+msgid "Disciplines"
+msgstr "Discipline"
+
+#: .\templates\base.html:76 .\templates\core\equipment.html:4
+#: .\templates\core\equipment.html:16
+msgid "Equipment Standards"
+msgstr "Standarde de echipamente"
+
+#: .\templates\base.html:89
+msgid "Resources"
+msgstr "Resurse"
+
+#: .\templates\base.html:95
+msgid "Rulebook"
+msgstr "Reguli"
+
+#: .\templates\base.html:101
+msgid "Drug Testing Policies"
+msgstr "Politicile Federaţiei"
+
+#: .\templates\base.html:107
+msgid "Banned Substances"
+msgstr "Substanţe Interzise"
+
+#: .\templates\base.html:117
+msgid "World Raw & Equipped Powerlifting Romania"
+msgstr "World Raw & Equipped Powerlifting Romania"
+
+#: .\templates\base.html:124 .\templates\meets\meet_list.html:4
+#: .\templates\meets\meet_list.html:16
+msgid "Competition Calendar"
+msgstr "Calendar competițional"
+
+#: .\templates\base.html:131 .\templates\core\staff.html:4
+#: .\templates\core\staff.html:17
+msgid "WRPF RO Staff Members"
+msgstr "Membrii Staff WRPF RO"
+
+#: .\templates\base.html:134
+msgid "Meet Directors"
+msgstr "Directori"
+
+#: .\templates\base.html:135
+msgid "Referees"
+msgstr "Arbtri"
+
+#: .\templates\base.html:141
+msgid "More"
+msgstr "Mai multe"
+
+#: .\templates\base.html:144
+msgid "News"
+msgstr "Ştiri"
+
+#: .\templates\base.html:145
+msgid "Gallery"
+msgstr "Galerie"
+
+#: .\templates\base.html:174
+msgid "Social"
+msgstr ""
+
+#: .\templates\base.html:216
+msgid "Follow us for meet updates"
+msgstr ""
+
+#: .\templates\core\about.html:13 .\templates\core\age_categories.html:14
+#: .\templates\core\disciplines.html:13 .\templates\core\equipment.html:13
+#: .\templates\core\staff.html:13 .\templates\meets\meet_list.html:13
+#: .\templates\meets\register_success.html:22
+#: .\templates\meets\registration_verify.html:22
+#, fuzzy
+#| msgid "World Raw & Equipped Powerlifting Romania"
+msgid "World Raw Powerlifting Federation Romania"
+msgstr "World Raw & Equipped Powerlifting Romania"
+
+#: .\templates\core\about.html:19
+msgid ""
+"WRPF Romania is the national branch of the World Raw Powerlifting "
+"Federation, dedicated to developing powerlifting at the highest standards."
+msgstr ""
+"WRPF România este filiala națională a World Raw Powerlifting Federation, "
+"dedicată dezvoltării powerliftingului la cele mai înalte standarde."
+
+#: .\templates\core\about.html:26
+msgid "Official Launch"
+msgstr "Lansare oficială"
+
+#: .\templates\core\about.html:28
+msgid ""
+"Starting with October 1st, 2025, WRPF Romania officially begins its "
+"activity, with the goal of supporting and promoting powerlifting in Romania "
+"through professionally organized competitions and respect for every athlete."
+msgstr ""
+"Începând cu 1 octombrie 2025, WRPF România își începe oficial activitatea, "
+"având ca obiectiv susținerea și promovarea powerliftingului în România prin "
+"competiții organizate profesionist și prin respect față de fiecare sportiv."
+
+#: .\templates\core\about.html:31
+msgid ""
+"Our objective is to create a competitive environment built on performance, "
+"discipline, fairness, and long-term development."
+msgstr ""
+"Obiectivul nostru este de a crea un mediu competițional bazat pe "
+"performanță, disciplină, corectitudine și dezvoltare pe termen lung."
+
+#: .\templates\core\about.html:38
+msgid "Divisions"
+msgstr "Divizii"
+
+#: .\templates\core\about.html:39
+msgid ""
+"WRPF Romania welcomes athletes from multiple competition categories, united "
+"by the same passion for strength sport:"
+msgstr ""
+"WRPF România primește sportivi din mai multe categorii competiționale, uniți "
+"de aceeași pasiune pentru sportul de forță:"
+
+#: .\templates\core\about.html:41
+msgid "Classic (Raw)"
+msgstr "Clasic (Raw)"
+
+#: .\templates\core\about.html:42
+msgid "Equipped"
+msgstr "Echipat"
+
+#: .\templates\core\about.html:43
+msgid "Raw with Wraps"
+msgstr "Raw cu bandaje"
+
+#: .\templates\core\about.html:50
+msgid "Mission"
+msgstr "Misiune"
+
+#: .\templates\core\about.html:54 .\templates\core\about.html:82
+msgid "Competitions"
+msgstr "Competiții"
+
+#: .\templates\core\about.html:56
+msgid ""
+"To organize competitions at high international standards, with "
+"professionalism and consistency."
+msgstr ""
+"Organizarea de competiții la standarde internaționale ridicate, cu "
+"profesionalism și consecvență."
+
+#: .\templates\core\about.html:63
+msgid "Community"
+msgstr "Comunitate"
+
+#: .\templates\core\about.html:65
+msgid ""
+"To help grow and strengthen the Romanian powerlifting community through "
+"serious and respected events."
+msgstr ""
+"Sprijinirea creșterii și consolidării comunității de powerlifting din "
+"România prin evenimente serioase și respectate."
+
+#: .\templates\core\about.html:72
+msgid "Athletes"
+msgstr "Sportivi"
+
+#: .\templates\core\about.html:74
+msgid ""
+"To offer athletes real opportunities to perform in a structured, fair, and "
+"competitive environment."
+msgstr ""
+"Oferirea de oportunități reale sportivilor pentru a performa într-un mediu "
+"structurat, corect și competitiv."
+
+#: .\templates\core\about.html:84
+msgid ""
+"The first official WRPF Romania competition will take place in 2026, with "
+"additional details to be announced soon through the federation's official "
+"channels."
+msgstr ""
+"Prima competiție oficială WRPF România va avea loc în 2026, iar detaliile "
+"suplimentare vor fi anunțate în curând prin canalele oficiale ale federației."
+
+#: .\templates\core\about.html:91
+msgid ""
+"Together, we aim to raise standards and carry the passion for this sport "
+"forward."
+msgstr ""
+"Împreună, ne propunem să ridicăm standardele și să ducem mai departe "
+"pasiunea pentru acest sport."
+
+#: .\templates\core\age_categories.html:20
+msgid ""
+"WRPF defines age categories to ensure fair competition and proper "
+"classification of athletes based on age."
+msgstr ""
+"WRPF definește categorii de vârstă pentru a asigura o competiție corectă și "
+"o clasificare adecvată a sportivilor în funcție de vârstă."
+
+#: .\templates\core\age_categories.html:26
+#, fuzzy
+#| msgid "Age Categories"
+msgid "Competition Age Categories"
+msgstr "Categorii competiționale de vârstă"
+
+#: .\templates\core\age_categories.html:31
+msgid "Teenage"
+msgstr "Teenage"
+
+#: .\templates\core\age_categories.html:38
+msgid "Sub-Junior"
+msgstr "Sub-Junior"
+
+#: .\templates\core\age_categories.html:45
+msgid "Junior"
+msgstr "Junior"
+
+#: .\templates\core\age_categories.html:52 .\templates\meets\meet_list.html:43
+#: .\templates\meets\partials\meet_list.html:16
+msgid "Open"
+msgstr "Înscrieri deschise"
+
+#: .\templates\core\age_categories.html:59
+msgid "Masters M1"
+msgstr "Masters M1"
+
+#: .\templates\core\age_categories.html:66
+msgid "Masters M2"
+msgstr "Masters M2"
+
+#: .\templates\core\age_categories.html:73
+msgid "Masters M3"
+msgstr "Masters M3"
+
+#: .\templates\core\age_categories.html:80
+msgid "Masters M4"
+msgstr "Masters M4"
+
+#: .\templates\core\age_categories.html:87
+msgid "Masters M5"
+msgstr "Masters M5"
+
+#: .\templates\core\age_categories.html:96
+msgid "Important Rules"
+msgstr "Reguli importante"
+
+#: .\templates\core\age_categories.html:100
+msgid ""
+"When an athlete turns 24 years old, they are no longer eligible for the "
+"Junior category."
+msgstr ""
+"Când un sportiv împlinește 24 de ani, nu mai este eligibil pentru categoria "
+"Junior."
+
+#: .\templates\core\age_categories.html:103
+msgid ""
+"Professional athletes compete in the Open category, without age-based "
+"classification (only by sex)."
+msgstr ""
+"Sportivii profesioniști concurează în categoria Open, fără clasificare pe "
+"vârstă (doar pe sex)."
+
+#: .\templates\core\age_categories.html:106
+msgid ""
+"Results from Teenagers, Sub-Junior, Junior, and Masters categories may also "
+"be included in the Open category."
+msgstr ""
+"Rezultatele din categoriile Teenage, Sub-Junior, Junior și Masters pot fi "
+"incluse și în categoria Open."
+
+#: .\templates\core\age_categories.html:114
+msgid ""
+"Athletes are responsible for registering in the correct age category "
+"according to the official WRPF rules."
+msgstr ""
+"Sportivii sunt responsabili să se înscrie în categoria de vârstă corectă "
+"conform regulamentului oficial WRPF."
+
+#: .\templates\core\disciplines.html:16
+msgid "Recognized Disciplines"
+msgstr "Discipline recunoscute"
+
+#: .\templates\core\disciplines.html:19
+msgid ""
+"WRPF recognizes a wide range of strength sport disciplines organized under "
+"its official competition rules."
+msgstr ""
+"WRPF recunoaște o gamă largă de discipline din sporturile de forță, "
+"organizate conform regulamentului său oficial de competiție."
+
+#: .\templates\core\disciplines.html:29 .\templates\meets\meet_list.html:32
+msgid "All"
+msgstr ""
+
+#: .\templates\core\disciplines.html:37
+#, fuzzy
+#| msgid "Powerlifting Competitions"
+msgid "Powerlifting"
+msgstr "Competiții de powerlifting"
+
+#: .\templates\core\disciplines.html:45
+#, fuzzy
+#| msgid "Bench Press"
+msgid "Bench"
+msgstr "Împins la piept"
+
+#: .\templates\core\disciplines.html:53
+msgid "Biceps"
+msgstr ""
+
+#: .\templates\core\disciplines.html:61
+msgid "Other"
+msgstr ""
+
+#: .\templates\core\disciplines.html:67
+msgid "Full Power"
+msgstr "Full Power"
+
+#: .\templates\core\disciplines.html:69
+msgid "Raw Powerlifting (Full Power: Squat, Bench Press, Deadlift)"
+msgstr ""
+"Raw Powerlifting (Full Power: Genuflexiuni, Împins la piept, Îndreptări)"
+
+#: .\templates\core\disciplines.html:70
+msgid "Classic Powerlifting (Full Power: Squat, Bench Press, Deadlift)"
+msgstr ""
+"Classic Powerlifting (Full Power: Genuflexiuni, Împins la piept, Îndreptări)"
+
+#: .\templates\core\disciplines.html:77
+msgid "Combined Events"
+msgstr "Evenimente combinate"
+
+#: .\templates\core\disciplines.html:79
+msgid "Push-Pull (Bench Press + Deadlift)"
+msgstr "Push-Pull (Împins la piept + Îndreptări)"
+
+#: .\templates\core\disciplines.html:80
+msgid "Raw Biathlon Bench Press 1x bodyweight (max kg + max reps)"
+msgstr ""
+"Biatlon Raw Bench Press 1x greutatea corporală (kg maxim + repetări maxime)"
+
+#: .\templates\core\disciplines.html:81
+msgid "Raw Biathlon Bench Press 1/2 bodyweight (max kg + max reps)"
+msgstr ""
+"Biatlon Raw Bench Press 1/2 greutatea corporală (kg maxim + repetări maxime)"
+
+#: .\templates\core\disciplines.html:82
+msgid "Biathlon Biceps Curl (Strict + Extreme)"
+msgstr "Biatlon Biceps Curl (Strict + Extreme)"
+
+#: .\templates\core\disciplines.html:83
+msgid "Triathlon Biceps Curl (Strict + Classic + Extreme)"
+msgstr "Triatlon Biceps Curl (Strict + Classic + Extreme)"
+
+#: .\templates\core\disciplines.html:90
+msgid "Squat / Bench / Deadlift"
+msgstr "Genuflexiuni / Împins la piept / Îndreptări"
+
+#: .\templates\core\disciplines.html:92
+msgid "Squat"
+msgstr "Genuflexiuni"
+
+#: .\templates\core\disciplines.html:93
+msgid "Bench Press"
+msgstr "Împins la piept"
+
+#: .\templates\core\disciplines.html:94
+msgid "Bench Press for athletes with physical disabilities"
+msgstr "Împins la piept pentru sportivi cu dizabilități fizice"
+
+#: .\templates\core\disciplines.html:95
+msgid "Deadlift"
+msgstr "Îndreptări"
+
+#: .\templates\core\disciplines.html:96
+msgid "Deadlift for reps"
+msgstr "Îndreptări pentru repetări"
+
+#: .\templates\core\disciplines.html:103
+msgid "Bench Variations"
+msgstr "Variații de împins la piept"
+
+#: .\templates\core\disciplines.html:105
+msgid "Military Bench Press"
+msgstr "Military Bench Press"
+
+#: .\templates\core\disciplines.html:106
+msgid "Military Bench Press for reps"
+msgstr "Military Bench Press pentru repetări"
+
+#: .\templates\core\disciplines.html:107
+msgid "Folk Bench Press"
+msgstr "Folk Bench Press"
+
+#: .\templates\core\disciplines.html:108
+msgid "Russian Bench Press"
+msgstr "Russian Bench Press"
+
+#: .\templates\core\disciplines.html:115
+msgid "Biceps Curl Events"
+msgstr "Probe de flexii pentru biceps"
+
+#: .\templates\core\disciplines.html:117
+msgid "Strict Biceps Curl"
+msgstr "Strict Biceps Curl"
+
+#: .\templates\core\disciplines.html:118
+msgid "Classic Biceps Curl"
+msgstr "Classic Biceps Curl"
+
+#: .\templates\core\disciplines.html:119
+msgid "Extreme Biceps Curl"
+msgstr "Extreme Biceps Curl"
+
+#: .\templates\core\disciplines.html:120
+msgid "Apollon's Axle Biceps Curl"
+msgstr "Apollon's Axle Biceps Curl"
+
+#: .\templates\core\disciplines.html:121
+msgid "Biceps Curl for reps"
+msgstr "Biceps Curl pentru repetări"
+
+#: .\templates\core\disciplines.html:122
+msgid "Folk Biceps Curl 1/2 bodyweight"
+msgstr "Folk Biceps Curl 1/2 greutatea corporală"
+
+#: .\templates\core\disciplines.html:129
+msgid "Other Strength Disciplines"
+msgstr "Alte discipline de forță"
+
+#: .\templates\core\disciplines.html:131
+msgid "Powersport (Army Press + Strict Biceps Curl)"
+msgstr "Powersport (Army Press + Strict Biceps Curl)"
+
+#: .\templates\core\disciplines.html:132
+msgid "Army Press"
+msgstr "Army Press"
+
+#: .\templates\core\disciplines.html:133
+msgid "Hip Thrust"
+msgstr "Hip Thrust"
+
+#: .\templates\core\disciplines.html:134
+msgid "Log Lift"
+msgstr "Log Lift"
+
+#: .\templates\core\disciplines.html:141
+msgid ""
+"All disciplines are conducted according to the official WRPF technical rules "
+"and competition standards."
+msgstr ""
+"Toate disciplinele se desfășoară conform regulamentului tehnic oficial WRPF "
+"și standardelor sale de competiție."
+
+#: .\templates\core\equipment.html:19
+msgid ""
+"WRPF defines clear equipment standards for each division. The main "
+"distinction presented here is between RAW and CLASSIC competition categories."
+msgstr ""
+"WRPF definește standarde clare de echipament pentru fiecare divizie. "
+"Principala distincție prezentată aici este între categoriile competiționale "
+"RAW și CLASSIC."
+
+#: .\templates\core\equipment.html:26
+msgid "RAW Division"
+msgstr "Divizia RAW"
+
+#: .\templates\core\equipment.html:28
+msgid ""
+"RAW refers to non-supportive equipment and is intended to preserve a more "
+"classic expression of strength performance."
+msgstr ""
+"RAW se referă la echipament non-suportiv și urmărește păstrarea unei "
+"expresii mai clasice a performanței de forță."
+
+#: .\templates\core\equipment.html:31 .\templates\core\equipment.html:52
+msgid "Allowed Equipment"
+msgstr "Echipament permis"
+
+#: .\templates\core\equipment.html:33 .\templates\core\equipment.html:54
+msgid "One-piece lifting singlet"
+msgstr "Singlet de concurs dintr-o singură piesă"
+
+#: .\templates\core\equipment.html:34 .\templates\core\equipment.html:55
+msgid "T-shirt"
+msgstr "Tricou"
+
+#: .\templates\core\equipment.html:35 .\templates\core\equipment.html:56
+msgid "Shorts (optional)"
+msgstr "Pantaloni scurți (opțional)"
+
+#: .\templates\core\equipment.html:36 .\templates\core\equipment.html:57
+msgid "Socks"
+msgstr "Șosete"
+
+#: .\templates\core\equipment.html:37 .\templates\core\equipment.html:58
+msgid "Belt (optional)"
+msgstr "Centură (opțional)"
+
+#: .\templates\core\equipment.html:38 .\templates\core\equipment.html:59
+msgid "Shoes"
+msgstr "Pantofi"
+
+#: .\templates\core\equipment.html:39 .\templates\core\equipment.html:60
+msgid "Wrist wraps (optional, single-ply)"
+msgstr "Wrist wraps (opțional, single-ply)"
+
+#: .\templates\core\equipment.html:40 .\templates\core\equipment.html:61
+msgid "Knee sleeves (optional)"
+msgstr "Knee sleeves (opțional)"
+
+#: .\templates\core\equipment.html:47
+msgid "CLASSIC Division"
+msgstr "Divizia CLASSIC"
+
+#: .\templates\core\equipment.html:49
+msgid ""
+"CLASSIC includes the same equipment allowed in RAW, with one important "
+"difference: knee wraps are permitted."
+msgstr ""
+"CLASSIC include același echipament permis în RAW, cu o diferență importantă: "
+"knee wraps sunt permise."
+
+#: .\templates\core\equipment.html:62
+msgid "Knee wraps"
+msgstr "Knee wraps"
+
+#: .\templates\core\equipment.html:69
+msgid "Important Distinction"
+msgstr "Diferență importantă"
+
+#: .\templates\core\equipment.html:71
+msgid "Knee wraps of any length are not permitted in the RAW division."
+msgstr "Knee wraps de orice lungime nu sunt permise în divizia RAW."
+
+#: .\templates\core\equipment.html:74
+msgid ""
+"Apart from this distinction, the technical execution rules remain the same "
+"for Squat, Bench Press, and Deadlift in both RAW and CLASSIC divisions."
+msgstr ""
+"În afară de această diferență, regulile tehnice de execuție rămân aceleași "
+"pentru Genuflexiuni, Împins la piept și Îndreptări atât în diviziile RAW, "
+"cât și în CLASSIC."
+
+#: .\templates\core\equipment.html:79
+msgid "Competition Rule Consistency"
+msgstr "Coerența regulamentului de concurs"
+
+#: .\templates\core\equipment.html:81
+msgid ""
+"The standards of execution for the three main lifts — Squat, Bench Press, "
+"and Deadlift — are applied consistently across both divisions in accordance "
+"with the official WRPF technical rules."
+msgstr ""
+"Standardele de execuție pentru cele trei probe principale — Genuflexiuni, "
+"Împins la piept și Îndreptări — se aplică în mod consecvent în ambele "
+"divizii, conform regulamentului tehnic oficial WRPF."
+
+#: .\templates\core\equipment.html:87
+msgid ""
+"Athletes, coaches, and officials are expected to understand and respect the "
+"official equipment requirements applicable to their division."
+msgstr ""
+"Sportivii, antrenorii și oficialii trebuie să cunoască și să respecte "
+"cerințele oficiale de echipament aplicabile diviziei lor."
+
+#: .\templates\core\staff.html:21
+msgid "Meet the people representing and supporting WRPF Romania."
+msgstr ""
+
+#: .\templates\core\staff.html:28
+msgid "Leadership"
+msgstr ""
+
+#: .\templates\core\staff.html:39
+msgid "President"
+msgstr ""
+
+#: .\templates\core\staff.html:47
+msgid ""
+"National powerlifting champion, coach, referee, and sports official, with "
+"competitive experience since 2018. He competed in the Romanian Powerlifting "
+"Federation, becoming National Champion in 2021, 2022, and 2023 in the -74 kg "
+"category."
+msgstr "Campion național la powerlifting, antrenor, arbitru și oficial sportiv, cu experiență competițională începând din anul 2018. A concurat în cadrul Federației Române de Powerlifting, devenind Campion Național în anii 2021, 2022 și 2023 la categoria -74 kg."
+
+#: .\templates\core\staff.html:51
+msgid ""
+"In 2026, he joined WRPF, where he placed first in the squat event in the "
+"-100 kg category and set a world record with a 290 kg squat. He is actively "
+"involved in developing powerlifting as an athlete, coach, referee, and "
+"President of WRPF Romania."
+msgstr "În anul 2026, s-a alăturat WRPF, unde a obținut locul 1 la proba de genuflexiuni în categoria -100 kg și a stabilit un record mondial cu o genuflexiune de 290 kg. Este implicat activ în dezvoltarea powerliftingului ca sportiv, antrenor, arbitru și Președinte WRPF România."
+
+#: .\templates\core\staff.html:67 .\templates\core\staff.html:91
+msgid "Vice President"
+msgstr "Vice Președinte"
+
+#: .\templates\core\staff.html:75
+msgid ""
+"Former athlete in the Romanian Powerlifting Federation and the Romanian "
+"Bodybuilding and Fitness Federation, champion and vice-champion in "
+"powerlifting and natural bodybuilding competitions."
+msgstr "Fostă sportivă în cadrul Federației Române de Powerlifting și al Federației Române de Culturism și Fitness, campioană și vicecampioană în competiții de powerlifting și bodybuilding natural."
+
+#: .\templates\core\staff.html:79
+msgid ""
+"Through her experience as a performance athlete, she actively promotes "
+"sport, discipline, and a balanced lifestyle. She currently serves as Vice "
+"President of WRPF Romania, while also working as a nutrition and fitness "
+"coach."
+msgstr "Prin experiența acumulată ca sportivă de performanță, promovează activ sportul, disciplina și un stil de viață echilibrat. În prezent, este Vicepreședinte WRPF România și activează ca nutrition și fitness coach."
+
+#: .\templates\core\staff.html:99
+msgid ""
+"Competitive powerlifter with over 5 years of experience in national and "
+"international competitions, across multiple weight categories. He has "
+"competed in raw with sleeves and wraps divisions, representing federations "
+"such as the International Powerlifting Federation, UAE Powerlifting "
+"Federation, RAW Iceland, and WRPF."
+msgstr "Powerlifter competitiv cu peste 5 ani de experiență în competiții naționale și internaționale, în mai multe categorii de greutate. A concurat în divizii raw cu sleeves și wraps, reprezentând federații precum International Powerlifting Federation, UAE Powerlifting Federation, RAW Iceland și WRPF."
+
+#: .\templates\core\staff.html:103
+msgid ""
+"He currently competes in the -110 kg category, with personal bests of 250 kg "
+"in the squat with wraps, 170 kg in the bench press, and 270 kg in the "
+"deadlift. He is motivated by progress, competitiveness, and continuous "
+"development in powerlifting."
+msgstr "În prezent concurează la categoria -110 kg, cu recorduri personale de 250 kg la genuflexiuni cu wraps, 170 kg la împins la piept și 270 kg la îndreptări. Este motivat de progres, competitivitate și dezvoltare constantă în powerlifting."
+
+#: .\templates\core\staff.html:114
+#, fuzzy
+#| msgid ""
+#| "Starting with October 1st, 2025, WRPF Romania officially begins its "
+#| "activity, with the goal of supporting and promoting powerlifting in "
+#| "Romania through professionally organized competitions and respect for "
+#| "every athlete."
+msgid ""
+"WRPF Romania is committed to developing and promoting powerlifting through "
+"professionalism, fairness, and respect for athletes."
+msgstr ""
+"Începând cu 1 octombrie 2025, WRPF România își începe oficial activitatea, "
+"având ca obiectiv susținerea și promovarea powerliftingului în România prin "
+"competiții organizate profesionist și prin respect față de fiecare sportiv."
+
+#: .\templates\emails\registration_confirmation.html:6
+msgid "WRPF Romania Registration Confirmation"
+msgstr "Confirmare înscriere WRPF România"
+
+#: .\templates\emails\registration_confirmation.html:18
+msgid "Registration Confirmation"
+msgstr "Confirmarea înscrierii"
+
+#: .\templates\emails\registration_confirmation.html:26
+#, python-format
+msgid "Hello %(name)s,"
+msgstr "Salut %(name)s,"
+
+#: .\templates\emails\registration_confirmation.html:30
+#, python-format
+msgid ""
+"\n"
+"                  Your registration for <strong>%(meet_name)s</strong> was "
+"submitted successfully.\n"
+"                "
+msgstr ""
+"\n"
+"        Înscrierea ta pentru  %(meet_name)s a fost procesată.\n"
+"        "
+
+#: .\templates\emails\registration_confirmation.html:38
+msgid "Registration Details"
+msgstr "Detalii Înscriere"
+
+#: .\templates\emails\registration_confirmation.html:42
+#: .\templates\meets\register_success.html:109
+#: .\templates\meets\registration_verify.html:90
+msgid "Meet"
+msgstr "Competiție"
+
+#: .\templates\emails\registration_confirmation.html:61
+#: .\templates\meets\register_success.html:95
+#: .\templates\meets\registration_verify.html:76
+#: .\venv\Lib\site-packages\django\forms\widgets.py:867
+msgid "Yes"
+msgstr "Da"
+
+#: .\templates\emails\registration_confirmation.html:63
+#: .\templates\meets\register_success.html:97
+#: .\templates\meets\registration_verify.html:78
+#: .\venv\Lib\site-packages\django\forms\widgets.py:868
+msgid "No"
+msgstr "Nu"
+
+#: .\templates\emails\registration_confirmation.html:70
+msgid "Thank you for registering. We look forward to seeing you at the meet."
+msgstr ""
+"Vă mulțumim pentru înscriere. Așteptăm cu nerăbdare să vă vedem la "
+"competiție."
+
+#: .\templates\index.html:19
+msgid "WRPF Romania"
+msgstr "WRPF Romania"
+
+#: .\templates\index.html:19
+msgid "Powerlifting Competitions"
+msgstr "Competiții de powerlifting"
+
+#: .\templates\index.html:21
+msgid "View Competitions"
+msgstr "Vezi competițiile"
+
+#: .\templates\index.html:24
+msgid "WRPF Romania Logo"
+msgstr "WRPF Romania Logo"
+
+#: .\templates\meets\meet_details.html:15
+msgid "Register"
+msgstr "Înregistrați-vă"
+
+#: .\templates\meets\meet_details.html:98
+msgid "Submit registration"
+msgstr "Trimite înregistrarea"
+
+#: .\templates\meets\meet_details.html:102
+msgid "Registration is closed for this meet."
+msgstr "Înregistrările sunt închise pentru acest meet"
+
+#: .\templates\meets\meet_list.html:19
+msgid ""
+"View the official WRPF Romania competition calendar and registration status "
+"for upcoming events."
+msgstr ""
+"Consultați calendarul oficial al competițiilor WRPF România și statusul "
+"înscrierilor pentru evenimentele viitoare."
+
+#: .\templates\meets\meet_list.html:54
+#: .\templates\meets\partials\meet_list.html:20
+msgid "Closed"
+msgstr "Înscrieri închise"
+
+#: .\templates\meets\partials\meet_list.html:27
+msgid "View competition"
+msgstr "Vezi competiția"
+
+#: .\templates\meets\partials\meet_list.html:35
+#, fuzzy
+#| msgid "No past competitions yet."
+msgid "No competitions found."
+msgstr "Nu există competiții anterioare momentan."
+
+#: .\templates\meets\register_success.html:5
+msgid "Registration successful"
+msgstr "Înscriere cu success"
+
+#: .\templates\meets\register_success.html:24
+msgid "Official Registration Confirmation"
+msgstr "Confirmare oficială a înscrierii"
+
+#: .\templates\meets\register_success.html:26
+#, python-format
+msgid ""
+"\n"
+"                  Your registration for %(meet_name)s has been received "
+"successfully.\n"
+"                "
+msgstr ""
+"\n"
+"        Înscrierea ta pentru  %(meet_name)s a fost procesată.\n"
+"        "
+
+#: .\templates\meets\register_success.html:34
+#: .\templates\meets\registration_verify.html:34
+msgid "Registration ID"
+msgstr "ID înregistrare"
+
+#: .\templates\meets\register_success.html:44
+#, fuzzy
+#| msgid "Registration open"
+msgid "Registration QR code"
+msgstr "Înscrieri deschise"
+
+#: .\templates\meets\register_success.html:48
+msgid "Scan code"
+msgstr ""
+
+#: .\templates\meets\register_success.html:58
+msgid "Confirmed"
+msgstr "Confirmat"
+
+#: .\templates\meets\register_success.html:64
+#: .\templates\meets\registration_verify.html:50
+msgid "Athlete Details"
+msgstr "Detaliile sportivului"
+
+#: .\templates\meets\register_success.html:87
+msgid "Registered At"
+msgstr "Data înregistrării"
+
+#: .\templates\meets\register_success.html:106
+#: .\templates\meets\registration_verify.html:87
+msgid "Meet Details"
+msgstr "Detaliile competiției"
+
+#: .\templates\meets\register_success.html:124
+msgid "Status"
+msgstr "Status"
+
+#: .\templates\meets\register_success.html:125
+msgid "Registered"
+msgstr "Înregistrat"
+
+#: .\templates\meets\register_success.html:132
+msgid "Important"
+msgstr "Important"
+
+#: .\templates\meets\register_success.html:134
+msgid ""
+"Please keep this confirmation for your records. You may be asked to present "
+"it at check-in or weigh-ins."
+msgstr ""
+"Vă rugăm să păstrați această confirmare pentru evidențele dumneavoastră. "
+"Este posibil să vi se solicite prezentarea acesteia la check-in sau la "
+"cântar."
+
+#: .\templates\meets\register_success.html:137
+#, python-format
+msgid ""
+"\n"
+"              A confirmation email has been sent to %(email)s.\n"
+"            "
+msgstr ""
+"\n"
+"        Un email de confirmare a fost trimis catre %(email)s.\n"
+"        "
+
+#: .\templates\meets\register_success.html:145
+msgid "Print Confirmation"
+msgstr "Tipărește confirmarea"
+
+#: .\templates\meets\register_success.html:148
+msgid "Back to main page"
+msgstr "Înapoi la pagina principala"
+
+#: .\templates\meets\register_success.html:151
+msgid "View all meets"
+msgstr "Vezi toate meet-urile"
+
+#: .\templates\meets\registration_verify.html:4
+#: .\templates\meets\registration_verify.html:26
+msgid "Registration Verification"
+msgstr "Verificarea înscrierii"
+
+#: .\templates\meets\registration_verify.html:28
+msgid ""
+"This registration has been successfully verified in the WRPF Romania system."
+msgstr ""
+"Această înregistrare a fost verificată cu succes în sistemul WRPF România."
+
+#: .\templates\meets\registration_verify.html:44
+msgid "Verified"
+msgstr "Verificat"
+
+#: .\templates\meets\registration_verify.html:105
+msgid "Registered at"
+msgstr "Înregistrat la"
+
+#: .\templates\meets\registration_verify.html:110
+msgid "Verified at"
+msgstr "Verificat la"
+
+#: .\templates\meets\registration_verify.html:118
+msgid "Verification Status"
+msgstr "Stare verificare"
+
+#: .\templates\meets\registration_verify.html:120
+msgid ""
+"This page confirms that the registration exists in the official WRPF Romania "
+"registration system."
+msgstr ""
+"Această pagină confirmă existența înregistrării în sistemul oficial de "
+"înscrieri WRPF România."
+
+#: .\templates\rules\pdf_viewer.html:26
+msgid "Download PDF"
+msgstr "Descărcați PDF"
+
+#: .\templates\rules\pdf_viewer.html:34
+msgid "PDF viewer"
+msgstr ""
+
+#: .\templates\rules\pdf_viewer.html:39
+msgid "Prev"
+msgstr "Anterior"
+
+#: .\templates\rules\pdf_viewer.html:41
+msgid "Next"
+msgstr "Următorul"
+
+#: .\venv\Lib\site-packages\django\contrib\messages\apps.py:16
+msgid "Messages"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\contrib\sitemaps\apps.py:8
+msgid "Site Maps"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\contrib\staticfiles\apps.py:9
+msgid "Static Files"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\contrib\syndication\apps.py:7
+msgid "Syndication"
+msgstr ""
+
+#. Translators: String used to replace omitted page numbers in elided page
+#. range generated by paginators, e.g. [1, 2, '…', 5, 6, 7, '…', 9, 10].
+#: .\venv\Lib\site-packages\django\core\paginator.py:30
+msgid "…"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\paginator.py:32
+msgid "That page number is not an integer"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\paginator.py:33
+msgid "That page number is less than 1"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\paginator.py:34
+msgid "That page contains no results"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:22
+msgid "Enter a valid value."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:70
+msgid "Enter a valid domain name."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:153
+#: .\venv\Lib\site-packages\django\forms\fields.py:775
+msgid "Enter a valid URL."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:200
+msgid "Enter a valid integer."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:211
+msgid "Enter a valid email address."
+msgstr ""
+
+#. Translators: "letters" means latin letters: a-z and A-Z.
+#: .\venv\Lib\site-packages\django\core\validators.py:289
+msgid ""
+"Enter a valid “slug” consisting of letters, numbers, underscores or hyphens."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:297
+msgid ""
+"Enter a valid “slug” consisting of Unicode letters, numbers, underscores, or "
+"hyphens."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:309
+#: .\venv\Lib\site-packages\django\core\validators.py:318
+#: .\venv\Lib\site-packages\django\core\validators.py:332
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2220
+#, python-format
+msgid "Enter a valid %(protocol)s address."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:311
+msgid "IPv4"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:320
+#: .\venv\Lib\site-packages\django\utils\ipv6.py:43
+msgid "IPv6"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:334
+msgid "IPv4 or IPv6"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:375
+msgid "Enter only digits separated by commas."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:381
+#, python-format
+msgid "Ensure this value is %(limit_value)s (it is %(show_value)s)."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:416
+#, python-format
+msgid "Ensure this value is less than or equal to %(limit_value)s."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:425
+#, python-format
+msgid "Ensure this value is greater than or equal to %(limit_value)s."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:434
+#, python-format
+msgid "Ensure this value is a multiple of step size %(limit_value)s."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:441
+#, python-format
+msgid ""
+"Ensure this value is a multiple of step size %(limit_value)s, starting from "
+"%(offset)s, e.g. %(offset)s, %(valid_value1)s, %(valid_value2)s, and so on."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:473
+#, python-format
+msgid ""
+"Ensure this value has at least %(limit_value)d character (it has "
+"%(show_value)d)."
+msgid_plural ""
+"Ensure this value has at least %(limit_value)d characters (it has "
+"%(show_value)d)."
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:491
+#, python-format
+msgid ""
+"Ensure this value has at most %(limit_value)d character (it has "
+"%(show_value)d)."
+msgid_plural ""
+"Ensure this value has at most %(limit_value)d characters (it has "
+"%(show_value)d)."
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:514
+#: .\venv\Lib\site-packages\django\forms\fields.py:366
+#: .\venv\Lib\site-packages\django\forms\fields.py:405
+msgid "Enter a number."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:516
+#, python-format
+msgid "Ensure that there are no more than %(max)s digit in total."
+msgid_plural "Ensure that there are no more than %(max)s digits in total."
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:521
+#, python-format
+msgid "Ensure that there are no more than %(max)s decimal place."
+msgid_plural "Ensure that there are no more than %(max)s decimal places."
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:526
+#, python-format
+msgid ""
+"Ensure that there are no more than %(max)s digit before the decimal point."
+msgid_plural ""
+"Ensure that there are no more than %(max)s digits before the decimal point."
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:597
+#, python-format
+msgid ""
+"File extension “%(extension)s” is not allowed. Allowed extensions are: "
+"%(allowed_extensions)s."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:659
+msgid "Null characters are not allowed."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\base.py:1600
+#: .\venv\Lib\site-packages\django\forms\models.py:908
+msgid "and"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\base.py:1602
+#, python-format
+msgid "%(model_name)s with this %(field_labels)s already exists."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\constraints.py:22
+#, python-format
+msgid "Constraint “%(name)s” is violated."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:134
+#, python-format
+msgid "Value %(value)r is not a valid choice."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:135
+msgid "This field cannot be null."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:136
+msgid "This field cannot be blank."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:137
+#, python-format
+msgid "%(model_name)s with this %(field_label)s already exists."
+msgstr ""
+
+#. Translators: The 'lookup_type' is one of 'date', 'year' or
+#. 'month'. Eg: "Title must be unique for pub_date year"
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:141
+#, python-format
+msgid ""
+"%(field_label)s must be unique for %(date_field_label)s %(lookup_type)s."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:180
+#, python-format
+msgid "Field of type: %(field_type)s"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1162
+#, python-format
+msgid "“%(value)s” value must be either True or False."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1163
+#, python-format
+msgid "“%(value)s” value must be either True, False, or None."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1165
+msgid "Boolean (Either True or False)"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1215
+#, python-format
+msgid "String (up to %(max_length)s)"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1217
+msgid "String (unlimited)"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1326
+msgid "Comma-separated integers"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1427
+#, python-format
+msgid ""
+"“%(value)s” value has an invalid date format. It must be in YYYY-MM-DD "
+"format."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1431
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1566
+#, python-format
+msgid ""
+"“%(value)s” value has the correct format (YYYY-MM-DD) but it is an invalid "
+"date."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1435
+msgid "Date (without time)"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1562
+#, python-format
+msgid ""
+"“%(value)s” value has an invalid format. It must be in YYYY-MM-DD "
+"HH:MM[:ss[.uuuuuu]][TZ] format."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1570
+#, python-format
+msgid ""
+"“%(value)s” value has the correct format (YYYY-MM-DD HH:MM[:ss[.uuuuuu]]"
+"[TZ]) but it is an invalid date/time."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1575
+msgid "Date (with time)"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1702
+#, python-format
+msgid "“%(value)s” value must be a decimal number."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1704
+msgid "Decimal number"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1864
+#, python-format
+msgid ""
+"“%(value)s” value has an invalid format. It must be in [DD] "
+"[[HH:]MM:]ss[.uuuuuu] format."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1868
+msgid "Duration"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1920
+msgid "Email address"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1945
+msgid "File path"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2023
+#, python-format
+msgid "“%(value)s” value must be a float."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2025
+msgid "Floating point number"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2065
+#, python-format
+msgid "“%(value)s” value must be an integer."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2067
+msgid "Integer"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2163
+msgid "Big (8 byte) integer"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2180
+msgid "Small integer"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2188
+msgid "IPv4 address"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2219
+msgid "IP address"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2310
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2311
+#, python-format
+msgid "“%(value)s” value must be either None, True or False."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2313
+msgid "Boolean (Either True, False or None)"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2364
+msgid "Positive big integer"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2379
+msgid "Positive integer"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2394
+msgid "Positive small integer"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2410
+#, python-format
+msgid "Slug (up to %(max_length)s)"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2446
+msgid "Text"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2526
+#, python-format
+msgid ""
+"“%(value)s” value has an invalid format. It must be in HH:MM[:ss[.uuuuuu]] "
+"format."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2530
+#, python-format
+msgid ""
+"“%(value)s” value has the correct format (HH:MM[:ss[.uuuuuu]]) but it is an "
+"invalid time."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2534
+msgid "Time"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2642
+msgid "URL"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2666
+msgid "Raw binary data"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2731
+#, python-format
+msgid "“%(value)s” is not a valid UUID."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2733
+msgid "Universally unique identifier"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\files.py:244
+msgid "File"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\files.py:420
+msgid "Image"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\json.py:24
+msgid "A JSON object"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\json.py:26
+msgid "Value must be valid JSON."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\related.py:979
+#, python-format
+msgid "%(model)s instance with %(field)s %(value)r is not a valid choice."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\related.py:982
+msgid "Foreign Key (type determined by related field)"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\related.py:1276
+msgid "One-to-one relationship"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\related.py:1333
+#, python-format
+msgid "%(from)s-%(to)s relationship"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\related.py:1335
+#, python-format
+msgid "%(from)s-%(to)s relationships"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\related.py:1383
+msgid "Many-to-many relationship"
+msgstr ""
+
+#. Translators: If found as last label character, these punctuation
+#. characters will prevent the default label_suffix to be appended to the label
+#: .\venv\Lib\site-packages\django\forms\boundfield.py:185
+msgid ":?.!"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:95
+msgid "This field is required."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:315
+msgid "Enter a whole number."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:486
+#: .\venv\Lib\site-packages\django\forms\fields.py:1267
+msgid "Enter a valid date."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:509
+#: .\venv\Lib\site-packages\django\forms\fields.py:1268
+msgid "Enter a valid time."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:536
+msgid "Enter a valid date/time."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:570
+msgid "Enter a valid duration."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:571
+#, python-brace-format
+msgid "The number of days must be between {min_days} and {max_days}."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:640
+msgid "No file was submitted. Check the encoding type on the form."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:641
+msgid "No file was submitted."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:642
+msgid "The submitted file is empty."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:644
+#, python-format
+msgid "Ensure this filename has at most %(max)d character (it has %(length)d)."
+msgid_plural ""
+"Ensure this filename has at most %(max)d characters (it has %(length)d)."
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:649
+msgid "Please either submit a file or check the clear checkbox, not both."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:717
+msgid ""
+"Upload a valid image. The file you uploaded was either not an image or a "
+"corrupted image."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:889
+#: .\venv\Lib\site-packages\django\forms\fields.py:975
+#: .\venv\Lib\site-packages\django\forms\models.py:1592
+#, python-format
+msgid "Select a valid choice. %(value)s is not one of the available choices."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:977
+#: .\venv\Lib\site-packages\django\forms\fields.py:1096
+#: .\venv\Lib\site-packages\django\forms\models.py:1590
+msgid "Enter a list of values."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:1097
+msgid "Enter a complete value."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:1339
+msgid "Enter a valid UUID."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:1369
+msgid "Enter a valid JSON."
+msgstr ""
+
+#. Translators: This is the default suffix added to form field labels
+#: .\venv\Lib\site-packages\django\forms\forms.py:97
+msgid ":"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\forms.py:239
+#, python-format
+msgid "(Hidden field %(name)s) %(error)s"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\formsets.py:61
+#, python-format
+msgid ""
+"ManagementForm data is missing or has been tampered with. Missing fields: "
+"%(field_names)s. You may need to file a bug report if the issue persists."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\formsets.py:65
+#, python-format
+msgid "Please submit at most %(num)d form."
+msgid_plural "Please submit at most %(num)d forms."
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\django\forms\formsets.py:70
+#, python-format
+msgid "Please submit at least %(num)d form."
+msgid_plural "Please submit at least %(num)d forms."
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\django\forms\formsets.py:484
+#: .\venv\Lib\site-packages\django\forms\formsets.py:491
+msgid "Order"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\formsets.py:499
+msgid "Delete"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\models.py:901
+#, python-format
+msgid "Please correct the duplicate data for %(field)s."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\models.py:906
+#, python-format
+msgid "Please correct the duplicate data for %(field)s, which must be unique."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\models.py:913
+#, python-format
+msgid ""
+"Please correct the duplicate data for %(field_name)s which must be unique "
+"for the %(lookup)s in %(date_field)s."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\models.py:922
+msgid "Please correct the duplicate values below."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\models.py:1359
+msgid "The inline value did not match the parent instance."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\models.py:1450
+msgid "Select a valid choice. That choice is not one of the available choices."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\models.py:1594
+#, python-format
+msgid "“%(pk)s” is not a valid value."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\utils.py:229
+#, python-format
+msgid ""
+"%(datetime)s couldn’t be interpreted in time zone %(current_timezone)s; it "
+"may be ambiguous or it may not exist."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\widgets.py:527
+msgid "Clear"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\widgets.py:528
+msgid "Currently"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\widgets.py:529
+msgid "Change"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\widgets.py:866
+msgid "Unknown"
+msgstr ""
+
+#. Translators: Please do not add spaces around commas.
+#: .\venv\Lib\site-packages\django\template\defaultfilters.py:873
+msgid "yes,no,maybe"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\template\defaultfilters.py:903
+#: .\venv\Lib\site-packages\django\template\defaultfilters.py:920
+#, python-format
+msgid "%(size)d byte"
+msgid_plural "%(size)d bytes"
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\django\template\defaultfilters.py:922
+#, python-format
+msgid "%s KB"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\template\defaultfilters.py:924
+#, python-format
+msgid "%s MB"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\template\defaultfilters.py:926
+#, python-format
+msgid "%s GB"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\template\defaultfilters.py:928
+#, python-format
+msgid "%s TB"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\template\defaultfilters.py:930
+#, python-format
+msgid "%s PB"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dateformat.py:74
+msgid "p.m."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dateformat.py:75
+msgid "a.m."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dateformat.py:80
+msgid "PM"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dateformat.py:81
+msgid "AM"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dateformat.py:153
+msgid "midnight"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dateformat.py:155
+msgid "noon"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:7
+msgid "Monday"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:8
+msgid "Tuesday"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:9
+msgid "Wednesday"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:10
+msgid "Thursday"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:11
+msgid "Friday"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:12
+msgid "Saturday"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:13
+msgid "Sunday"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:16
+msgid "Mon"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:17
+msgid "Tue"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:18
+msgid "Wed"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:19
+msgid "Thu"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:20
+msgid "Fri"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:21
+msgid "Sat"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:22
+msgid "Sun"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:25
+msgid "January"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:26
+msgid "February"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:27
+msgid "March"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:28
+msgid "April"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:29
+msgid "May"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:30
+msgid "June"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:31
+msgid "July"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:32
+msgid "August"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:33
+msgid "September"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:34
+msgid "October"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:35
+msgid "November"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:36
+msgid "December"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:39
+msgid "jan"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:40
+msgid "feb"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:41
+msgid "mar"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:42
+msgid "apr"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:43
+msgid "may"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:44
+msgid "jun"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:45
+msgid "jul"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:46
+msgid "aug"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:47
+msgid "sep"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:48
+msgid "oct"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:49
+msgid "nov"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:50
+msgid "dec"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:53
+msgctxt "abbrev. month"
+msgid "Jan."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:54
+msgctxt "abbrev. month"
+msgid "Feb."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:55
+msgctxt "abbrev. month"
+msgid "March"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:56
+msgctxt "abbrev. month"
+msgid "April"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:57
+msgctxt "abbrev. month"
+msgid "May"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:58
+msgctxt "abbrev. month"
+msgid "June"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:59
+msgctxt "abbrev. month"
+msgid "July"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:60
+msgctxt "abbrev. month"
+msgid "Aug."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:61
+msgctxt "abbrev. month"
+msgid "Sept."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:62
+msgctxt "abbrev. month"
+msgid "Oct."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:63
+msgctxt "abbrev. month"
+msgid "Nov."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:64
+msgctxt "abbrev. month"
+msgid "Dec."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:67
+msgctxt "alt. month"
+msgid "January"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:68
+msgctxt "alt. month"
+msgid "February"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:69
+msgctxt "alt. month"
+msgid "March"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:70
+msgctxt "alt. month"
+msgid "April"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:71
+msgctxt "alt. month"
+msgid "May"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:72
+msgctxt "alt. month"
+msgid "June"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:73
+msgctxt "alt. month"
+msgid "July"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:74
+msgctxt "alt. month"
+msgid "August"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:75
+msgctxt "alt. month"
+msgid "September"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:76
+msgctxt "alt. month"
+msgid "October"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:77
+msgctxt "alt. month"
+msgid "November"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:78
+msgctxt "alt. month"
+msgid "December"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\ipv6.py:20
+msgid "This is not a valid IPv6 address."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\text.py:76
+#, python-format
+msgctxt "String to return when truncating text"
+msgid "%(truncated_text)s…"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\text.py:287
+msgid "or"
+msgstr ""
+
+#. Translators: This string is used as a separator between list elements
+#: .\venv\Lib\site-packages\django\utils\text.py:306
+#: .\venv\Lib\site-packages\django\utils\timesince.py:135
+msgid ", "
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\timesince.py:8
+#, python-format
+msgid "%(num)d year"
+msgid_plural "%(num)d years"
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\django\utils\timesince.py:9
+#, python-format
+msgid "%(num)d month"
+msgid_plural "%(num)d months"
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\django\utils\timesince.py:10
+#, python-format
+msgid "%(num)d week"
+msgid_plural "%(num)d weeks"
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\django\utils\timesince.py:11
+#, python-format
+msgid "%(num)d day"
+msgid_plural "%(num)d days"
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\django\utils\timesince.py:12
+#, python-format
+msgid "%(num)d hour"
+msgid_plural "%(num)d hours"
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\django\utils\timesince.py:13
+#, python-format
+msgid "%(num)d minute"
+msgid_plural "%(num)d minutes"
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\django\views\csrf.py:29
+msgid "Forbidden"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\csrf.py:30
+msgid "CSRF verification failed. Request aborted."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\csrf.py:34
+msgid ""
+"You are seeing this message because this HTTPS site requires a “Referer "
+"header” to be sent by your web browser, but none was sent. This header is "
+"required for security reasons, to ensure that your browser is not being "
+"hijacked by third parties."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\csrf.py:40
+msgid ""
+"If you have configured your browser to disable “Referer” headers, please re-"
+"enable them, at least for this site, or for HTTPS connections, or for “same-"
+"origin” requests."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\csrf.py:45
+msgid ""
+"If you are using the <meta name=\"referrer\" content=\"no-referrer\"> tag or "
+"including the “Referrer-Policy: no-referrer” header, please remove them. The "
+"CSRF protection requires the “Referer” header to do strict referer checking. "
+"If you’re concerned about privacy, use alternatives like <a "
+"rel=\"noreferrer\" …> for links to third-party sites."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\csrf.py:54
+msgid ""
+"You are seeing this message because this site requires a CSRF cookie when "
+"submitting forms. This cookie is required for security reasons, to ensure "
+"that your browser is not being hijacked by third parties."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\csrf.py:60
+msgid ""
+"If you have configured your browser to disable cookies, please re-enable "
+"them, at least for this site, or for “same-origin” requests."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\csrf.py:66
+msgid "More information is available with DEBUG=True."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\generic\dates.py:44
+msgid "No year specified"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\generic\dates.py:64
+#: .\venv\Lib\site-packages\django\views\generic\dates.py:115
+#: .\venv\Lib\site-packages\django\views\generic\dates.py:214
+msgid "Date out of range"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\generic\dates.py:94
+msgid "No month specified"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\generic\dates.py:147
+msgid "No day specified"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\generic\dates.py:194
+msgid "No week specified"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\generic\dates.py:353
+#: .\venv\Lib\site-packages\django\views\generic\dates.py:384
+#, python-format
+msgid "No %(verbose_name_plural)s available"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\generic\dates.py:680
+#, python-format
+msgid ""
+"Future %(verbose_name_plural)s not available because "
+"%(class_name)s.allow_future is False."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\generic\dates.py:720
+#, python-format
+msgid "Invalid date string “%(datestr)s” given format “%(format)s”"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\generic\detail.py:56
+#, python-format
+msgid "No %(verbose_name)s found matching the query"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\generic\list.py:70
+msgid "Page is not “last”, nor can it be converted to an int."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\generic\list.py:77
+#, python-format
+msgid "Invalid page (%(page_number)s): %(message)s"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\generic\list.py:173
+#, python-format
+msgid "Empty list and “%(class_name)s.allow_empty” is False."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\static.py:49
+msgid "Directory indexes are not allowed here."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\static.py:51
+#, python-format
+msgid "“%(path)s” does not exist"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\static.py:68
+#: .\venv\Lib\site-packages\django\views\templates\directory_index.html:8
+#: .\venv\Lib\site-packages\django\views\templates\directory_index.html:11
+#, python-format
+msgid "Index of %(directory)s"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:7
+#: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:204
+msgid "The install worked successfully! Congratulations!"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:206
+#, python-format
+msgid ""
+"View <a href=\"https://docs.djangoproject.com/en/%(version)s/releases/\" "
+"target=\"_blank\" rel=\"noopener\">release notes</a> for Django %(version)s"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:208
+#, python-format
+msgid ""
+"You are seeing this page because <a href=\"https://docs.djangoproject.com/en/"
+"%(version)s/ref/settings/#debug\" target=\"_blank\" "
+"rel=\"noopener\">DEBUG=True</a> is in your settings file and you have not "
+"configured any URLs."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:217
+msgid "Django Documentation"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:218
+msgid "Topics, references, &amp; how-to’s"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:226
+msgid "Tutorial: A Polling App"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:227
+msgid "Get started with Django"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:235
+msgid "Django Community"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:236
+msgid "Connect, get help, or contribute"
+msgstr ""
+
+#, fuzzy
+#~| msgid "Meet Directors"
+#~ msgid "Meet Director"
+#~ msgstr "Directori"
+
+#, fuzzy
+#~| msgid "Referees"
+#~ msgid "Referee"
+#~ msgstr "Arbtri"
+
+#, fuzzy
+#~| msgid "WRPF Romania Registration Confirmation"
+#~ msgid ""
+#~ "WRPF Romania referees will be listed here after official confirmation."
+#~ msgstr "Confirmare înscriere WRPF România"
+
+#~ msgid "Upcoming Competitions"
+#~ msgstr "Competiții viitoare"
+
+#~ msgid "Registration Open"
+#~ msgstr "Înscrieri deschise"
+
+#~ msgid "Registration Closed"
+#~ msgstr "Înscrieri închise"
+
+#~ msgid "No upcoming competitions at the moment."
+#~ msgstr "Nu există competiții viitoare momentan."
+
+#~ msgid "Past Competitions"
+#~ msgstr "Competiții anterioare"
+
+#~ msgid "Finished"
+#~ msgstr "Finalizată"
+
+#~ msgid "Categories"
+#~ msgstr "Categorii de vârstă"
+
+#~ msgid "Meets"
+#~ msgstr "Concursuri"
+
+#~ msgid "Admin"
+#~ msgstr "Admin"
+
+#~ msgid "Entry Forms"
+#~ msgstr "Formulare de înscriere"
+
+#~ msgid "Refund Policy"
+#~ msgstr "Politica de rambursare"
+
+#~ msgid "Please complete all required fields."
+#~ msgstr "Va rog completati toate campurile necesare."
+
+#~ msgid "Tested athlete"
+#~ msgstr "Testat"
+
+#~ msgid "Sex"
+#~ msgstr "Sex"
+
+#~ msgid "Registration successful!"
+#~ msgstr "Înscriere cu success!"
+
+#~ msgid "Tested"
+#~ msgstr "Testat"
+
+#~ msgid "Your registration was submitted successfully!"
+#~ msgstr "Înregistrarea dumneavoastră a fost procesată cu succes!"
+
+#~ msgid ""
+#~ "We will publish more details about payment, weigh-ins, and schedule soon."
+#~ msgstr "Vom publica mai multe detalii curand"
+
+#~ msgid "End Date"
+#~ msgstr "Data Inchieierii"
+
+#~ msgid "Results"
+#~ msgstr "Rezultate"
+
+#~ msgid "Federation Policies"
+#~ msgstr "Politicile Federaţiei"
+
+#~ msgid "Testing"
+#~ msgstr "Testare"
+
+#~ msgid "Tested Membership"
+#~ msgstr "Atleţi testaţi"
+
+#~ msgid "Anti-Doping Info"
+#~ msgstr "Informaţii Anti-Doping"

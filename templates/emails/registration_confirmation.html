@@ -1,0 +1,86 @@
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{% trans "WRPF Romania Registration Confirmation" %}</title>
+</head>
+<body style="margin: 0; padding: 0; background-color: #f4f4f4; font-family: Arial, sans-serif;">
+  <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="background-color: #f4f4f4; padding: 30px 0;">
+    <tr>
+      <td align="center">
+        <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="max-width: 640px; background-color: #ffffff; border-radius: 12px; overflow: hidden;">
+          
+          <tr>
+            <td style="background-color: #111111; color: #ffffff; text-align: center; padding: 24px;">
+              <h1 style="margin: 0; font-size: 28px;">WRPF Romania</h1>
+              <p style="margin: 8px 0 0; font-size: 14px; color: #cccccc;">
+                {% trans "Registration Confirmation" %}
+              </p>
+            </td>
+          </tr>
+
+          <tr>
+            <td style="padding: 32px 28px;">
+              <h2 style="margin-top: 0; font-size: 22px; color: #222222;">
+                {% blocktrans with name=registration.full_name %}Hello {{ name }},{% endblocktrans %}
+              </h2>
+
+              <p style="font-size: 16px; line-height: 1.6; color: #444444;">
+                {% blocktrans with meet_name=meet.name %}
+                  Your registration for <strong>{{ meet_name }}</strong> was submitted successfully.
+                {% endblocktrans %}
+              </p>
+
+              <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="margin: 24px 0; border-collapse: collapse;">
+                <tr>
+                  <td colspan="2" style="padding-bottom: 12px; font-size: 18px; font-weight: bold; color: #222222;">
+                    {% trans "Registration Details" %}
+                  </td>
+                </tr>
+                <tr>
+                  <td style="padding: 10px 0; border-bottom: 1px solid #eeeeee; color: #666666; width: 40%;">{% trans "Meet" %}</td>
+                  <td style="padding: 10px 0; border-bottom: 1px solid #eeeeee; color: #222222;">{{ meet.name }}</td>
+                </tr>
+                <tr>
+                  <td style="padding: 10px 0; border-bottom: 1px solid #eeeeee; color: #666666;">{% trans "Date" %}</td>
+                  <td style="padding: 10px 0; border-bottom: 1px solid #eeeeee; color: #222222;">{{ meet.date }}</td>
+                </tr>
+                <tr>
+                  <td style="padding: 10px 0; border-bottom: 1px solid #eeeeee; color: #666666;">{% trans "Division" %}</td>
+                  <td style="padding: 10px 0; border-bottom: 1px solid #eeeeee; color: #222222;">{{ registration.get_sex_display }}</td>
+                </tr>
+                <tr>
+                  <td style="padding: 10px 0; border-bottom: 1px solid #eeeeee; color: #666666;">{% trans "Weight class" %}</td>
+                  <td style="padding: 10px 0; border-bottom: 1px solid #eeeeee; color: #222222;">{{ registration.get_weight_class_display }}</td>
+                </tr>
+                <tr>
+                  <td style="padding: 10px 0; color: #666666;">{% trans "Tested division" %}</td>
+                  <td style="padding: 10px 0; color: #222222;">
+                    {% if registration.is_tested %}
+                      {% trans "Yes" %}
+                    {% else %}
+                      {% trans "No" %}
+                    {% endif %}
+                  </td>
+                </tr>
+              </table>
+
+              <p style="font-size: 15px; line-height: 1.6; color: #444444;">
+                {% trans "Thank you for registering. We look forward to seeing you at the meet." %}
+              </p>
+            </td>
+          </tr>
+
+          <tr>
+            <td style="background-color: #f8f8f8; text-align: center; padding: 18px; font-size: 13px; color: #777777;">
+              WRPF Romania
+            </td>
+          </tr>
+
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>

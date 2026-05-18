@@ -1,0 +1,159 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load static %}
+
+{% block title %}{% trans "Registration successful" %}{% endblock %}
+{% block main_classes %}d-flex align-items-center justify-content-center min-vh-100 py-5{% endblock %}
+{% block container_classes %}container{% endblock %}
+{% block body_class %}blur-bg registration-success-page{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+  <div class="col-lg-10 col-xl-8">
+    <div class="card shadow-sm border-0 rounded-4 registration-sheet">
+      <div class="registration-watermark"></div>
+      <div class="card-body p-4 p-md-5">
+
+        <div class="sheet-header text-center text-md-start border-bottom pb-4 mb-4">
+          <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3">
+            <div>
+              <img src="{% static 'img/sigil.png' %}" alt="WRPF Romania logo" class="sheet-logo">
+              <div class="small text-uppercase text-muted fw-semibold mb-2">
+                {% trans "World Raw Powerlifting Federation Romania" %}
+              </div>
+              <h1 class="h3 mb-2">{% trans "Official Registration Confirmation" %}</h1>
+              <p class="text-muted mb-0">
+                {% blocktrans with meet_name=meet.name %}
+                  Your registration for {{ meet_name }} has been received successfully.
+                {% endblocktrans %}
+              </p>
+            </div>
+
+            <div class="registration-id-box text-center text-md-end">
+              <div class="small text-uppercase text-muted fw-semibold">
+                {% trans "Registration ID" %}
+              </div>
+              <div class="registration-id">
+                WRPF-{{ meet.date|date:"Y" }}-{{ registration.id }}
+              </div>
+
+              {% if qr_code_base64 %}
+                <div class="qr-box mt-3">
+                  <img
+                    src="data:image/png;base64,{{ qr_code_base64 }}"
+                    alt="{% trans 'Registration QR code' %}"
+                    class="qr-code-img"
+                  >
+                  <div class="qr-caption text-muted">
+                    {% trans "Scan code" %}
+                  </div>
+                </div>
+              {% endif %}
+
+            </div>
+          </div>
+        </div>
+
+        <div class="status-banner mb-4">
+          <span class="status-pill">{% trans "Confirmed" %}</span>
+        </div>
+
+        <div class="row g-4 mb-4">
+          <div class="col-md-6">
+            <div class="info-panel h-100">
+              <h2 class="section-title">{% trans "Athlete Details" %}</h2>
+
+              <div class="info-row">
+                <span class="info-label">{% trans "Full name" %}</span>
+                <span class="info-value">{{ registration.full_name }}</span>
+              </div>
+
+              <div class="info-row">
+                <span class="info-label">{% trans "Email" %}</span>
+                <span class="info-value">{{ registration.email }}</span>
+              </div>
+
+              <div class="info-row">
+                <span class="info-label">{% trans "Division" %}</span>
+                <span class="info-value">{{ registration.get_sex_display }}</span>
+              </div>
+
+              <div class="info-row">
+                <span class="info-label">{% trans "Weight class" %}</span>
+                <span class="info-value">{{ registration.get_weight_class_display }}</span>
+              </div>
+
+              <div class="info-row">
+                <span class="info-label">{% trans "Registered At" %}</span>
+                <span class="info-value">{{ registration.created_at }}</span>
+              </div>
+
+              <div class="info-row">
+                <span class="info-label">{% trans "Tested division" %}</span>
+                <span class="info-value">
+                  {% if registration.is_tested %}
+                    {% trans "Yes" %}
+                  {% else %}
+                    {% trans "No" %}
+                  {% endif %}
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="info-panel h-100">
+              <h2 class="section-title">{% trans "Meet Details" %}</h2>
+
+              <div class="info-row">
+                <span class="info-label">{% trans "Meet" %}</span>
+                <span class="info-value">{{ meet.name }}</span>
+              </div>
+
+              <div class="info-row">
+                <span class="info-label">{% trans "Date" %}</span>
+                <span class="info-value">{{ meet.date }}</span>
+              </div>
+
+              <div class="info-row">
+                <span class="info-label">{% trans "Location" %}</span>
+                <span class="info-value">{{ meet.location }}</span>
+              </div>
+
+              <div class="info-row">
+                <span class="info-label">{% trans "Status" %}</span>
+                <span class="info-value">{% trans "Registered" %}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="important-note border-top pt-4 mb-4">
+          <h3 class="h6 text-uppercase text-muted mb-2">{% trans "Important" %}</h3>
+          <p class="mb-2">
+            {% trans "Please keep this confirmation for your records. You may be asked to present it at check-in or weigh-ins." %}
+          </p>
+          <p class="email-note">
+            {% blocktrans with email=registration.email %}
+              A confirmation email has been sent to {{ email }}.
+            {% endblocktrans %}
+          </p>
+        </div>
+
+        <div class="d-flex flex-column flex-md-row gap-2 no-print">
+          <button type="button" onclick="window.print()" class="btn btn-dark">
+            {% trans "Print Confirmation" %}
+          </button>
+          <a href="{% url 'home' %}" class="btn btn-outline-secondary">
+            {% trans "Back to main page" %}
+          </a>
+          <a href="{% url 'meet_list' %}" class="btn btn-outline-secondary">
+            {% trans "View all meets" %}
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
