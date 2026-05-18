@@ -828,18 +828,11 @@ msgid ""
 msgstr "În prezent concurează la categoria -110 kg, cu recorduri personale de 250 kg la genuflexiuni cu wraps, 170 kg la împins la piept și 270 kg la îndreptări. Este motivat de progres, competitivitate și dezvoltare constantă în powerlifting."
 
 #: .\templates\core\staff.html:114
-#, fuzzy
-#| msgid ""
-#| "Starting with October 1st, 2025, WRPF Romania officially begins its "
-#| "activity, with the goal of supporting and promoting powerlifting in "
-#| "Romania through professionally organized competitions and respect for "
-#| "every athlete."
 msgid ""
 "WRPF Romania is committed to developing and promoting powerlifting through "
 "professionalism, fairness, and respect for athletes."
 msgstr ""
-"Începând cu 1 octombrie 2025, WRPF România își începe oficial activitatea, "
-"având ca obiectiv susținerea și promovarea powerliftingului în România prin "
+"WRPF Romania are ca obiectiv susținerea și promovarea powerliftingului în România prin "
 "competiții organizate profesionist și prin respect față de fiecare sportiv."
 
 #: .\templates\emails\registration_confirmation.html:6
@@ -944,11 +937,10 @@ msgstr "Vezi competiția"
 
 #: .\templates\meets\partials\meet_list.html:35
 #, fuzzy
-#| msgid "No past competitions yet."
 msgid "No competitions found."
-msgstr "Nu există competiții anterioare momentan."
+msgstr "Nu există competiții momentan."
 
-#: .\templates\meets\register_success.html:5
+#: .\templates\meets\register_success.html:5f
 msgid "Registration successful"
 msgstr "Înscriere cu success"
 
