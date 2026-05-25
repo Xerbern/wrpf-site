@@ -1,86 +1,222 @@
 {% load i18n %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ro">
 <head>
   <meta charset="UTF-8">
   <title>{% trans "WRPF Romania Registration Confirmation" %}</title>
 </head>
-<body style="margin: 0; padding: 0; background-color: #f4f4f4; font-family: Arial, sans-serif;">
-  <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="background-color: #f4f4f4; padding: 30px 0;">
-    <tr>
-      <td align="center">
-        <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="max-width: 640px; background-color: #ffffff; border-radius: 12px; overflow: hidden;">
-          
-          <tr>
-            <td style="background-color: #111111; color: #ffffff; text-align: center; padding: 24px;">
-              <h1 style="margin: 0; font-size: 28px;">WRPF Romania</h1>
-              <p style="margin: 8px 0 0; font-size: 14px; color: #cccccc;">
-                {% trans "Registration Confirmation" %}
-              </p>
-            </td>
-          </tr>
 
-          <tr>
-            <td style="padding: 32px 28px;">
-              <h2 style="margin-top: 0; font-size: 22px; color: #222222;">
-                {% blocktrans with name=registration.full_name %}Hello {{ name }},{% endblocktrans %}
-              </h2>
+<body style="margin:0; padding:0; background-color:#f4f4f4; font-family:Arial,sans-serif;">
 
-              <p style="font-size: 16px; line-height: 1.6; color: #444444;">
-                {% blocktrans with meet_name=meet.name %}
-                  Your registration for <strong>{{ meet_name }}</strong> was submitted successfully.
-                {% endblocktrans %}
-              </p>
+<table width="100%" cellspacing="0" cellpadding="0" style="background:#f4f4f4; padding:30px 0;">
+  <tr>
+    <td align="center">
 
-              <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="margin: 24px 0; border-collapse: collapse;">
-                <tr>
-                  <td colspan="2" style="padding-bottom: 12px; font-size: 18px; font-weight: bold; color: #222222;">
-                    {% trans "Registration Details" %}
-                  </td>
-                </tr>
-                <tr>
-                  <td style="padding: 10px 0; border-bottom: 1px solid #eeeeee; color: #666666; width: 40%;">{% trans "Meet" %}</td>
-                  <td style="padding: 10px 0; border-bottom: 1px solid #eeeeee; color: #222222;">{{ meet.name }}</td>
-                </tr>
-                <tr>
-                  <td style="padding: 10px 0; border-bottom: 1px solid #eeeeee; color: #666666;">{% trans "Date" %}</td>
-                  <td style="padding: 10px 0; border-bottom: 1px solid #eeeeee; color: #222222;">{{ meet.date }}</td>
-                </tr>
-                <tr>
-                  <td style="padding: 10px 0; border-bottom: 1px solid #eeeeee; color: #666666;">{% trans "Division" %}</td>
-                  <td style="padding: 10px 0; border-bottom: 1px solid #eeeeee; color: #222222;">{{ registration.get_sex_display }}</td>
-                </tr>
-                <tr>
-                  <td style="padding: 10px 0; border-bottom: 1px solid #eeeeee; color: #666666;">{% trans "Weight class" %}</td>
-                  <td style="padding: 10px 0; border-bottom: 1px solid #eeeeee; color: #222222;">{{ registration.get_weight_class_display }}</td>
-                </tr>
-                <tr>
-                  <td style="padding: 10px 0; color: #666666;">{% trans "Tested division" %}</td>
-                  <td style="padding: 10px 0; color: #222222;">
-                    {% if registration.is_tested %}
-                      {% trans "Yes" %}
-                    {% else %}
-                      {% trans "No" %}
-                    {% endif %}
-                  </td>
-                </tr>
-              </table>
+      <table width="100%" cellspacing="0" cellpadding="0"
+             style="max-width:700px; background:#ffffff; border-radius:14px; overflow:hidden;">
 
-              <p style="font-size: 15px; line-height: 1.6; color: #444444;">
-                {% trans "Thank you for registering. We look forward to seeing you at the meet." %}
-              </p>
-            </td>
-          </tr>
-
-          <tr>
-            <td style="background-color: #f8f8f8; text-align: center; padding: 18px; font-size: 13px; color: #777777;">
+        <!-- HEADER -->
+        <tr>
+          <td style="background:#111111; text-align:center; padding:30px;">
+            <h1 style="margin:0; color:#ffffff; font-size:32px;">
               WRPF Romania
-            </td>
-          </tr>
+            </h1>
 
-        </table>
-      </td>
-    </tr>
-  </table>
+            <p style="margin:10px 0 0; color:#cccccc; font-size:14px;">
+              {% trans "Official Registration Confirmation" %}
+            </p>
+          </td>
+        </tr>
+
+        <!-- CONTENT -->
+        <tr>
+          <td style="padding:36px 32px;">
+
+            <h2 style="margin-top:0; color:#222222; font-size:28px;">
+              {% blocktrans with name=registration.full_name %}
+                Hello {{ name }},
+              {% endblocktrans %}
+            </h2>
+
+            <p style="font-size:16px; line-height:1.7; color:#444444;">
+              {% blocktrans with meet_name=meet.name %}
+                Your registration for <strong>{{ meet_name }}</strong> was submitted successfully.
+              {% endblocktrans %}
+            </p>
+
+            <!-- REGISTRATION ID -->
+            <div style="margin:26px 0; font-size:15px; color:#555555;">
+              <strong>{% trans "Registration ID" %}:</strong>
+              WRPF-{{ meet.date|date:"Y" }}-{{ registration.id }}
+            </div>
+
+            <!-- QR -->
+            {% if qr_code_base64 %}
+            <div style="text-align:center; margin:30px 0;">
+              <img
+                src="data:image/png;base64,{{ qr_code_base64 }}"
+                alt="{% trans 'Registration QR code' %}"
+                style="width:140px; height:140px; border:1px solid #e5e5e5; border-radius:10px; padding:10px; background:#ffffff;"
+              >
+
+              <div style="margin-top:8px; color:#777777; font-size:12px;">
+                {% trans "Scan code" %}
+              </div>
+            </div>
+            {% endif %}
+
+            <!-- VERIFICATION LINK -->
+            {% if verification_url %}
+            <p style="font-size:14px; line-height:1.6; color:#555555;">
+              <strong>{% trans "Verification link" %}:</strong><br>
+              <a href="{{ verification_url }}" style="color:#d71920;">
+                {{ verification_url }}
+              </a>
+            </p>
+            {% endif %}
+
+            <!-- ATHLETE DETAILS -->
+            <h3 style="margin-top:36px; margin-bottom:18px; color:#222222; font-size:24px;">
+              {% trans "Athlete Details" %}
+            </h3>
+
+            <table width="100%" cellspacing="0" cellpadding="0" style="border-collapse:collapse;">
+
+              <tr>
+                <td style="padding:12px 0; border-bottom:1px solid #eeeeee; color:#666666; width:42%;">
+                  {% trans "Full name" %}
+                </td>
+
+                <td style="padding:12px 0; border-bottom:1px solid #eeeeee; color:#222222;">
+                  {{ registration.full_name }}
+                </td>
+              </tr>
+
+              <tr>
+                <td style="padding:12px 0; border-bottom:1px solid #eeeeee; color:#666666;">
+                  {% trans "Email" %}
+                </td>
+
+                <td style="padding:12px 0; border-bottom:1px solid #eeeeee; color:#222222;">
+                  {{ registration.email }}
+                </td>
+              </tr>
+
+              <tr>
+                <td style="padding:12px 0; border-bottom:1px solid #eeeeee; color:#666666;">
+                  {% trans "Date of birth" %}
+                </td>
+
+                <td style="padding:12px 0; border-bottom:1px solid #eeeeee; color:#222222;">
+                  {{ registration.date_of_birth }}
+                </td>
+              </tr>
+
+              <tr>
+                <td style="padding:12px 0; border-bottom:1px solid #eeeeee; color:#666666;">
+                  {% trans "Division" %}
+                </td>
+
+                <td style="padding:12px 0; border-bottom:1px solid #eeeeee; color:#222222;">
+                  {{ registration.get_sex_display }}
+                </td>
+              </tr>
+
+              <tr>
+                <td style="padding:12px 0; border-bottom:1px solid #eeeeee; color:#666666;">
+                  {% trans "Weight class" %}
+                </td>
+
+                <td style="padding:12px 0; border-bottom:1px solid #eeeeee; color:#222222;">
+                  {{ registration.get_weight_class_display }}
+                </td>
+              </tr>
+
+              <tr>
+                <td style="padding:12px 0; border-bottom:1px solid #eeeeee; color:#666666;">
+                  {% trans "Discipline" %}
+                </td>
+
+                <td style="padding:12px 0; border-bottom:1px solid #eeeeee; color:#222222;">
+                  {{ registration.get_discipline_display }}
+                </td>
+              </tr>
+
+              <tr>
+                <td style="padding:12px 0; color:#666666;">
+                  {% trans "Tested division" %}
+                </td>
+
+                <td style="padding:12px 0; color:#222222;">
+                  {% if registration.is_tested %}
+                    {% trans "Yes" %}
+                  {% else %}
+                    {% trans "No" %}
+                  {% endif %}
+                </td>
+              </tr>
+
+            </table>
+
+            <!-- MEET DETAILS -->
+            <h3 style="margin-top:42px; margin-bottom:18px; color:#222222; font-size:24px;">
+              {% trans "Meet Details" %}
+            </h3>
+
+            <table width="100%" cellspacing="0" cellpadding="0" style="border-collapse:collapse;">
+
+              <tr>
+                <td style="padding:12px 0; border-bottom:1px solid #eeeeee; color:#666666; width:42%;">
+                  {% trans "Meet" %}
+                </td>
+
+                <td style="padding:12px 0; border-bottom:1px solid #eeeeee; color:#222222;">
+                  {{ meet.name }}
+                </td>
+              </tr>
+
+              <tr>
+                <td style="padding:12px 0; border-bottom:1px solid #eeeeee; color:#666666;">
+                  {% trans "Date" %}
+                </td>
+
+                <td style="padding:12px 0; border-bottom:1px solid #eeeeee; color:#222222;">
+                  {{ meet.date }}
+                </td>
+              </tr>
+
+              <tr>
+                <td style="padding:12px 0; color:#666666;">
+                  {% trans "Location" %}
+                </td>
+
+                <td style="padding:12px 0; color:#222222;">
+                  {{ meet.location }}
+                </td>
+              </tr>
+
+            </table>
+
+            <!-- FOOTER TEXT -->
+            <p style="margin-top:36px; font-size:15px; line-height:1.7; color:#444444;">
+              {% trans "Please keep this confirmation for your records. You may be asked to present it at check-in or weigh-ins." %}
+            </p>
+
+          </td>
+        </tr>
+
+        <!-- FOOTER -->
+        <tr>
+          <td style="background:#f8f8f8; text-align:center; padding:20px; color:#777777; font-size:13px;">
+            WRPF Romania
+          </td>
+        </tr>
+
+      </table>
+
+    </td>
+  </tr>
+</table>
+
 </body>
 </html>

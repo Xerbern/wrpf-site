@@ -126,9 +126,14 @@ def meet_register(request, pk):
             "meet": meet.name
         }
 
+        verification_url = request.build_absolute_uri(
+            reverse("registration_verify", args=[registration.id])
+        )
+
         context = {
             "meet": meet,
             "registration": registration,
+            "verification_url": verification_url,
         }
 
         html_content = render_to_string(

@@ -16,23 +16,36 @@ class Registration(models.Model):
         WOMEN = "women", _("Women")
 
     class WeightClassChoices(models.TextChoices):
-        M_59 = "59", _("59 kg")
-        M_66 = "66", _("66 kg")
-        M_74 = "74", _("74 kg")
-        M_83 = "83", _("83 kg")
-        M_93 = "93", _("93 kg")
-        M_105 = "105", _("105 kg")
-        M_120 = "120", _("120 kg")
-        M_120_PLUS = "120+", _("120+ kg")
+        M_52 = "men_52", _("52 kg")
+        M_56 = "men_56", _("56 kg")
+        M_60 = "men_60", _("60 kg")
+        M_67_5 = "men_67.5", _("67.5 kg")
+        M_75 = "men_75", _("75 kg")
+        M_82_5 = "men_82.5", _("82.5 kg")
+        M_90 = "men_90", _("90 kg")
+        M_100 = "men_100", _("100 kg")
+        M_110 = "men_110", _("110 kg")
+        M_125 = "men_125", _("125 kg")
+        M_140 = "men_140", _("140 kg")
+        M_140_PLUS = "men_140+", _("140+ kg")
 
-        W_47 = "47", _("47 kg")
-        W_52 = "52", _("52 kg")
-        W_57 = "57", _("57 kg")
-        W_63 = "63", _("63 kg")
-        W_69 = "69", _("69 kg")
-        W_76 = "76", _("76 kg")
-        W_84 = "84", _("84 kg")
-        W_84_PLUS = "84+", _("84+ kg")
+        W_44 = "women_44", _("44 kg")
+        W_48 = "women_48", _("48 kg")
+        W_52 = "women_52", _("52 kg")
+        W_56 = "women_56", _("56 kg")
+        W_60 = "women_60", _("60 kg")
+        W_67_5 = "women_67.5", _("67.5 kg")
+        W_75 = "women_75", _("75 kg")
+        W_82_5 = "women_82.5", _("82.5 kg")
+        W_90 = "women_90", _("90 kg")
+        W_90_PLUS = "women_90+", _("90+ kg")
+
+    class DisciplineChoices(models.TextChoices):
+        RAW_POWERLIFTING = "raw_powerlifting", _("Raw Powerlifting")
+        CLASSIC_POWERLIFTING = "classic_powerlifting", _("Classic Powerlifting")
+        SQUAT = "squat", _("Squat")
+        BENCH_PRESS = "bench_press", _("Bench Press")
+        DEADLIFT = "deadlift", _("Deadlift")
 
     meet = models.ForeignKey(
         Meet,
@@ -45,9 +58,20 @@ class Registration(models.Model):
         max_length=10,
         choices=SexChoices.choices,
     )
+    date_of_birth = models.DateField(
+        _("Date of birth"),
+        null=True,
+        blank=True,
+    )
     weight_class = models.CharField(
         max_length=10,
         choices=WeightClassChoices.choices,
+    )
+    discipline = models.CharField(
+        _("Discipline"),
+        max_length=30,
+        choices=DisciplineChoices.choices,
+        default=DisciplineChoices.RAW_POWERLIFTING,
     )
     is_tested = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-18 10:30+0300\n"
+"POT-Creation-Date: 2026-05-25 14:08+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,108 +19,133 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n==1?0:(((n%100>19)||((n%100==0)&&(n!=0)))?"
 "2:1));\n"
 
-#: .\meets\forms.py:7 .\meets\models.py:19
-msgid "59 kg"
-msgstr ""
-
-#: .\meets\forms.py:8 .\meets\models.py:20
-msgid "66 kg"
-msgstr ""
-
-#: .\meets\forms.py:9 .\meets\models.py:21
-msgid "74 kg"
-msgstr ""
-
-#: .\meets\forms.py:10 .\meets\models.py:22
-msgid "83 kg"
-msgstr ""
-
-#: .\meets\forms.py:11 .\meets\models.py:23
-msgid "93 kg"
-msgstr ""
-
-#: .\meets\forms.py:12 .\meets\models.py:24
-msgid "105 kg"
-msgstr ""
-
-#: .\meets\forms.py:13 .\meets\models.py:25
-msgid "120 kg"
-msgstr ""
-
-#: .\meets\forms.py:14 .\meets\models.py:26
-msgid "120+ kg"
-msgstr ""
-
-#: .\meets\forms.py:18 .\meets\models.py:28
-msgid "47 kg"
-msgstr ""
-
-#: .\meets\forms.py:19 .\meets\models.py:29
+#: .\meets\forms.py:8 .\meets\forms.py:25 .\meets\models.py:19
+#: .\meets\models.py:34
 msgid "52 kg"
 msgstr ""
 
-#: .\meets\forms.py:20 .\meets\models.py:30
-msgid "57 kg"
+#: .\meets\forms.py:9 .\meets\forms.py:26 .\meets\models.py:20
+#: .\meets\models.py:35
+msgid "56 kg"
 msgstr ""
 
-#: .\meets\forms.py:21 .\meets\models.py:31
-msgid "63 kg"
+#: .\meets\forms.py:10 .\meets\forms.py:27 .\meets\models.py:21
+#: .\meets\models.py:36
+msgid "60 kg"
 msgstr ""
 
-#: .\meets\forms.py:22 .\meets\models.py:32
-msgid "69 kg"
+#: .\meets\forms.py:11 .\meets\forms.py:28 .\meets\models.py:22
+#: .\meets\models.py:37
+msgid "67.5 kg"
 msgstr ""
 
-#: .\meets\forms.py:23 .\meets\models.py:33
-msgid "76 kg"
+#: .\meets\forms.py:12 .\meets\forms.py:29 .\meets\models.py:23
+#: .\meets\models.py:38
+msgid "75 kg"
 msgstr ""
 
-#: .\meets\forms.py:24 .\meets\models.py:34
-msgid "84 kg"
+#: .\meets\forms.py:13 .\meets\forms.py:30 .\meets\models.py:24
+#: .\meets\models.py:39
+msgid "82.5 kg"
 msgstr ""
 
-#: .\meets\forms.py:25 .\meets\models.py:35
-msgid "84+ kg"
+#: .\meets\forms.py:14 .\meets\forms.py:31 .\meets\models.py:25
+#: .\meets\models.py:40
+msgid "90 kg"
 msgstr ""
 
-#: .\meets\forms.py:34 .\templates\meets\register_success.html:67
+#: .\meets\forms.py:15 .\meets\models.py:26
+msgid "100 kg"
+msgstr ""
+
+#: .\meets\forms.py:16 .\meets\models.py:27
+msgid "110 kg"
+msgstr ""
+
+#: .\meets\forms.py:17 .\meets\models.py:28
+msgid "125 kg"
+msgstr ""
+
+#: .\meets\forms.py:18 .\meets\models.py:29
+msgid "140 kg"
+msgstr ""
+
+#: .\meets\forms.py:19 .\meets\models.py:30
+msgid "140+ kg"
+msgstr ""
+
+#: .\meets\forms.py:23 .\meets\models.py:32
+msgid "44 kg"
+msgstr ""
+
+#: .\meets\forms.py:24 .\meets\models.py:33
+msgid "48 kg"
+msgstr ""
+
+#: .\meets\forms.py:32 .\meets\models.py:41
+msgid "90+ kg"
+msgstr ""
+
+#: .\meets\forms.py:51 .\templates\emails\registration_confirmation.html:87
+#: .\templates\meets\register_success.html:67
 #: .\templates\meets\registration_verify.html:53
 msgid "Full name"
 msgstr "Nume complet"
 
-#: .\meets\forms.py:35 .\templates\meets\register_success.html:72
+#: .\meets\forms.py:52 .\templates\emails\registration_confirmation.html:97
+#: .\templates\meets\register_success.html:72
 #: .\templates\meets\registration_verify.html:58
 msgid "Email"
 msgstr "Email"
 
-#: .\meets\forms.py:36 .\templates\emails\registration_confirmation.html:50
-#: .\templates\meets\register_success.html:77
+#: .\meets\forms.py:53 .\templates\emails\registration_confirmation.html:117
+#: .\templates\meets\register_success.html:82
 #: .\templates\meets\registration_verify.html:63
 msgid "Division"
 msgstr "Diviza"
 
-#: .\meets\forms.py:37 .\templates\emails\registration_confirmation.html:54
-#: .\templates\meets\register_success.html:82
+#: .\meets\forms.py:54 .\meets\models.py:62
+#: .\templates\emails\registration_confirmation.html:107
+#: .\templates\meets\register_success.html:77
+msgid "Date of birth"
+msgstr ""
+
+#: .\meets\forms.py:55 .\templates\emails\registration_confirmation.html:127
+#: .\templates\meets\register_success.html:87
 #: .\templates\meets\registration_verify.html:68
 msgid "Weight class"
 msgstr "Categoria de greutate"
 
-#: .\meets\forms.py:38 .\templates\emails\registration_confirmation.html:58
+#: .\meets\forms.py:56 .\meets\models.py:71
+#: .\templates\emails\registration_confirmation.html:137
 #: .\templates\meets\register_success.html:92
+#, fuzzy
+#| msgid "Disciplines"
+msgid "Discipline"
+msgstr "Discipline"
+
+#: .\meets\forms.py:57 .\templates\emails\registration_confirmation.html:147
+#: .\templates\meets\register_success.html:102
 #: .\templates\meets\registration_verify.html:73
 msgid "Tested division"
 msgstr "Divizie testată"
 
-#: .\meets\forms.py:52
+#: .\meets\forms.py:78
 msgid "Select division"
 msgstr "Selecteaza divizia"
 
-#: .\meets\forms.py:56 .\templates\meets\meet_details.html:70
-#: .\templates\meets\meet_details.html:139
+#: .\meets\forms.py:82 .\templates\meets\meet_details.html:82
+#: .\templates\meets\meet_details.html:169
 msgid "Select weight class"
 msgstr "Categoria de greutate"
 
-#: .\meets\forms.py:76 .\meets\forms.py:79
+#: .\meets\forms.py:86
+#, fuzzy
+#| msgid "Select division"
+msgid "Select discipline"
+msgstr "Selecteaza divizia"
+
+#: .\meets\forms.py:107 .\meets\forms.py:110
 msgid "Invalid weight class for the selected division."
 msgstr ""
 
@@ -128,13 +153,14 @@ msgstr ""
 msgid "Name"
 msgstr "Nume"
 
-#: .\meets\models.py:7 .\templates\emails\registration_confirmation.html:46
-#: .\templates\meets\register_success.html:114
+#: .\meets\models.py:7 .\templates\emails\registration_confirmation.html:180
+#: .\templates\meets\register_success.html:124
 #: .\templates\meets\registration_verify.html:95
 msgid "Date"
 msgstr "Data de start"
 
-#: .\meets\models.py:8 .\templates\meets\register_success.html:119
+#: .\meets\models.py:8 .\templates\emails\registration_confirmation.html:190
+#: .\templates\meets\register_success.html:129
 #: .\templates\meets\registration_verify.html:100
 msgid "Location"
 msgstr "Locaţia"
@@ -151,6 +177,30 @@ msgstr "Masculin"
 msgid "Women"
 msgstr "Feminin"
 
+#: .\meets\models.py:44
+#, fuzzy
+#| msgid "Powerlifting Competitions"
+msgid "Raw Powerlifting"
+msgstr "Competiții de powerlifting"
+
+#: .\meets\models.py:45
+#, fuzzy
+#| msgid "Powerlifting Competitions"
+msgid "Classic Powerlifting"
+msgstr "Competiții de powerlifting"
+
+#: .\meets\models.py:46 .\templates\core\disciplines.html:92
+msgid "Squat"
+msgstr "Genuflexiuni"
+
+#: .\meets\models.py:47 .\templates\core\disciplines.html:93
+msgid "Bench Press"
+msgstr "Împins la piept"
+
+#: .\meets\models.py:48 .\templates\core\disciplines.html:95
+msgid "Deadlift"
+msgstr "Îndreptări"
+
 #: .\meets\views.py:94
 #, fuzzy
 #| msgid "Registration is closed for this meet."
@@ -166,7 +216,7 @@ msgstr "Există deja o înregistrare cu acest email."
 msgid "WRPF Romania Registration Confirmation - %(meet)s"
 msgstr "Confirmare înscriere WRPF România - %(meet)s"
 
-#: .\meets\views.py:153
+#: .\meets\views.py:174
 msgid "Registration was saved, but the confirmation email could not be sent."
 msgstr ""
 
@@ -555,21 +605,9 @@ msgstr "Triatlon Biceps Curl (Strict + Classic + Extreme)"
 msgid "Squat / Bench / Deadlift"
 msgstr "Genuflexiuni / Împins la piept / Îndreptări"
 
-#: .\templates\core\disciplines.html:92
-msgid "Squat"
-msgstr "Genuflexiuni"
-
-#: .\templates\core\disciplines.html:93
-msgid "Bench Press"
-msgstr "Împins la piept"
-
 #: .\templates\core\disciplines.html:94
 msgid "Bench Press for athletes with physical disabilities"
 msgstr "Împins la piept pentru sportivi cu dizabilități fizice"
-
-#: .\templates\core\disciplines.html:95
-msgid "Deadlift"
-msgstr "Îndreptări"
 
 #: .\templates\core\disciplines.html:96
 msgid "Deadlift for reps"
@@ -863,56 +901,108 @@ msgstr ""
 msgid "WRPF Romania Registration Confirmation"
 msgstr "Confirmare înscriere WRPF România"
 
-#: .\templates\emails\registration_confirmation.html:18
-msgid "Registration Confirmation"
-msgstr "Confirmarea înscrierii"
-
 #: .\templates\emails\registration_confirmation.html:26
-#, python-format
-msgid "Hello %(name)s,"
-msgstr "Salut %(name)s,"
+#: .\templates\meets\register_success.html:24
+msgid "Official Registration Confirmation"
+msgstr "Confirmare oficială a înscrierii"
 
-#: .\templates\emails\registration_confirmation.html:30
-#, python-format
+#: .\templates\emails\registration_confirmation.html:36
+#, fuzzy, python-format
+#| msgid ""
+#| "\n"
+#| "              A confirmation email has been sent to %(email)s.\n"
+#| "            "
 msgid ""
 "\n"
-"                  Your registration for <strong>%(meet_name)s</strong> was "
+"                Hello %(name)s,\n"
+"              "
+msgstr ""
+"\n"
+"        Un email de confirmare a fost trimis catre %(email)s.\n"
+"        "
+
+#: .\templates\emails\registration_confirmation.html:42
+#, fuzzy, python-format
+#| msgid ""
+#| "\n"
+#| "                  Your registration for <strong>%(meet_name)s</strong> "
+#| "was submitted successfully.\n"
+#| "                "
+msgid ""
+"\n"
+"                Your registration for <strong>%(meet_name)s</strong> was "
 "submitted successfully.\n"
-"                "
+"              "
 msgstr ""
 "\n"
 "        Înscrierea ta pentru  %(meet_name)s a fost procesată.\n"
 "        "
 
-#: .\templates\emails\registration_confirmation.html:38
-msgid "Registration Details"
-msgstr "Detalii Înscriere"
+#: .\templates\emails\registration_confirmation.html:49
+#: .\templates\meets\register_success.html:34
+#: .\templates\meets\registration_verify.html:34
+msgid "Registration ID"
+msgstr "ID înregistrare"
 
-#: .\templates\emails\registration_confirmation.html:42
-#: .\templates\meets\register_success.html:109
-#: .\templates\meets\registration_verify.html:90
-msgid "Meet"
-msgstr "Competiție"
+#: .\templates\emails\registration_confirmation.html:58
+#: .\templates\meets\register_success.html:44
+#, fuzzy
+#| msgid "Registration open"
+msgid "Registration QR code"
+msgstr "Înscrieri deschise"
 
-#: .\templates\emails\registration_confirmation.html:61
-#: .\templates\meets\register_success.html:95
+#: .\templates\emails\registration_confirmation.html:63
+#: .\templates\meets\register_success.html:48
+msgid "Scan code"
+msgstr ""
+
+#: .\templates\emails\registration_confirmation.html:71
+#, fuzzy
+#| msgid "Verification Status"
+msgid "Verification link"
+msgstr "Stare verificare"
+
+#: .\templates\emails\registration_confirmation.html:80
+#: .\templates\meets\register_success.html:64
+#: .\templates\meets\registration_verify.html:50
+msgid "Athlete Details"
+msgstr "Detaliile sportivului"
+
+#: .\templates\emails\registration_confirmation.html:152
+#: .\templates\meets\register_success.html:105
 #: .\templates\meets\registration_verify.html:76
 #: .\venv\Lib\site-packages\django\forms\widgets.py:867
 msgid "Yes"
 msgstr "Da"
 
-#: .\templates\emails\registration_confirmation.html:63
-#: .\templates\meets\register_success.html:97
+#: .\templates\emails\registration_confirmation.html:154
+#: .\templates\meets\register_success.html:107
 #: .\templates\meets\registration_verify.html:78
 #: .\venv\Lib\site-packages\django\forms\widgets.py:868
 msgid "No"
 msgstr "Nu"
 
-#: .\templates\emails\registration_confirmation.html:70
-msgid "Thank you for registering. We look forward to seeing you at the meet."
+#: .\templates\emails\registration_confirmation.html:163
+#: .\templates\meets\register_success.html:116
+#: .\templates\meets\registration_verify.html:87
+msgid "Meet Details"
+msgstr "Detaliile competiției"
+
+#: .\templates\emails\registration_confirmation.html:170
+#: .\templates\meets\register_success.html:119
+#: .\templates\meets\registration_verify.html:90
+msgid "Meet"
+msgstr "Competiție"
+
+#: .\templates\emails\registration_confirmation.html:202
+#: .\templates\meets\register_success.html:144
+msgid ""
+"Please keep this confirmation for your records. You may be asked to present "
+"it at check-in or weigh-ins."
 msgstr ""
-"Vă mulțumim pentru înscriere. Așteptăm cu nerăbdare să vă vedem la "
-"competiție."
+"Vă rugăm să păstrați această confirmare pentru evidențele dumneavoastră. "
+"Este posibil să vi se solicite prezentarea acesteia la check-in sau la "
+"cântar."
 
 #: .\templates\index.html:19
 msgid "WRPF Romania"
@@ -934,11 +1024,11 @@ msgstr "WRPF Romania Logo"
 msgid "Register"
 msgstr "Înregistrați-vă"
 
-#: .\templates\meets\meet_details.html:98
+#: .\templates\meets\meet_details.html:122
 msgid "Submit registration"
 msgstr "Trimite înregistrarea"
 
-#: .\templates\meets\meet_details.html:102
+#: .\templates\meets\meet_details.html:126
 msgid "Registration is closed for this meet."
 msgstr "Înregistrările sunt închise pentru acest meet"
 
@@ -968,10 +1058,6 @@ msgstr "Nu există competiții momentan."
 msgid "Registration successful"
 msgstr "Înscriere cu success"
 
-#: .\templates\meets\register_success.html:24
-msgid "Official Registration Confirmation"
-msgstr "Confirmare oficială a înscrierii"
-
 #: .\templates\meets\register_success.html:26
 #, python-format
 msgid ""
@@ -984,61 +1070,27 @@ msgstr ""
 "        Înscrierea ta pentru  %(meet_name)s a fost procesată.\n"
 "        "
 
-#: .\templates\meets\register_success.html:34
-#: .\templates\meets\registration_verify.html:34
-msgid "Registration ID"
-msgstr "ID înregistrare"
-
-#: .\templates\meets\register_success.html:44
-#, fuzzy
-#| msgid "Registration open"
-msgid "Registration QR code"
-msgstr "Înscrieri deschise"
-
-#: .\templates\meets\register_success.html:48
-msgid "Scan code"
-msgstr ""
-
 #: .\templates\meets\register_success.html:58
 msgid "Confirmed"
 msgstr "Confirmat"
 
-#: .\templates\meets\register_success.html:64
-#: .\templates\meets\registration_verify.html:50
-msgid "Athlete Details"
-msgstr "Detaliile sportivului"
-
-#: .\templates\meets\register_success.html:87
+#: .\templates\meets\register_success.html:97
 msgid "Registered At"
 msgstr "Data înregistrării"
 
-#: .\templates\meets\register_success.html:106
-#: .\templates\meets\registration_verify.html:87
-msgid "Meet Details"
-msgstr "Detaliile competiției"
-
-#: .\templates\meets\register_success.html:124
+#: .\templates\meets\register_success.html:134
 msgid "Status"
 msgstr "Status"
 
-#: .\templates\meets\register_success.html:125
+#: .\templates\meets\register_success.html:135
 msgid "Registered"
 msgstr "Înregistrat"
 
-#: .\templates\meets\register_success.html:132
+#: .\templates\meets\register_success.html:142
 msgid "Important"
 msgstr "Important"
 
-#: .\templates\meets\register_success.html:134
-msgid ""
-"Please keep this confirmation for your records. You may be asked to present "
-"it at check-in or weigh-ins."
-msgstr ""
-"Vă rugăm să păstrați această confirmare pentru evidențele dumneavoastră. "
-"Este posibil să vi se solicite prezentarea acesteia la check-in sau la "
-"cântar."
-
-#: .\templates\meets\register_success.html:137
+#: .\templates\meets\register_success.html:147
 #, python-format
 msgid ""
 "\n"
@@ -1049,15 +1101,15 @@ msgstr ""
 "        Un email de confirmare a fost trimis catre %(email)s.\n"
 "        "
 
-#: .\templates\meets\register_success.html:145
+#: .\templates\meets\register_success.html:155
 msgid "Print Confirmation"
 msgstr "Tipărește confirmarea"
 
-#: .\templates\meets\register_success.html:148
+#: .\templates\meets\register_success.html:158
 msgid "Back to main page"
 msgstr "Înapoi la pagina principala"
 
-#: .\templates\meets\register_success.html:151
+#: .\templates\meets\register_success.html:161
 msgid "View all meets"
 msgstr "Vezi toate meet-urile"
 
@@ -2327,6 +2379,22 @@ msgstr ""
 #: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:236
 msgid "Connect, get help, or contribute"
 msgstr ""
+
+#~ msgid "Registration Confirmation"
+#~ msgstr "Confirmarea înscrierii"
+
+#, python-format
+#~ msgid "Hello %(name)s,"
+#~ msgstr "Salut %(name)s,"
+
+#~ msgid "Registration Details"
+#~ msgstr "Detalii Înscriere"
+
+#~ msgid ""
+#~ "Thank you for registering. We look forward to seeing you at the meet."
+#~ msgstr ""
+#~ "Vă mulțumim pentru înscriere. Așteptăm cu nerăbdare să vă vedem la "
+#~ "competiție."
 
 #, fuzzy
 #~| msgid "Meet Directors"

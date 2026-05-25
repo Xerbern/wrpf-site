@@ -45,6 +45,18 @@
           </div>
 
           <div class="mb-3">
+            <label for="{{ form.date_of_birth.id_for_label }}" class="form-label">
+              {{ form.date_of_birth.label }}
+            </label>
+            {{ form.date_of_birth }}
+            {% if form.date_of_birth.errors %}
+              <div class="text-danger small mt-1">
+                {{ form.date_of_birth.errors }}
+              </div>
+            {% endif %}
+          </div>
+
+          <div class="mb-3">
             <label for="{{ form.sex.id_for_label }}" class="form-label">
               {{ form.sex.label }}
             </label>
@@ -72,6 +84,18 @@
             {% if form.weight_class.errors %}
               <div class="text-danger small mt-1">
                 {{ form.weight_class.errors }}
+              </div>
+            {% endif %}
+          </div>
+
+          <div class="mb-3">
+            <label for="{{ form.discipline.id_for_label }}" class="form-label">
+              {{ form.discipline.label }}
+            </label>
+            {{ form.discipline }}
+            {% if form.discipline.errors %}
+              <div class="text-danger small mt-1">
+                {{ form.discipline.errors }}
               </div>
             {% endif %}
           </div>
@@ -111,56 +135,119 @@
   const sexSelect = document.getElementById("id_sex");
   const weightClassSelect = document.getElementById("id_weight_class");
 
+  let sexChoices = null;
+  let weightChoices = null;
+  let disciplineChoices = null;
+
   const weightClasses = {
     men: [
-      ["59", "59 kg"],
-      ["66", "66 kg"],
-      ["74", "74 kg"],
-      ["83", "83 kg"],
-      ["93", "93 kg"],
-      ["105", "105 kg"],
-      ["120", "120 kg"],
-      ["120+", "120+ kg"]
+      ["men_52", "52 kg"],
+      ["men_56", "56 kg"],
+      ["men_60", "60 kg"],
+      ["men_67.5", "67.5 kg"],
+      ["men_75", "75 kg"],
+      ["men_82.5", "82.5 kg"],
+      ["men_90", "90 kg"],
+      ["men_100", "100 kg"],
+      ["men_110", "110 kg"],
+      ["men_125", "125 kg"],
+      ["men_140", "140 kg"],
+      ["men_140+", "140+ kg"]
     ],
     women: [
-      ["47", "47 kg"],
-      ["52", "52 kg"],
-      ["57", "57 kg"],
-      ["63", "63 kg"],
-      ["69", "69 kg"],
-      ["76", "76 kg"],
-      ["84", "84 kg"],
-      ["84+", "84+ kg"]
+      ["women_44", "44 kg"],
+      ["women_48", "48 kg"],
+      ["women_52", "52 kg"],
+      ["women_56", "56 kg"],
+      ["women_60", "60 kg"],
+      ["women_67.5", "67.5 kg"],
+      ["women_75", "75 kg"],
+      ["women_82.5", "82.5 kg"],
+      ["women_90", "90 kg"],
+      ["women_90+", "90+ kg"]
     ]
   };
 
   function updateWeightClasses(selectedValue = "") {
     const selectedSex = sexSelect.value;
-    weightClassSelect.innerHTML = '<option value="">-- {% trans "Select weight class" %} --</option>';
 
-    if (!selectedSex || !weightClasses[selectedSex]) {
-      return;
+    if (weightChoices) {
+      weightChoices.clearStore();
+    } else {
+      weightClassSelect.innerHTML = "";
     }
 
-    weightClasses[selectedSex].forEach(([value, label]) => {
-      const option = document.createElement("option");
-      option.value = value;
-      option.textContent = label;
-
-      if (value === selectedValue) {
-        option.selected = true;
+    const choices = [
+      {
+        value: "",
+        label: "-- {% trans 'Select weight class' %} --",
+        selected: !selectedValue,
+        disabled: true,
       }
+    ];
 
-      weightClassSelect.appendChild(option);
-    });
+    if (selectedSex && weightClasses[selectedSex]) {
+      weightClasses[selectedSex].forEach(([value, label]) => {
+        choices.push({
+          value,
+          label,
+          selected: value === selectedValue,
+        });
+      });
+    }
+
+    if (weightChoices) {
+      weightChoices.setChoices(choices, "value", "label", true);
+    } else {
+      weightClassSelect.innerHTML = '<option value="">-- {% trans "Select weight class" %} --</option>';
+
+      if (selectedSex && weightClasses[selectedSex]) {
+        weightClasses[selectedSex].forEach(([value, label]) => {
+          const option = document.createElement("option");
+          option.value = value;
+          option.textContent = label;
+
+          if (value === selectedValue) {
+            option.selected = true;
+          }
+
+          weightClassSelect.appendChild(option);
+        });
+      }
+    }
   }
 
-  if (sexSelect && weightClassSelect) {
-    sexSelect.addEventListener("change", () => updateWeightClasses());
+  document.addEventListener("DOMContentLoaded", () => {
+    if (typeof Choices !== "undefined") {
+      sexChoices = new Choices("#id_sex", {
+        searchEnabled: false,
+        itemSelectText: "",
+        shouldSort: false,
+        allowHTML: false,
+      });
 
-    document.addEventListener("DOMContentLoaded", () => {
-      updateWeightClasses(weightClassSelect.dataset.selected || "");
-    });
-  }
+      weightChoices = new Choices("#id_weight_class", {
+        searchEnabled: false,
+        itemSelectText: "",
+        shouldSort: false,
+        allowHTML: false,
+      });
+
+      disciplineChoices = new Choices("#id_discipline", {
+        searchEnabled: false,
+        itemSelectText: "",
+        shouldSort: false,
+        allowHTML: false,
+      });
+    }
+
+    updateWeightClasses(weightClassSelect.dataset.selected || "");
+
+    if (sexSelect && weightClassSelect) {
+      sexSelect.addEventListener("change", () => {
+        updateWeightClasses();
+      });
+    }
+  });
 </script>
 {% endblock %}

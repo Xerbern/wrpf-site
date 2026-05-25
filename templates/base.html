@@ -9,9 +9,12 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 
+  <!-- Choices.js -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css">
+
   {% load static i18n %}
   {% get_current_language as LANGUAGE_CODE %}
-  <link rel="stylesheet" href="{% static 'css/site.css' %}?v=6">
+  <link rel="stylesheet" href="{% static 'css/site.css' %}?v=7">
   {% block head %}{% endblock %}
 </head>
 
@@ -27,6 +30,7 @@
     </button>
 
     <div class="collapse navbar-collapse justify-content-between" id="mainnav">
+
       <!-- LEFT SIDE NAV -->
       <ul class="navbar-nav align-items-lg-center me-auto gap-lg-3">
 
@@ -81,13 +85,15 @@
 
         <!-- RESOURCES -->
         <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle
-          {% if current == 'rulebook' or current == 'banned_substances' or current == 'drug_testing_policies' %}
-            active
-          {% endif %}"
-          href="#" data-bs-toggle="dropdown">
+          <a class="nav-link dropdown-toggle
+            {% if current == 'rulebook' or current == 'banned_substances' or current == 'drug_testing_policies' %}
+              active
+            {% endif %}"
+            href="#"
+            data-bs-toggle="dropdown">
             {% trans "Resources" %}
           </a>
+
           <ul class="dropdown-menu dropdown-menu-dark">
             <li>
               <a class="dropdown-item {% if current == 'rulebook' %}active{% endif %}"
@@ -95,12 +101,14 @@
                 {% trans "Rulebook" %}
               </a>
             </li>
+
             <li>
               <a class="dropdown-item {% if current == 'drug_testing_policies' %}active{% endif %}"
                  href="{% url 'drug_testing_policies' %}">
                 {% trans "Drug Testing Policies" %}
               </a>
             </li>
+
             <li>
               <a class="dropdown-item {% if current == 'banned_substances' %}active{% endif %}"
                  href="{% url 'banned_substances' %}">
@@ -109,7 +117,7 @@
             </li>
           </ul>
         </li>
-      </ul>  {# ← IMPORTANT: close the left UL before the brand #}
+      </ul>
 
       <!-- CENTER BRAND -->
       <a class="navbar-brand text-uppercase fw-semibold center-brand d-none d-lg-block mx-lg-4"
@@ -119,6 +127,7 @@
 
       <!-- RIGHT SIDE NAV -->
       <ul class="navbar-nav align-items-lg-center ms-auto gap-lg-3">
+
         <li class="nav-item dropdown">
           <a class="nav-link" href="{% url 'meet_list' %}">
             {% trans "Competition Calendar" %}
@@ -126,10 +135,11 @@
         </li>
 
         <li class="nav-item dropdown">
-            <a class="nav-link {% if current == 'staff' %}active{% endif %}"
-              href="{% url 'staff' %}">
+          <a class="nav-link {% if current == 'staff' %}active{% endif %}"
+             href="{% url 'staff' %}">
             {% trans "WRPF RO Staff Members" %}
           </a>
+
           <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end">
             <li><a class="dropdown-item" href="#">{% trans "Meet Directors" %}</a></li>
             <li><a class="dropdown-item" href="#">{% trans "Referees" %}</a></li>
@@ -140,21 +150,22 @@
           <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
             {% trans "More" %}
           </a>
+
           <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end">
             <li><a class="dropdown-item" href="/news/">{% trans "News" %}</a></li>
             <li><a class="dropdown-item" href="/gallery/">{% trans "Gallery" %}</a></li>
           </ul>
         </li>
       </ul>
+
     </div>
   </div>
 </nav>
 {% endwith %}
 
-
-
 <main class="flex-grow-1 {% block main_classes %}py-5{% endblock %}">
   <div class="{% block container_classes %}container{% endblock %}">
+
     {% if messages %}
       <div class="mt-4">
         {% for message in messages %}
@@ -165,17 +176,20 @@
         {% endfor %}
       </div>
     {% endif %}
+
     {% block content %}{% endblock %}
   </div>
 </main>
 
 <footer class="social-footer">
   <div class="container">
+
     <h2 class="social-footer-title">{% trans "Social" %}</h2>
 
     <div class="social-footer-divider"></div>
 
     <div class="social-links">
+
       <a href="https://www.instagram.com/wrpfromania/"
          target="_blank"
          rel="noopener noreferrer"
@@ -211,6 +225,7 @@
          title="TikTok">
         <i class="bi bi-tiktok"></i>
       </a>
+
     </div>
 
     <p class="social-footer-note">{% trans "Follow us for meet updates" %}</p>
@@ -218,16 +233,22 @@
     <div class="social-footer-copy">
       <small>© {% now "Y" %} WRPF Romania</small>
     </div>
+
   </div>
 </footer>
 
 <!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Choices.js -->
+<script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
+
 {% block scripts %}{% endblock %}
 
 <script>
 window.addEventListener("scroll", function() {
   const navbar = document.querySelector(".nav-over-hero");
+
   if (window.scrollY > 50) {
     navbar.classList.add("scrolled");
   } else {
@@ -238,27 +259,39 @@ window.addEventListener("scroll", function() {
 
 <!-- LANGUAGE SWITCH -->
 <div class="lang-switch">
-  {# English #}
+
+  <!-- English -->
   <form action="{% url 'set_language' %}" method="post" class="m-0 p-0">
     {% csrf_token %}
+
     <input type="hidden" name="next"
            value="{% if request.get_full_path|slice:':4' == '/en/' %}{{ request.get_full_path }}{% else %}/en{{ request.get_full_path }}{% endif %}">
+
     <button class="lang-btn {% if LANGUAGE_CODE == 'en' %}is-active{% endif %}"
-            name="language" value="en" title="English" aria-label="English">
+            name="language"
+            value="en"
+            title="English"
+            aria-label="English">
       <img src="{% static 'img/flags/gb.svg' %}" alt="English flag">
     </button>
   </form>
 
-  {# Romanian #}
+  <!-- Romanian -->
   <form action="{% url 'set_language' %}" method="post" class="m-0 p-0">
     {% csrf_token %}
+
     <input type="hidden" name="next"
            value="{% if request.get_full_path|slice:':4' == '/en/' %}{{ request.get_full_path|slice:'3:' }}{% else %}{{ request.get_full_path }}{% endif %}">
+
     <button class="lang-btn {% if LANGUAGE_CODE == 'ro' %}is-active{% endif %}"
-            name="language" value="ro" title="Română" aria-label="Română">
+            name="language"
+            value="ro"
+            title="Română"
+            aria-label="Română">
       <img src="{% static 'img/flags/ro.svg' %}" alt="Steagul României">
     </button>
   </form>
+
 </div>
 
 <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>

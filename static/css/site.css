@@ -963,3 +963,167 @@ button.active {
 .staff-social-muted {
   opacity: 0.65;
 }
+
+/* =========================
+   WRPF REGISTRATION FORM
+========================= */
+
+.blur-bg .form-control,
+.blur-bg .form-select {
+  background-color: rgba(17, 17, 17, 0.86) !important;
+  color: #fff !important;
+  border: 1px solid rgba(229, 9, 20, 0.45) !important;
+  border-radius: 0.75rem;
+}
+
+.blur-bg .form-control:focus,
+.blur-bg .form-select:focus {
+  background-color: rgba(17, 17, 17, 0.96) !important;
+  color: #fff !important;
+  border-color: #e50914 !important;
+  box-shadow: 0 0 0 0.2rem rgba(229, 9, 20, 0.25) !important;
+}
+
+.blur-bg .form-control::placeholder {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+/* Custom select styling */
+.form-select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  background-color: rgba(17, 17, 17, 0.92) !important;
+  color: #fff !important;
+}
+
+.form-select option {
+  background: #111 !important;
+  color: #fff !important;
+}
+
+.form-select option:hover,
+.form-select option:checked,
+.form-select option:focus {
+  background: #e50914 !important;
+  color: #fff !important;
+}
+
+/* Date picker icon */
+.blur-bg input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+}
+
+/* Checkbox */
+.blur-bg .form-check-input {
+  background-color: rgba(17, 17, 17, 0.9);
+  border-color: rgba(229, 9, 20, 0.65);
+}
+
+.blur-bg .form-check-input:checked {
+  background-color: #e50914;
+  border-color: #e50914;
+}
+
+/* Submit button */
+.blur-bg .btn-danger {
+  background-color: #e50914;
+  border-color: #e50914;
+  border-radius: 0.75rem;
+  font-weight: 700;
+  box-shadow: 0 8px 22px rgba(229, 9, 20, 0.28);
+}
+
+.blur-bg .btn-danger:hover {
+  background-color: #b8000a;
+  border-color: #b8000a;
+}
+
+
+/* =========================
+   CHOICES.JS WRPF THEME
+========================= */
+
+.choices {
+  margin-bottom: 0;
+}
+
+.choices__inner {
+  background-color: rgba(17, 17, 17, 0.92) !important;
+  border: 1px solid rgba(229, 9, 20, 0.45) !important;
+  border-radius: 0.75rem !important;
+  color: #fff !important;
+  min-height: 44px !important;
+  padding: 0.45rem 0.75rem !important;
+}
+
+.choices[data-type*=select-one] .choices__inner {
+  padding-bottom: 0.45rem !important;
+}
+
+.choices__list--single {
+  padding: 0 !important;
+}
+
+.choices__item {
+  color: #fff !important;
+}
+
+.choices__list--dropdown,
+.choices__list[aria-expanded] {
+  background-color: #111 !important;
+  border: 1px solid rgba(229, 9, 20, 0.65) !important;
+  border-radius: 0.75rem !important;
+  overflow: hidden !important;
+  margin-top: 0.35rem !important;
+}
+
+.choices__list--dropdown .choices__item,
+.choices__list[aria-expanded] .choices__item {
+  background-color: #111 !important;
+  color: #fff !important;
+  padding: 0.75rem 1rem !important;
+}
+
+.choices__list--dropdown .choices__item--selectable.is-highlighted,
+.choices__list[aria-expanded] .choices__item--selectable.is-highlighted {
+  background-color: #e50914 !important;
+  color: #fff !important;
+}
+
+.choices.is-focused .choices__inner,
+.choices.is-open .choices__inner {
+  border-color: #e50914 !important;
+  box-shadow: 0 0 0 0.2rem rgba(229, 9, 20, 0.25) !important;
+}
+
+.choices[data-type*=select-one]::after {
+  border-color: #fff transparent transparent transparent !important;
+}
+
+.choices[data-type*=select-one].is-open::after {
+  border-color: transparent transparent #fff transparent !important;
+}
+
+.blur-bg input[type="date"] {
+  color-scheme: dark;
+  accent-color: #e50914;
+}
+
+.blur-bg input[type="date"] {
+  background-color: rgba(17, 17, 17, 0.92) !important;
+  color: #fff !important;
+  border: 1px solid rgba(229, 9, 20, 0.45) !important;
+}
+
+.blur-bg input[type="date"]:focus {
+  border-color: #e50914 !important;
+  box-shadow: 0 0 0 0.2rem rgba(229, 9, 20, 0.25) !important;
+}
+
+.blur-bg input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: brightness(0) saturate(100%) invert(13%) sepia(95%) saturate(7486%) hue-rotate(356deg) brightness(92%) contrast(117%);
+  cursor: pointer;
+  opacity: 1;
+}

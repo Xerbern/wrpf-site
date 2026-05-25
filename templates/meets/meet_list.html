@@ -23,7 +23,7 @@
     <div class="mb-4 text-center" x-data="{ active: 'all' }">
       <button
         type="button"
-        class="btn btn-outline-light me-2 mb-2"
+        class="btn btn-outline-danger me-2 mb-2"
         :class="{ 'btn-danger active': active === 'all' }"
         @click="active = 'all'"
         hx-get="{% url 'meet_list' %}"
@@ -34,7 +34,7 @@
 
       <button
         type="button"
-        class="btn btn-outline-light me-2 mb-2"
+        class="btn btn-outline-danger me-2 mb-2"
         :class="{ 'btn-danger active': active === 'open' }"
         @click="active = 'open'"
         hx-get="{% url 'meet_list' %}?status=open"
@@ -45,7 +45,7 @@
 
       <button
         type="button"
-        class="btn btn-outline-light mb-2"
+        class="btn btn-outline-danger mb-2"
         :class="{ 'btn-danger active': active === 'closed' }"
         @click="active = 'closed'"
         hx-get="{% url 'meet_list' %}?status=closed"
