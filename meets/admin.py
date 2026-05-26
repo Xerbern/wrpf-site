@@ -39,7 +39,7 @@ def export_registrations_csv(modeladmin, request, queryset):
         "Date of birth",
         "Division",
         "Weight class",
-        "Discipline",
+        "disciplines",
         "Tested",
         "Paid",
         "Payment notes",
@@ -54,7 +54,10 @@ def export_registrations_csv(modeladmin, request, queryset):
             registration.date_of_birth,
             registration.get_sex_display(),
             registration.get_weight_class_display(),
-            registration.get_discipline_display(),
+            ", ".join(
+                str(dict(Registration.DisciplineChoices.choices).get(discipline, discipline))
+                for discipline in registration.disciplines
+            ),
             "Yes" if registration.is_tested else "No",
             "Yes" if registration.paid else "No",
             registration.payment_notes,
@@ -73,7 +76,7 @@ class RegistrationAdmin(admin.ModelAdmin):
         "email",
         "sex",
         "weight_class",
-        "discipline",
+        "disciplines",
         "is_tested",
         "paid_status",
         "created_at",
@@ -82,7 +85,7 @@ class RegistrationAdmin(admin.ModelAdmin):
     list_filter = (
         "meet",
         "sex",
-        "discipline",
+        "disciplines",
         "is_tested",
         "paid",
         "created_at",
@@ -124,7 +127,7 @@ class RegistrationAdmin(admin.ModelAdmin):
                 "date_of_birth",
                 "sex",
                 "weight_class",
-                "discipline",
+                "disciplines",
                 "is_tested",
             )
         }),
@@ -140,3 +143,12 @@ class RegistrationAdmin(admin.ModelAdmin):
             )
         }),
     )
+
+    @admin.display(description=_("Disciplines"))
+    def disciplines_display(self, obj):
+        discipline_labels = dict(Registration.DisciplineChoices.choices)
+
+        return ", ".join(
+            str(discipline_labels.get(discipline, discipline))
+            for discipline in obj.disciplines
+        )

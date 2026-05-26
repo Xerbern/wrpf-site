@@ -44,7 +44,7 @@ class RegistrationForm(forms.ModelForm):
             "sex",
             "date_of_birth",
             "weight_class",
-            "discipline",
+            "disciplines",
             "is_tested",
         ]
         labels = {
@@ -53,7 +53,7 @@ class RegistrationForm(forms.ModelForm):
             "sex": _("Division"),
             "date_of_birth": _("Date of birth"),
             "weight_class": _("Weight class"),
-            "discipline": _("Discipline"),
+            "disciplines": _("Disciplines"),
             "is_tested": _("Tested division"),
         }
         widgets = {
@@ -67,7 +67,7 @@ class RegistrationForm(forms.ModelForm):
                 }
             ),
             "weight_class": forms.Select(attrs={"class": "form-select"}),
-            "discipline": forms.Select(attrs={"class": "form-select"}),
+            "disciplines": forms.HiddenInput(attrs={"id": "id_disciplines"}),
             "is_tested": forms.CheckboxInput(attrs={"class": "form-check-input"}),
         }
 
@@ -81,10 +81,6 @@ class RegistrationForm(forms.ModelForm):
         self.fields["weight_class"].choices = [
             ("", _("Select weight class")),
             *Registration.WeightClassChoices.choices,
-        ]
-        self.fields["discipline"].choices = [
-            ("", _("Select discipline")),
-            *Registration.DisciplineChoices.choices,
         ]
 
     def clean_email(self):
@@ -108,5 +104,22 @@ class RegistrationForm(forms.ModelForm):
 
         if sex == Registration.SexChoices.WOMEN and weight_class not in women_weight_classes:
             self.add_error("weight_class", _("Invalid weight class for the selected division."))
+
+        disciplines = cleaned_data.get("disciplines") or []
+
+        valid_disciplines = {
+            choice[0] for choice in Registration.DisciplineChoices.choices
+        }
+
+        if not disciplines:
+            self.add_error("disciplines", _("Please select at least one discipline."))
+
+        invalid_disciplines = [
+            discipline for discipline in disciplines
+            if discipline not in valid_disciplines
+        ]
+
+        if invalid_disciplines:
+            self.add_error("disciplines", _("Invalid discipline selected."))
 
         return cleaned_data

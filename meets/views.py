@@ -17,6 +17,14 @@ from io import BytesIO
 
 import qrcode
 
+def get_disciplines_display(registration):
+    discipline_labels = dict(Registration.DisciplineChoices.choices)
+
+    return ", ".join(
+        str(discipline_labels.get(discipline, discipline))
+        for discipline in registration.disciplines
+    )
+
 def meet_list(request):
     status = request.GET.get("status")
 
@@ -40,7 +48,16 @@ def meet_list(request):
 def meet_details(request, pk):
     meet = get_object_or_404(Meet, pk=pk)
     form = RegistrationForm()
-    return render(request, "meets/meet_details.html", {"meet": meet, "form": form})
+
+    return render(
+        request,
+        "meets/meet_details.html",
+        {
+            "meet": meet,
+            "form": form,
+            "discipline_choices": Registration.DisciplineChoices.choices,
+        },
+    )
 
 def register_success(request, pk, registration_id):
     meet = get_object_or_404(Meet, pk=pk)
@@ -75,6 +92,8 @@ def register_success(request, pk, registration_id):
     # deletes the last_reg_id after first navigation
     request.session.pop("last_registration_id", None)
 
+    disciplines_display = get_disciplines_display(registration)
+    
     return render(
         request,
         "meets/register_success.html",
@@ -83,6 +102,7 @@ def register_success(request, pk, registration_id):
             "registration": registration,
             "qr_code_base64": qr_code_base64,
             "qr_payload": qr_payload,
+            "disciplines_display": disciplines_display,
         },
     )
 
@@ -102,6 +122,7 @@ def meet_register(request, pk):
             {
                 "meet": meet,
                 "form": form,
+                "discipline_choices": Registration.DisciplineChoices.choices,
             },
             status=400,
         )
@@ -110,6 +131,7 @@ def meet_register(request, pk):
         registration = form.save(commit=False)
         registration.meet = meet
         registration.save()
+        disciplines_display = get_disciplines_display(registration)
     except IntegrityError:
         form.add_error("email", _("This email is already registered for this meet."))
         return render(
@@ -118,6 +140,7 @@ def meet_register(request, pk):
             {
                 "meet": meet,
                 "form": form,
+                "discipline_choices": Registration.DisciplineChoices.choices,
             },
             status=400,
         )
@@ -135,6 +158,7 @@ def meet_register(request, pk):
             "meet": meet,
             "registration": registration,
             "verification_url": verification_url,
+            "disciplines_display": disciplines_display,
         }
 
         html_content = render_to_string(
@@ -160,6 +184,12 @@ def meet_register(request, pk):
         )
 
     try:
+        discipline_labels = dict(Registration.DisciplineChoices.choices)
+        disciplines_display = ", ".join(
+            str(discipline_labels.get(discipline, discipline))
+            for discipline in registration.disciplines
+        )
+
         admin_subject = f"Înscriere nouă - {meet.name}"
         admin_message = (
             f"Înscriere nouă primită:\n\n"
@@ -168,7 +198,7 @@ def meet_register(request, pk):
             f"Data nașterii: {registration.date_of_birth}\n"
             f"Divizie: {registration.get_sex_display()}\n"
             f"Categoria de greutate: {registration.get_weight_class_display()}\n"
-            f"Disciplină: {registration.get_discipline_display()}\n"
+            f"Discipline: {disciplines_display}\n"
             f"Testat antidoping: {'Da' if registration.is_tested else 'Nu'}\n\n"
             f"Competiție: {meet.name}\n"
             f"Data competiției: {meet.date}"

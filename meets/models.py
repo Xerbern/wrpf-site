@@ -74,11 +74,10 @@ class Registration(models.Model):
         max_length=10,
         choices=WeightClassChoices.choices,
     )
-    discipline = models.CharField(
-        _("Discipline"),
-        max_length=30,
-        choices=DisciplineChoices.choices,
-        default=DisciplineChoices.RAW_POWERLIFTING,
+    disciplines = models.JSONField(
+        _("Disciplines"),
+        default=list,
+        blank=True,
     )
     is_tested = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)

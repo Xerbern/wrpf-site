@@ -1133,3 +1133,54 @@ button.active {
     cursor: default;
     pointer-events: none;
 }
+
+.selected-disciplines {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.selected-discipline-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #e50914;
+  color: white;
+  padding: 0.35rem 0.7rem;
+  border-radius: 999px;
+  font-weight: 600;
+}
+
+.remove-discipline {
+  border: none;
+  background: transparent;
+  color: white;
+  font-size: 1.1rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+#disciplineSelect {
+  background-color: #111;
+  color: #fff;
+  border: 1px solid #e50914;
+  border-radius: 14px;
+  padding: 0.9rem 1rem;
+}
+
+#disciplineSelect:focus {
+  border-color: #ff1a1a;
+  box-shadow: 0 0 0 0.2rem rgba(229, 9, 20, 0.25);
+  outline: none;
+}
+
+.selected-discipline-badge {
+  box-shadow: 0 12px 28px rgba(229, 9, 20, 0.35);
+}
+
+#disciplineSelect:focus,
+#disciplineSelect:active {
+  border-color: #e50914 !important;
+  box-shadow: 0 0 0 0.2rem rgba(229, 9, 20, 0.25) !important;
+  outline: none !important;
+}
