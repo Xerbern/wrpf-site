@@ -1,0 +1,84 @@
+{% extends "admin/index.html" %}
+{% load i18n admin_dashboard %}
+
+{% block sidebar %}{% endblock %}
+
+{% block content %}
+{% admin_dashboard_stats as stats %}
+
+<div class="wrpf-dashboard">
+  <div class="wrpf-card">
+    <div class="wrpf-label">{% trans "Total registrations" %}</div>
+    <div class="wrpf-number">{{ stats.total_registrations }}</div>
+  </div>
+
+  <div class="wrpf-card">
+    <div class="wrpf-label">{% trans "Paid" %}</div>
+    <div class="wrpf-number paid">{{ stats.paid_registrations }}</div>
+  </div>
+
+  <div class="wrpf-card">
+    <div class="wrpf-label">{% trans "Unpaid" %}</div>
+    <div class="wrpf-number unpaid">{{ stats.unpaid_registrations }}</div>
+  </div>
+
+  <div class="wrpf-card">
+    <div class="wrpf-label">{% trans "Upcoming meets" %}</div>
+    <div class="wrpf-number">{{ stats.upcoming_meets }}</div>
+  </div>
+</div>
+
+<div class="quick-actions">
+  <h2>{% trans "Quick actions" %}</h2>
+
+  <div class="quick-buttons">
+    <a href="/admin/meets/meet/add/" class="quick-btn create-btn">
+      ➕ {% trans "Create competition" %}
+    </a>
+
+    <a href="/admin/meets/registration/" class="quick-btn registrations-btn">
+      👥 {% trans "View registrations" %}
+    </a>
+
+    <a href="/admin/meets/meet/" class="quick-btn meets-btn">
+      🏆 {% trans "Manage competitions" %}
+    </a>
+  </div>
+</div>
+
+<div class="wrpf-dashboard-section">
+  <h2>{% trans "Latest registrations" %}</h2>
+
+  {% if stats.latest_registrations %}
+    <table class="wrpf-latest-table">
+      <thead>
+        <tr>
+          <th>{% trans "Name" %}</th>
+          <th>{% trans "Meet" %}</th>
+          <th>{% trans "Payment" %}</th>
+          <th>{% trans "Created" %}</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for registration in stats.latest_registrations %}
+          <tr>
+            <td>{{ registration.full_name }}</td>
+            <td>{{ registration.meet.name }}</td>
+            <td>
+              {% if registration.paid %}
+                <span class="wrpf-paid">{% trans "PAID" %}</span>
+              {% else %}
+                <span class="wrpf-unpaid">{% trans "UNPAID" %}</span>
+              {% endif %}
+            </td>
+            <td>{{ registration.created_at|date:"d M Y, H:i" }}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  {% else %}
+    <p>{% trans "No registrations yet." %}</p>
+  {% endif %}
+</div>
+
+{% endblock %}

@@ -1,5 +1,12 @@
+import csv
+
 from django.contrib import admin
+from django.http import HttpResponse
+from django.utils.html import format_html
+from django.utils.translation import gettext_lazy as _
+
 from .models import Meet, Registration
+
 
 admin.site.site_header = "WRPF Romania Admin"
 admin.site.site_title = "WRPF RO Admin"
@@ -14,8 +21,122 @@ class MeetAdmin(admin.ModelAdmin):
     ordering = ("date",)
     list_editable = ("registration_open",)
 
-    @admin.display(description=("Registrations"))
+    @admin.display(description="Registrations")
     def registration_count(self, obj):
         return obj.registrations.count()
 
-admin.site.register(Registration)
+
+@admin.action(description=_("Export registrations to CSV"))
+def export_registrations_csv(modeladmin, request, queryset):
+    response = HttpResponse(content_type="text/csv")
+    response["Content-Disposition"] = 'attachment; filename="wrpf_registrations.csv"'
+
+    writer = csv.writer(response)
+    writer.writerow([
+        "Meet",
+        "Full name",
+        "Email",
+        "Date of birth",
+        "Division",
+        "Weight class",
+        "Discipline",
+        "Tested",
+        "Paid",
+        "Payment notes",
+        "Created at",
+    ])
+
+    for registration in queryset.select_related("meet"):
+        writer.writerow([
+            registration.meet.name,
+            registration.full_name,
+            registration.email,
+            registration.date_of_birth,
+            registration.get_sex_display(),
+            registration.get_weight_class_display(),
+            registration.get_discipline_display(),
+            "Yes" if registration.is_tested else "No",
+            "Yes" if registration.paid else "No",
+            registration.payment_notes,
+            registration.created_at,
+        ])
+
+    return response
+
+
+@admin.register(Registration)
+class RegistrationAdmin(admin.ModelAdmin):
+
+    list_display = (
+        "full_name",
+        "meet",
+        "email",
+        "sex",
+        "weight_class",
+        "discipline",
+        "is_tested",
+        "paid_status",
+        "created_at",
+    )
+
+    list_filter = (
+        "meet",
+        "sex",
+        "discipline",
+        "is_tested",
+        "paid",
+        "created_at",
+    )
+
+    search_fields = (
+        "full_name",
+        "email",
+        "meet__name",
+    )
+
+    readonly_fields = (
+        "created_at",
+    )
+
+    ordering = ("-created_at",)
+
+    list_per_page = 50
+
+    actions = [export_registrations_csv]
+
+    @admin.display(description="Payment")
+    def paid_status(self, obj):
+        if obj.paid:
+            return format_html(
+                '<span style="color:#22c55e;font-weight:bold;">PAID</span>'
+            )
+
+        return format_html(
+            '<span style="color:#ef4444;font-weight:bold;">UNPAID</span>'
+        )
+
+    fieldsets = (
+        ("Athlete details", {
+            "fields": (
+                "meet",
+                "full_name",
+                "email",
+                "date_of_birth",
+                "sex",
+                "weight_class",
+                "discipline",
+                "is_tested",
+            )
+        }),
+        ("Payment", {
+            "fields": (
+                "paid",
+                "payment_notes",
+            )
+        }),
+        ("System", {
+            "fields": (
+                "created_at",
+            )
+        }),
+    )

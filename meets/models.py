@@ -8,6 +8,13 @@ class Meet(models.Model):
     location = models.CharField(_("Location"), max_length=200)
     registration_open = models.BooleanField(_("Registration open"), default=True)
 
+    class Meta:
+        verbose_name = _("Meet")
+        verbose_name_plural = _("Meets")
+
+    def __str__(self):
+        return self.name
+
 
 # Registration
 class Registration(models.Model):
@@ -75,8 +82,12 @@ class Registration(models.Model):
     )
     is_tested = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
+    paid = models.BooleanField(_("Payment confirmed"), default=False)
+    payment_notes = models.TextField(_("Payment notes"), blank=True)
 
     class Meta:
+        verbose_name = _("Registration")
+        verbose_name_plural = _("Registrations")
         unique_together = ("meet", "email")
 
     def __str__(self):

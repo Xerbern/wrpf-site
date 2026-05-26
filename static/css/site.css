@@ -1127,3 +1127,9 @@ button.active {
   cursor: pointer;
   opacity: 1;
 }
+
+.disabled-social {
+    opacity: 0.45;
+    cursor: default;
+    pointer-events: none;
+}

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-25 14:08+0300\n"
+"POT-Creation-Date: 2026-05-26 15:58+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,70 +19,79 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n==1?0:(((n%100>19)||((n%100==0)&&(n!=0)))?"
 "2:1));\n"
 
-#: .\meets\forms.py:8 .\meets\forms.py:25 .\meets\models.py:19
-#: .\meets\models.py:34
+#: .\meets\admin.py:29
+msgid "Export registrations to CSV"
+msgstr "Exportă înscrierile selectate în CSV"
+
+#: .\meets\apps.py:8 .\templates\core\about.html:54
+#: .\templates\core\about.html:82
+msgid "Competitions"
+msgstr "Competiții"
+
+#: .\meets\forms.py:8 .\meets\forms.py:25 .\meets\models.py:26
+#: .\meets\models.py:41
 msgid "52 kg"
 msgstr ""
 
-#: .\meets\forms.py:9 .\meets\forms.py:26 .\meets\models.py:20
-#: .\meets\models.py:35
+#: .\meets\forms.py:9 .\meets\forms.py:26 .\meets\models.py:27
+#: .\meets\models.py:42
 msgid "56 kg"
 msgstr ""
 
-#: .\meets\forms.py:10 .\meets\forms.py:27 .\meets\models.py:21
-#: .\meets\models.py:36
+#: .\meets\forms.py:10 .\meets\forms.py:27 .\meets\models.py:28
+#: .\meets\models.py:43
 msgid "60 kg"
 msgstr ""
 
-#: .\meets\forms.py:11 .\meets\forms.py:28 .\meets\models.py:22
-#: .\meets\models.py:37
+#: .\meets\forms.py:11 .\meets\forms.py:28 .\meets\models.py:29
+#: .\meets\models.py:44
 msgid "67.5 kg"
 msgstr ""
 
-#: .\meets\forms.py:12 .\meets\forms.py:29 .\meets\models.py:23
-#: .\meets\models.py:38
+#: .\meets\forms.py:12 .\meets\forms.py:29 .\meets\models.py:30
+#: .\meets\models.py:45
 msgid "75 kg"
 msgstr ""
 
-#: .\meets\forms.py:13 .\meets\forms.py:30 .\meets\models.py:24
-#: .\meets\models.py:39
+#: .\meets\forms.py:13 .\meets\forms.py:30 .\meets\models.py:31
+#: .\meets\models.py:46
 msgid "82.5 kg"
 msgstr ""
 
-#: .\meets\forms.py:14 .\meets\forms.py:31 .\meets\models.py:25
-#: .\meets\models.py:40
+#: .\meets\forms.py:14 .\meets\forms.py:31 .\meets\models.py:32
+#: .\meets\models.py:47
 msgid "90 kg"
 msgstr ""
 
-#: .\meets\forms.py:15 .\meets\models.py:26
+#: .\meets\forms.py:15 .\meets\models.py:33
 msgid "100 kg"
 msgstr ""
 
-#: .\meets\forms.py:16 .\meets\models.py:27
+#: .\meets\forms.py:16 .\meets\models.py:34
 msgid "110 kg"
 msgstr ""
 
-#: .\meets\forms.py:17 .\meets\models.py:28
+#: .\meets\forms.py:17 .\meets\models.py:35
 msgid "125 kg"
 msgstr ""
 
-#: .\meets\forms.py:18 .\meets\models.py:29
+#: .\meets\forms.py:18 .\meets\models.py:36
 msgid "140 kg"
 msgstr ""
 
-#: .\meets\forms.py:19 .\meets\models.py:30
+#: .\meets\forms.py:19 .\meets\models.py:37
 msgid "140+ kg"
 msgstr ""
 
-#: .\meets\forms.py:23 .\meets\models.py:32
+#: .\meets\forms.py:23 .\meets\models.py:39
 msgid "44 kg"
 msgstr ""
 
-#: .\meets\forms.py:24 .\meets\models.py:33
+#: .\meets\forms.py:24 .\meets\models.py:40
 msgid "48 kg"
 msgstr ""
 
-#: .\meets\forms.py:32 .\meets\models.py:41
+#: .\meets\forms.py:32 .\meets\models.py:48
 msgid "90+ kg"
 msgstr ""
 
@@ -104,11 +113,11 @@ msgstr "Email"
 msgid "Division"
 msgstr "Diviza"
 
-#: .\meets\forms.py:54 .\meets\models.py:62
+#: .\meets\forms.py:54 .\meets\models.py:69
 #: .\templates\emails\registration_confirmation.html:107
 #: .\templates\meets\register_success.html:77
 msgid "Date of birth"
-msgstr ""
+msgstr "Data nașterii"
 
 #: .\meets\forms.py:55 .\templates\emails\registration_confirmation.html:127
 #: .\templates\meets\register_success.html:87
@@ -116,7 +125,7 @@ msgstr ""
 msgid "Weight class"
 msgstr "Categoria de greutate"
 
-#: .\meets\forms.py:56 .\meets\models.py:71
+#: .\meets\forms.py:56 .\meets\models.py:78
 #: .\templates\emails\registration_confirmation.html:137
 #: .\templates\meets\register_success.html:92
 #, fuzzy
@@ -132,24 +141,23 @@ msgstr "Divizie testată"
 
 #: .\meets\forms.py:78
 msgid "Select division"
-msgstr "Selecteaza divizia"
+msgstr "Selectează divizia"
 
 #: .\meets\forms.py:82 .\templates\meets\meet_details.html:82
-#: .\templates\meets\meet_details.html:169
+#: .\templates\meets\meet_details.html:183
+#: .\templates\meets\meet_details.html:202
 msgid "Select weight class"
 msgstr "Categoria de greutate"
 
 #: .\meets\forms.py:86
-#, fuzzy
-#| msgid "Select division"
 msgid "Select discipline"
-msgstr "Selecteaza divizia"
+msgstr "Selectează disciplina"
 
 #: .\meets\forms.py:107 .\meets\forms.py:110
 msgid "Invalid weight class for the selected division."
-msgstr ""
+msgstr "Categoria de greutate nu este validă pentru divizia selectată."
 
-#: .\meets\models.py:6
+#: .\meets\models.py:6 .\templates\admin\index.html:56
 msgid "Name"
 msgstr "Nume"
 
@@ -169,56 +177,84 @@ msgstr "Locaţia"
 msgid "Registration open"
 msgstr "Înscrieri deschise"
 
-#: .\meets\models.py:15
+#: .\meets\models.py:12 .\templates\admin\index.html:57
+#: .\templates\emails\registration_confirmation.html:170
+#: .\templates\meets\register_success.html:119
+#: .\templates\meets\registration_verify.html:90
+msgid "Meet"
+msgstr "Competiție"
+
+#: .\meets\models.py:13
+msgid "Meets"
+msgstr "Competiții"
+
+#: .\meets\models.py:22
 msgid "Men"
 msgstr "Masculin"
 
-#: .\meets\models.py:16
+#: .\meets\models.py:23
 msgid "Women"
 msgstr "Feminin"
 
-#: .\meets\models.py:44
+#: .\meets\models.py:51
 #, fuzzy
 #| msgid "Powerlifting Competitions"
 msgid "Raw Powerlifting"
 msgstr "Competiții de powerlifting"
 
-#: .\meets\models.py:45
+#: .\meets\models.py:52
 #, fuzzy
 #| msgid "Powerlifting Competitions"
 msgid "Classic Powerlifting"
 msgstr "Competiții de powerlifting"
 
-#: .\meets\models.py:46 .\templates\core\disciplines.html:92
+#: .\meets\models.py:53 .\templates\core\disciplines.html:92
 msgid "Squat"
 msgstr "Genuflexiuni"
 
-#: .\meets\models.py:47 .\templates\core\disciplines.html:93
+#: .\meets\models.py:54 .\templates\core\disciplines.html:93
 msgid "Bench Press"
 msgstr "Împins la piept"
 
-#: .\meets\models.py:48 .\templates\core\disciplines.html:95
+#: .\meets\models.py:55 .\templates\core\disciplines.html:95
 msgid "Deadlift"
 msgstr "Îndreptări"
 
-#: .\meets\views.py:94
+#: .\meets\models.py:85
 #, fuzzy
-#| msgid "Registration is closed for this meet."
-msgid "Registration is closed."
-msgstr "Înregistrările sunt închise pentru acest meet"
+#| msgid "Confirmed"
+msgid "Payment confirmed"
+msgstr "Plată confirmată"
 
-#: .\meets\views.py:113
+#: .\meets\models.py:86
+msgid "Payment notes"
+msgstr "Note plată"
+
+#: .\meets\models.py:89
+msgid "Registration"
+msgstr "Înscriere"
+
+#: .\meets\models.py:90
+msgid "Registrations"
+msgstr "Înscrieri"
+
+#: .\meets\views.py:95
+msgid "Registration is closed."
+msgstr "Înscrierile sunt închise."
+
+#: .\meets\views.py:114
 msgid "This email is already registered for this meet."
 msgstr "Există deja o înregistrare cu acest email."
 
-#: .\meets\views.py:125
+#: .\meets\views.py:126
 #, python-format
 msgid "WRPF Romania Registration Confirmation - %(meet)s"
 msgstr "Confirmare înscriere WRPF România - %(meet)s"
 
-#: .\meets\views.py:174
+#: .\meets\views.py:159
 msgid "Registration was saved, but the confirmation email could not be sent."
 msgstr ""
+"Înscrierea a fost salvată, dar emailul de confirmare nu a putut fi trimis."
 
 #: .\rulebook\views.py:8
 msgid "WRPF Rule Book"
@@ -232,90 +268,146 @@ msgstr "Substanţe Interzise"
 msgid "WRPF Drug Testing Policies"
 msgstr "Politicile Federaţiei"
 
-#: .\templates\base.html:36
+#: .\templates\admin\index.html:11
+msgid "Total registrations"
+msgstr "Total înscrieri"
+
+#: .\templates\admin\index.html:16
+msgid "Paid"
+msgstr "Plătite"
+
+#: .\templates\admin\index.html:21
+msgid "Unpaid"
+msgstr "Neplătite"
+
+#: .\templates\admin\index.html:26
+msgid "Upcoming meets"
+msgstr "Competiții viitoare"
+
+#: .\templates\admin\index.html:32
+msgid "Quick actions"
+msgstr "Acțiuni rapide"
+
+#: .\templates\admin\index.html:36
+msgid "Create competition"
+msgstr "Creează competiție"
+
+#: .\templates\admin\index.html:40
+msgid "View registrations"
+msgstr "Vezi înscrieri"
+
+#: .\templates\admin\index.html:44
+msgid "Manage competitions"
+msgstr "Gestionează competiții"
+
+#: .\templates\admin\index.html:50
+msgid "Latest registrations"
+msgstr "Ultimele înscrieri"
+
+#: .\templates\admin\index.html:58
+msgid "Payment"
+msgstr "Plată"
+
+#: .\templates\admin\index.html:59
+msgid "Created"
+msgstr "Creat la"
+
+#: .\templates\admin\index.html:69
+msgid "PAID"
+msgstr "PLĂTIT"
+
+#: .\templates\admin\index.html:71
+msgid "UNPAID"
+msgstr "NEPLĂTIT"
+
+#: .\templates\admin\index.html:80
+msgid "No registrations yet."
+msgstr "Nu există înscrieri momentan."
+
+#: .\templates\base.html:40
 msgid "Home"
 msgstr "Acasă"
 
-#: .\templates\base.html:48
+#: .\templates\base.html:52
 msgid "Overview"
 msgstr "Generalităţi"
 
-#: .\templates\base.html:55 .\templates\core\age_categories.html:4
+#: .\templates\base.html:59 .\templates\core\age_categories.html:4
 #: .\templates\core\age_categories.html:17
 msgid "Age Categories"
 msgstr "Categorii de vârsta"
 
-#: .\templates\base.html:62 .\templates\core\about.html:4
+#: .\templates\base.html:66 .\templates\core\about.html:4
 #: .\templates\core\about.html:16
 msgid "About WRPF Romania"
 msgstr "Despre WRPF România"
 
-#: .\templates\base.html:69 .\templates\core\disciplines.html:4
+#: .\templates\base.html:73 .\templates\core\disciplines.html:4
 msgid "Disciplines"
 msgstr "Discipline"
 
-#: .\templates\base.html:76 .\templates\core\equipment.html:4
+#: .\templates\base.html:80 .\templates\core\equipment.html:4
 #: .\templates\core\equipment.html:16
 msgid "Equipment Standards"
 msgstr "Standarde de echipamente"
 
-#: .\templates\base.html:89
+#: .\templates\base.html:94
 msgid "Resources"
 msgstr "Resurse"
 
-#: .\templates\base.html:95
+#: .\templates\base.html:101
 msgid "Rulebook"
 msgstr "Reguli"
 
-#: .\templates\base.html:101
+#: .\templates\base.html:108
 msgid "Drug Testing Policies"
 msgstr "Politicile Federaţiei"
 
-#: .\templates\base.html:107
+#: .\templates\base.html:115
 msgid "Banned Substances"
 msgstr "Substanţe Interzise"
 
-#: .\templates\base.html:117
+#: .\templates\base.html:125
 msgid "World Raw & Equipped Powerlifting Romania"
 msgstr "World Raw & Equipped Powerlifting Romania"
 
-#: .\templates\base.html:124 .\templates\meets\meet_list.html:4
+#: .\templates\base.html:133 .\templates\meets\meet_list.html:4
 #: .\templates\meets\meet_list.html:16
 msgid "Competition Calendar"
 msgstr "Calendar competițional"
 
-#: .\templates\base.html:131 .\templates\core\staff.html:4
+#: .\templates\base.html:140 .\templates\core\staff.html:4
 #: .\templates\core\staff.html:17
 msgid "WRPF RO Staff Members"
 msgstr "Membrii Staff WRPF RO"
 
-#: .\templates\base.html:134
+#: .\templates\base.html:144
 msgid "Meet Directors"
 msgstr "Directori"
 
-#: .\templates\base.html:135
+#: .\templates\base.html:145
 msgid "Referees"
 msgstr "Arbtri"
 
-#: .\templates\base.html:141
+#: .\templates\base.html:151
 msgid "More"
 msgstr "Mai multe"
 
-#: .\templates\base.html:144
+#: .\templates\base.html:155
 msgid "News"
 msgstr "Ştiri"
 
-#: .\templates\base.html:145
+#: .\templates\base.html:156
 msgid "Gallery"
 msgstr "Galerie"
 
-#: .\templates\base.html:174
+#: .\templates\base.html:187
 msgid "Social"
-msgstr ""
+msgstr "Social"
 
-#: .\templates\base.html:216
+#: .\templates\base.html:225
 msgid "Follow us for meet updates"
-msgstr ""
+msgstr "Urmărește-ne pentru actualizări despre competiții"
 
 #: .\templates\core\about.html:13 .\templates\core\age_categories.html:14
 #: .\templates\core\disciplines.html:13 .\templates\core\equipment.html:13
@@ -384,10 +476,6 @@ msgstr "Raw cu bandaje"
 #: .\templates\core\about.html:50
 msgid "Mission"
 msgstr "Misiune"
-
-#: .\templates\core\about.html:54 .\templates\core\about.html:82
-msgid "Competitions"
-msgstr "Competiții"
 
 #: .\templates\core\about.html:56
 msgid ""
@@ -539,7 +627,7 @@ msgstr ""
 
 #: .\templates\core\disciplines.html:29 .\templates\meets\meet_list.html:32
 msgid "All"
-msgstr ""
+msgstr "Toate"
 
 #: .\templates\core\disciplines.html:37
 #, fuzzy
@@ -808,11 +896,11 @@ msgstr ""
 
 #: .\templates\core\staff.html:28
 msgid "Leadership"
-msgstr ""
+msgstr "Conducere"
 
 #: .\templates\core\staff.html:39
 msgid "President"
-msgstr ""
+msgstr "Președinte"
 
 #: .\templates\core\staff.html:47
 msgid ""
@@ -988,12 +1076,6 @@ msgstr "Nu"
 msgid "Meet Details"
 msgstr "Detaliile competiției"
 
-#: .\templates\emails\registration_confirmation.html:170
-#: .\templates\meets\register_success.html:119
-#: .\templates\meets\registration_verify.html:90
-msgid "Meet"
-msgstr "Competiție"
-
 #: .\templates\emails\registration_confirmation.html:202
 #: .\templates\meets\register_success.html:144
 msgid ""
@@ -1050,7 +1132,6 @@ msgid "View competition"
 msgstr "Vezi competiția"
 
 #: .\templates\meets\partials\meet_list.html:35
-#, fuzzy
 msgid "No competitions found."
 msgstr "Nu există competiții momentan."
 
@@ -1152,15 +1233,15 @@ msgstr ""
 msgid "Download PDF"
 msgstr "Descărcați PDF"
 
-#: .\templates\rules\pdf_viewer.html:34
+#: .\templates\rules\pdf_viewer.html:35
 msgid "PDF viewer"
-msgstr ""
+msgstr "Vizualizator PDF"
 
-#: .\templates\rules\pdf_viewer.html:39
+#: .\templates\rules\pdf_viewer.html:40
 msgid "Prev"
 msgstr "Anterior"
 
-#: .\templates\rules\pdf_viewer.html:41
+#: .\templates\rules\pdf_viewer.html:48
 msgid "Next"
 msgstr "Următorul"
 
@@ -1177,8 +1258,10 @@ msgid "Static Files"
 msgstr ""
 
 #: .\venv\Lib\site-packages\django\contrib\syndication\apps.py:7
+#, fuzzy
+#| msgid "Location"
 msgid "Syndication"
-msgstr ""
+msgstr "Locaţia"
 
 #. Translators: String used to replace omitted page numbers in elided page
 #. range generated by paginators, e.g. [1, 2, '…', 5, 6, 7, '…', 9, 10].
@@ -1293,6 +1376,7 @@ msgid_plural ""
 "%(show_value)d)."
 msgstr[0] ""
 msgstr[1] ""
+msgstr[2] ""
 
 #: .\venv\Lib\site-packages\django\core\validators.py:491
 #, python-format
@@ -1304,6 +1388,7 @@ msgid_plural ""
 "%(show_value)d)."
 msgstr[0] ""
 msgstr[1] ""
+msgstr[2] ""
 
 #: .\venv\Lib\site-packages\django\core\validators.py:514
 #: .\venv\Lib\site-packages\django\forms\fields.py:366
@@ -1317,6 +1402,7 @@ msgid "Ensure that there are no more than %(max)s digit in total."
 msgid_plural "Ensure that there are no more than %(max)s digits in total."
 msgstr[0] ""
 msgstr[1] ""
+msgstr[2] ""
 
 #: .\venv\Lib\site-packages\django\core\validators.py:521
 #, python-format
@@ -1324,6 +1410,7 @@ msgid "Ensure that there are no more than %(max)s decimal place."
 msgid_plural "Ensure that there are no more than %(max)s decimal places."
 msgstr[0] ""
 msgstr[1] ""
+msgstr[2] ""
 
 #: .\venv\Lib\site-packages\django\core\validators.py:526
 #, python-format
@@ -1333,6 +1420,7 @@ msgid_plural ""
 "Ensure that there are no more than %(max)s digits before the decimal point."
 msgstr[0] ""
 msgstr[1] ""
+msgstr[2] ""
 
 #: .\venv\Lib\site-packages\django\core\validators.py:597
 #, python-format
@@ -1472,8 +1560,10 @@ msgid ""
 msgstr ""
 
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1868
+#, fuzzy
+#| msgid "Location"
 msgid "Duration"
-msgstr ""
+msgstr "Locaţia"
 
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1920
 msgid "Email address"
@@ -1682,6 +1772,7 @@ msgid_plural ""
 "Ensure this filename has at most %(max)d characters (it has %(length)d)."
 msgstr[0] ""
 msgstr[1] ""
+msgstr[2] ""
 
 #: .\venv\Lib\site-packages\django\forms\fields.py:649
 msgid "Please either submit a file or check the clear checkbox, not both."
@@ -1741,6 +1832,7 @@ msgid "Please submit at most %(num)d form."
 msgid_plural "Please submit at most %(num)d forms."
 msgstr[0] ""
 msgstr[1] ""
+msgstr[2] ""
 
 #: .\venv\Lib\site-packages\django\forms\formsets.py:70
 #, python-format
@@ -1748,6 +1840,7 @@ msgid "Please submit at least %(num)d form."
 msgid_plural "Please submit at least %(num)d forms."
 msgstr[0] ""
 msgstr[1] ""
+msgstr[2] ""
 
 #: .\venv\Lib\site-packages\django\forms\formsets.py:484
 #: .\venv\Lib\site-packages\django\forms\formsets.py:491
@@ -1827,6 +1920,7 @@ msgid "%(size)d byte"
 msgid_plural "%(size)d bytes"
 msgstr[0] ""
 msgstr[1] ""
+msgstr[2] ""
 
 #: .\venv\Lib\site-packages\django\template\defaultfilters.py:922
 #, python-format
@@ -1906,8 +2000,10 @@ msgid "Sunday"
 msgstr ""
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:16
+#, fuzzy
+#| msgid "Men"
 msgid "Mon"
-msgstr ""
+msgstr "Masculin"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:17
 msgid "Tue"
@@ -1926,8 +2022,10 @@ msgid "Fri"
 msgstr ""
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:21
+#, fuzzy
+#| msgid "Squat"
 msgid "Sat"
-msgstr ""
+msgstr "Genuflexiuni"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:22
 msgid "Sun"
@@ -2160,8 +2258,10 @@ msgid "%(truncated_text)s…"
 msgstr ""
 
 #: .\venv\Lib\site-packages\django\utils\text.py:287
+#, fuzzy
+#| msgid "More"
 msgid "or"
-msgstr ""
+msgstr "Mai multe"
 
 #. Translators: This string is used as a separator between list elements
 #: .\venv\Lib\site-packages\django\utils\text.py:306
@@ -2175,6 +2275,7 @@ msgid "%(num)d year"
 msgid_plural "%(num)d years"
 msgstr[0] ""
 msgstr[1] ""
+msgstr[2] ""
 
 #: .\venv\Lib\site-packages\django\utils\timesince.py:9
 #, python-format
@@ -2182,6 +2283,7 @@ msgid "%(num)d month"
 msgid_plural "%(num)d months"
 msgstr[0] ""
 msgstr[1] ""
+msgstr[2] ""
 
 #: .\venv\Lib\site-packages\django\utils\timesince.py:10
 #, python-format
@@ -2189,6 +2291,7 @@ msgid "%(num)d week"
 msgid_plural "%(num)d weeks"
 msgstr[0] ""
 msgstr[1] ""
+msgstr[2] ""
 
 #: .\venv\Lib\site-packages\django\utils\timesince.py:11
 #, python-format
@@ -2196,6 +2299,7 @@ msgid "%(num)d day"
 msgid_plural "%(num)d days"
 msgstr[0] ""
 msgstr[1] ""
+msgstr[2] ""
 
 #: .\venv\Lib\site-packages\django\utils\timesince.py:12
 #, python-format
@@ -2203,6 +2307,7 @@ msgid "%(num)d hour"
 msgid_plural "%(num)d hours"
 msgstr[0] ""
 msgstr[1] ""
+msgstr[2] ""
 
 #: .\venv\Lib\site-packages\django\utils\timesince.py:13
 #, python-format
@@ -2210,6 +2315,7 @@ msgid "%(num)d minute"
 msgid_plural "%(num)d minutes"
 msgstr[0] ""
 msgstr[1] ""
+msgstr[2] ""
 
 #: .\venv\Lib\site-packages\django\views\csrf.py:29
 msgid "Forbidden"
@@ -2267,8 +2373,10 @@ msgstr ""
 #: .\venv\Lib\site-packages\django\views\generic\dates.py:64
 #: .\venv\Lib\site-packages\django\views\generic\dates.py:115
 #: .\venv\Lib\site-packages\django\views\generic\dates.py:214
+#, fuzzy
+#| msgid "Date of birth"
 msgid "Date out of range"
-msgstr ""
+msgstr "Data nașterii"
 
 #: .\venv\Lib\site-packages\django\views\generic\dates.py:94
 msgid "No month specified"
@@ -2357,8 +2465,10 @@ msgid ""
 msgstr ""
 
 #: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:217
+#, fuzzy
+#| msgid "Manage competitions"
 msgid "Django Documentation"
-msgstr ""
+msgstr "Gestionează competiții"
 
 #: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:218
 msgid "Topics, references, &amp; how-to’s"
@@ -2373,114 +2483,11 @@ msgid "Get started with Django"
 msgstr ""
 
 #: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:235
+#, fuzzy
+#| msgid "Community"
 msgid "Django Community"
-msgstr ""
+msgstr "Comunitate"
 
 #: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:236
 msgid "Connect, get help, or contribute"
 msgstr ""
-
-#~ msgid "Registration Confirmation"
-#~ msgstr "Confirmarea înscrierii"
-
-#, python-format
-#~ msgid "Hello %(name)s,"
-#~ msgstr "Salut %(name)s,"
-
-#~ msgid "Registration Details"
-#~ msgstr "Detalii Înscriere"
-
-#~ msgid ""
-#~ "Thank you for registering. We look forward to seeing you at the meet."
-#~ msgstr ""
-#~ "Vă mulțumim pentru înscriere. Așteptăm cu nerăbdare să vă vedem la "
-#~ "competiție."
-
-#, fuzzy
-#~| msgid "Meet Directors"
-#~ msgid "Meet Director"
-#~ msgstr "Directori"
-
-#, fuzzy
-#~| msgid "Referees"
-#~ msgid "Referee"
-#~ msgstr "Arbtri"
-
-#, fuzzy
-#~| msgid "WRPF Romania Registration Confirmation"
-#~ msgid ""
-#~ "WRPF Romania referees will be listed here after official confirmation."
-#~ msgstr "Confirmare înscriere WRPF România"
-
-#~ msgid "Upcoming Competitions"
-#~ msgstr "Competiții viitoare"
-
-#~ msgid "Registration Open"
-#~ msgstr "Înscrieri deschise"
-
-#~ msgid "Registration Closed"
-#~ msgstr "Înscrieri închise"
-
-#~ msgid "No upcoming competitions at the moment."
-#~ msgstr "Nu există competiții viitoare momentan."
-
-#~ msgid "Past Competitions"
-#~ msgstr "Competiții anterioare"
-
-#~ msgid "Finished"
-#~ msgstr "Finalizată"
-
-#~ msgid "Categories"
-#~ msgstr "Categorii de vârstă"
-
-#~ msgid "Meets"
-#~ msgstr "Concursuri"
-
-#~ msgid "Admin"
-#~ msgstr "Admin"
-
-#~ msgid "Entry Forms"
-#~ msgstr "Formulare de înscriere"
-
-#~ msgid "Refund Policy"
-#~ msgstr "Politica de rambursare"
-
-#~ msgid "Please complete all required fields."
-#~ msgstr "Va rog completati toate campurile necesare."
-
-#~ msgid "Tested athlete"
-#~ msgstr "Testat"
-
-#~ msgid "Sex"
-#~ msgstr "Sex"
-
-#~ msgid "Registration successful!"
-#~ msgstr "Înscriere cu success!"
-
-#~ msgid "Tested"
-#~ msgstr "Testat"
-
-#~ msgid "Your registration was submitted successfully!"
-#~ msgstr "Înregistrarea dumneavoastră a fost procesată cu succes!"
-
-#~ msgid ""
-#~ "We will publish more details about payment, weigh-ins, and schedule soon."
-#~ msgstr "Vom publica mai multe detalii curand"
-
-#~ msgid "End Date"
-#~ msgstr "Data Inchieierii"
-
-#~ msgid "Results"
-#~ msgstr "Rezultate"
-
-#~ msgid "Federation Policies"
-#~ msgstr "Politicile Federaţiei"
-
-#~ msgid "Testing"
-#~ msgstr "Testare"
-
-#~ msgid "Tested Membership"
-#~ msgstr "Atleţi testaţi"
-
-#~ msgid "Anti-Doping Info"
-#~ msgstr "Informaţii Anti-Doping"

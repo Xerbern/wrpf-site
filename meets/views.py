@@ -10,6 +10,7 @@ from django.urls import reverse
 from django.views.decorators.http import require_http_methods
 from .models import Meet, Registration
 from .forms import RegistrationForm
+from project.settings import DEFAULT_FROM_EMAIL
 
 import base64
 from io import BytesIO
@@ -158,25 +159,31 @@ def meet_register(request, pk):
             _("Registration was saved, but the confirmation email could not be sent.")
         )
 
-    # Idea for the future, send emails to the admin on new registration for specific meets
-    # admin_subject = f"New registration - {meet.name}"
-    # admin_message = (
-    #     f"New registration received:\n\n"
-    #     f"Name: {registration.full_name}\n"
-    #     f"Email: {registration.email}\n"
-    #     f"Sex: {registration.sex}\n"
-    #     f"Weight class: {registration.weight_class}\n"
-    #     f"Tested: {'Yes' if registration.is_tested else 'No'}\n\n"
-    #     f"Meet: {meet.name}\n"
-    #     f"Date: {meet.date}"
-    # )
-    # send_mail(
-    #     subject=admin_subject,
-    #     message=admin_message,
-    #     from_email=None,
-    #     recipient_list=["nezko45@gmail.com"],
-    #     fail_silently=False,
-    # )
+    try:
+        admin_subject = f"Înscriere nouă - {meet.name}"
+        admin_message = (
+            f"Înscriere nouă primită:\n\n"
+            f"Nume: {registration.full_name}\n"
+            f"Email: {registration.email}\n"
+            f"Data nașterii: {registration.date_of_birth}\n"
+            f"Divizie: {registration.get_sex_display()}\n"
+            f"Categoria de greutate: {registration.get_weight_class_display()}\n"
+            f"Disciplină: {registration.get_discipline_display()}\n"
+            f"Testat antidoping: {'Da' if registration.is_tested else 'Nu'}\n\n"
+            f"Competiție: {meet.name}\n"
+            f"Data competiției: {meet.date}"
+        )
+
+        send_mail(
+            subject=admin_subject,
+            message=admin_message,
+            from_email=None,
+            recipient_list=[DEFAULT_FROM_EMAIL],
+            fail_silently=False,
+        )
+
+    except Exception as e:
+        print("ADMIN EMAIL ERROR:", repr(e))
 
     request.session["last_registration_id"] = registration.pk
     return redirect("register_success", pk=meet.pk, registration_id=registration.pk)
