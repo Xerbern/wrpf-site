@@ -8,6 +8,7 @@ from django.utils import timezone
 from django.utils.translation import gettext_lazy as _
 from django.urls import reverse
 from django.views.decorators.http import require_http_methods
+from django_ratelimit.decorators import ratelimit
 from .models import Meet, Registration
 from .forms import RegistrationForm
 from project.settings import DEFAULT_FROM_EMAIL
@@ -106,8 +107,15 @@ def register_success(request, pk, registration_id):
         },
     )
 
-@require_http_methods(["POST"])
+@ratelimit(key="ip", rate="5/h", method="POST", block=False)
 def meet_register(request, pk):
+    if getattr(request, "limited", False):
+        messages.error(
+            request,
+            _("Too many registration attempts. Please try again later.")
+        )
+        return redirect("meet_details", pk=pk)
+    
     meet = get_object_or_404(Meet, pk=pk)
     form = RegistrationForm(request.POST)
 
@@ -205,11 +213,11 @@ def meet_register(request, pk):
         )
 
         send_mail(
-            subject=admin_subject,
-            message=admin_message,
-            from_email=None,
-            recipient_list=[DEFAULT_FROM_EMAIL],
-            fail_silently=False,
+           subject=admin_subject,
+           message=admin_message,
+           from_email=None,
+           recipient_list=[DEFAULT_FROM_EMAIL],
+           fail_silently=False,
         )
 
     except Exception as e:
