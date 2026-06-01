@@ -49,7 +49,7 @@ class Registration(models.Model):
 
     class DisciplineChoices(models.TextChoices):
         RAW_POWERLIFTING = "raw_powerlifting", _("Raw Powerlifting")
-        CLASSIC_POWERLIFTING = "classic_powerlifting", _("Classic Powerlifting")
+        CLASSIC_POWERLIFTING = "classic_powerlifting", _("Classic Powerlifting (Knee Wraps)")
         SQUAT = "squat", _("Squat")
         BENCH_PRESS = "bench_press", _("Bench Press")
         DEADLIFT = "deadlift", _("Deadlift")

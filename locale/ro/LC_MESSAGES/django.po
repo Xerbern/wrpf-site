@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-27 15:00+0300\n"
+"POT-Creation-Date: 2026-06-01 21:45+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -134,8 +134,8 @@ msgstr "Categoria de greutate"
 #: .\meets\forms.py:57 .\templates\emails\registration_confirmation.html:147
 #: .\templates\meets\register_success.html:102
 #: .\templates\meets\registration_verify.html:73
-msgid "Tested division"
-msgstr "Divizie testată"
+msgid "Anti-doping tested"
+msgstr "Testat anti-doping"
 
 #: .\meets\forms.py:78
 msgid "Select division"
@@ -204,10 +204,8 @@ msgid "Raw Powerlifting"
 msgstr "Competiții de powerlifting"
 
 #: .\meets\models.py:52
-#, fuzzy
-#| msgid "Powerlifting Competitions"
-msgid "Classic Powerlifting"
-msgstr "Competiții de powerlifting"
+msgid "Classic Powerlifting (Knee Wraps)"
+msgstr "Powerlifting Clasic (cu bandaje la genunchi)"
 
 #: .\meets\models.py:53 .\templates\core\disciplines.html:92
 msgid "Squat"
@@ -241,7 +239,8 @@ msgstr "Înscrieri"
 
 #: .\meets\views.py:115
 msgid "Too many registration attempts. Please try again later."
-msgstr "Prea multe încercări de înscriere. Te rugăm să încerci din nou mai târziu."
+msgstr ""
+"Prea multe încercări de înscriere. Te rugăm să încerci din nou mai târziu."
 
 #: .\meets\views.py:123
 msgid "Registration is closed."
@@ -660,9 +659,9 @@ msgstr ""
 "Raw Powerlifting (Full Power: Genuflexiuni, Împins la piept, Îndreptări)"
 
 #: .\templates\core\disciplines.html:70
-msgid "Classic Powerlifting (Full Power: Squat, Bench Press, Deadlift)"
+msgid "Classic Powerlifting (Full Power: Squat - Knee Wraps, Bench Press, Deadlift)"
 msgstr ""
-"Classic Powerlifting (Full Power: Genuflexiuni, Împins la piept, Îndreptări)"
+"Classic Powerlifting (Full Power: Genuflexiuni - cu bandaje la genunchi, Împins la piept, Îndreptări)"
 
 #: .\templates\core\disciplines.html:77
 msgid "Combined Events"

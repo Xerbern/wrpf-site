@@ -54,7 +54,7 @@ class RegistrationForm(forms.ModelForm):
             "date_of_birth": _("Date of birth"),
             "weight_class": _("Weight class"),
             "disciplines": _("Disciplines"),
-            "is_tested": _("Tested division"),
+            "is_tested": _("Anti-doping tested"),
         }
         widgets = {
             "full_name": forms.TextInput(attrs={"class": "form-control"}),
