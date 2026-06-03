@@ -133,6 +133,7 @@ class RegistrationAdmin(admin.ModelAdmin):
                 "email",
                 "date_of_birth",
                 "sex",
+                "divisions",
                 "weight_class",
                 "disciplines",
                 "is_tested",
