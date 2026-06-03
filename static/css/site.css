@@ -1151,7 +1151,8 @@ button.active {
   font-weight: 600;
 }
 
-.remove-discipline {
+.remove-discipline,
+.remove-division {
   border: none;
   background: transparent;
   color: white;
