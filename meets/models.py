@@ -54,14 +54,27 @@ class Registration(models.Model):
         BENCH_PRESS = "bench_press", _("Bench Press")
         DEADLIFT = "deadlift", _("Deadlift")
 
+    class DivisionChoices(models.TextChoices):
+        TEENAGE_1 = "teenage_1", _("Teenage 1 (14-16)")
+        TEENAGE_2 = "teenage_2", _("Teenage 2 (17-19)")
+        JUNIOR = "junior", _("Junior (20-23)")
+        OPEN = "open", _("Open (24-39)")
+        MASTERS_M1 = "masters_m1", _("Masters M1 (40-49)")
+        MASTERS_M2 = "masters_m2", _("Masters M2 (50-59)")
+        MASTERS_M3 = "masters_m3", _("Masters M3 (60-69)")
+        MASTERS_M4 = "masters_m4", _("Masters M4 (70-79)")
+        MASTERS_M5 = "masters_m5", _("Masters M5 (80+)")
+
     meet = models.ForeignKey(
         Meet,
         on_delete=models.CASCADE,
         related_name="registrations",
+        verbose_name=_("Meet"),
     )
-    full_name = models.CharField(max_length=255)
+    full_name = models.CharField(_("Full name"), max_length=255)
     email = models.EmailField()
     sex = models.CharField(
+        _("Sex"),
         max_length=10,
         choices=SexChoices.choices,
     )
@@ -71,6 +84,7 @@ class Registration(models.Model):
         blank=True,
     )
     weight_class = models.CharField(
+        _("Weight class"),
         max_length=10,
         choices=WeightClassChoices.choices,
     )
@@ -79,10 +93,15 @@ class Registration(models.Model):
         default=list,
         blank=True,
     )
-    is_tested = models.BooleanField(default=False)
-    created_at = models.DateTimeField(auto_now_add=True)
+    is_tested = models.BooleanField(_("Anti-doping tested"), default=False)
+    created_at = models.DateTimeField(_("Created at"), auto_now_add=True)
     paid = models.BooleanField(_("Payment confirmed"), default=False)
     payment_notes = models.TextField(_("Payment notes"), blank=True)
+    divisions = models.JSONField(
+        _("Divisions"),
+        default=list,
+        blank=True,
+    )
 
     class Meta:
         verbose_name = _("Registration")

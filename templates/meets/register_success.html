@@ -79,8 +79,13 @@
               </div>
 
               <div class="info-row">
-                <span class="info-label">{% trans "Division" %}</span>
+                <span class="info-label">{% trans "Sex" %}</span>
                 <span class="info-value">{{ registration.get_sex_display }}</span>
+              </div>
+
+              <div class="info-row">
+                <span class="info-label">{% trans "Divisions" %}</span>
+                <span class="info-value">{{ divisions_display }}</span>
               </div>
 
               <div class="info-row">

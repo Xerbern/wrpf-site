@@ -347,3 +347,9 @@ a.button:hover {
     justify-content: center;
   }
 }
+
+.aligned label,
+.form-row label,
+fieldset label {
+    font-weight: 700;
+}

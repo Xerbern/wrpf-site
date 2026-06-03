@@ -114,11 +114,21 @@
 
               <tr>
                 <td style="padding:12px 0; border-bottom:1px solid #eeeeee; color:#666666;">
-                  {% trans "Division" %}
+                  {% trans "Sex" %}
                 </td>
 
                 <td style="padding:12px 0; border-bottom:1px solid #eeeeee; color:#222222;">
                   {{ registration.get_sex_display }}
+                </td>
+              </tr>
+
+              <tr>
+                <td style="padding:12px 0; border-bottom:1px solid #eeeeee; color:#666666;">
+                  {% trans "Divisions" %}
+                </td>
+
+                <td style="padding:12px 0; border-bottom:1px solid #eeeeee; color:#222222;">
+                  {{ divisions_display }}
                 </td>
               </tr>
 
@@ -134,7 +144,7 @@
 
               <tr>
                 <td style="padding:12px 0; border-bottom:1px solid #eeeeee; color:#666666;">
-                  {% trans "Discipline" %}
+                  {% trans "Disciplines" %}
                 </td>
 
                 <td style="padding:12px 0; border-bottom:1px solid #eeeeee; color:#222222;">

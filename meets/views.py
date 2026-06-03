@@ -26,6 +26,14 @@ def get_disciplines_display(registration):
         for discipline in registration.disciplines
     )
 
+def get_divisions_display(registration):
+    division_labels = dict(Registration.DivisionChoices.choices)
+
+    return ", ".join(
+        str(division_labels.get(division, division))
+        for division in registration.divisions
+    )
+
 def meet_list(request):
     status = request.GET.get("status")
 
@@ -57,6 +65,7 @@ def meet_details(request, pk):
             "meet": meet,
             "form": form,
             "discipline_choices": Registration.DisciplineChoices.choices,
+            "division_choices": Registration.DivisionChoices.choices,
         },
     )
 
@@ -94,6 +103,7 @@ def register_success(request, pk, registration_id):
     request.session.pop("last_registration_id", None)
 
     disciplines_display = get_disciplines_display(registration)
+    divisions_display = get_divisions_display(registration)
     
     return render(
         request,
@@ -104,6 +114,7 @@ def register_success(request, pk, registration_id):
             "qr_code_base64": qr_code_base64,
             "qr_payload": qr_payload,
             "disciplines_display": disciplines_display,
+            "divisions_display": divisions_display,
         },
     )
 
@@ -131,6 +142,7 @@ def meet_register(request, pk):
                 "meet": meet,
                 "form": form,
                 "discipline_choices": Registration.DisciplineChoices.choices,
+                "division_choices": Registration.DivisionChoices.choices,
             },
             status=400,
         )
@@ -140,6 +152,7 @@ def meet_register(request, pk):
         registration.meet = meet
         registration.save()
         disciplines_display = get_disciplines_display(registration)
+        divisions_display = get_divisions_display(registration)
     except IntegrityError:
         form.add_error("email", _("This email is already registered for this meet."))
         return render(
@@ -149,6 +162,7 @@ def meet_register(request, pk):
                 "meet": meet,
                 "form": form,
                 "discipline_choices": Registration.DisciplineChoices.choices,
+                "division_choices": Registration.DivisionChoices.choices,
             },
             status=400,
         )
@@ -167,6 +181,7 @@ def meet_register(request, pk):
             "registration": registration,
             "verification_url": verification_url,
             "disciplines_display": disciplines_display,
+            "divisions_display": divisions_display,
         }
 
         html_content = render_to_string(
@@ -192,11 +207,8 @@ def meet_register(request, pk):
         )
 
     try:
-        discipline_labels = dict(Registration.DisciplineChoices.choices)
-        disciplines_display = ", ".join(
-            str(discipline_labels.get(discipline, discipline))
-            for discipline in registration.disciplines
-        )
+        disciplines_display = get_disciplines_display(registration)
+        divisions_display = get_divisions_display(registration)
 
         admin_subject = f"Înscriere nouă - {meet.name}"
         admin_message = (
@@ -204,9 +216,10 @@ def meet_register(request, pk):
             f"Nume: {registration.full_name}\n"
             f"Email: {registration.email}\n"
             f"Data nașterii: {registration.date_of_birth}\n"
-            f"Divizie: {registration.get_sex_display()}\n"
+            f"Sex: {registration.get_sex_display()}\n"
             f"Categoria de greutate: {registration.get_weight_class_display()}\n"
             f"Discipline: {disciplines_display}\n"
+            f"Divizii: {divisions_display}\n"
             f"Testat antidoping: {'Da' if registration.is_tested else 'Nu'}\n\n"
             f"Competiție: {meet.name}\n"
             f"Data competiției: {meet.date}"
@@ -232,11 +245,15 @@ def registration_verify(request, registration_id):
         Registration.objects.select_related("meet"),
         pk=registration_id,
     )
+    divisions_display = get_divisions_display(registration)
+    disciplines_display = get_disciplines_display(registration)
     meet = registration.meet
 
     context = {
         "registration": registration,
         "meet": meet,
         "verified_at": timezone.now(),
+        "divisions_display": divisions_display,
+        "disciplines_display": disciplines_display,
     }
     return render(request, "meets/registration_verify.html", context)

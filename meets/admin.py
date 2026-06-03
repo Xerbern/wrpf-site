@@ -37,7 +37,8 @@ def export_registrations_csv(modeladmin, request, queryset):
         "Full name",
         "Email",
         "Date of birth",
-        "Division",
+        "Sex",
+        "Divisions",
         "Weight class",
         "disciplines",
         "Tested",
@@ -53,6 +54,10 @@ def export_registrations_csv(modeladmin, request, queryset):
             registration.email,
             registration.date_of_birth,
             registration.get_sex_display(),
+            ", ".join(
+                str(dict(Registration.DivisionChoices.choices).get(division, division))
+                for division in registration.divisions
+            ),
             registration.get_weight_class_display(),
             ", ".join(
                 str(dict(Registration.DisciplineChoices.choices).get(discipline, discipline))
@@ -76,10 +81,12 @@ class RegistrationAdmin(admin.ModelAdmin):
         "email",
         "sex",
         "weight_class",
-        "disciplines",
+        "disciplines_display",
+        "divisions_display",
         "is_tested",
         "paid_status",
         "created_at",
+        "date_of_birth",
     )
 
     list_filter = (
@@ -107,19 +114,19 @@ class RegistrationAdmin(admin.ModelAdmin):
 
     actions = [export_registrations_csv]
 
-    @admin.display(description="Payment")
+    @admin.display(description=_("Payment"))
     def paid_status(self, obj):
         if obj.paid:
             return format_html(
-                '<span style="color:#22c55e;font-weight:bold;">PAID</span>'
+                '<span style="color:#22c55e;font-weight:bold;">PLĂTIT</span>'
             )
 
         return format_html(
-            '<span style="color:#ef4444;font-weight:bold;">UNPAID</span>'
+            '<span style="color:#ef4444;font-weight:bold;">NEPLĂTIT</span>'
         )
 
     fieldsets = (
-        ("Athlete details", {
+        ("Detalii sportiv", {
             "fields": (
                 "meet",
                 "full_name",
@@ -131,13 +138,13 @@ class RegistrationAdmin(admin.ModelAdmin):
                 "is_tested",
             )
         }),
-        ("Payment", {
+        ("Plată", {
             "fields": (
                 "paid",
                 "payment_notes",
             )
         }),
-        ("System", {
+        ("Sistem", {
             "fields": (
                 "created_at",
             )
@@ -151,4 +158,13 @@ class RegistrationAdmin(admin.ModelAdmin):
         return ", ".join(
             str(discipline_labels.get(discipline, discipline))
             for discipline in obj.disciplines
+        )
+
+    @admin.display(description=_("Divisions"))
+    def divisions_display(self, obj):
+        labels = dict(Registration.DivisionChoices.choices)
+
+        return ", ".join(
+            str(labels.get(division, division))
+            for division in obj.divisions
         )

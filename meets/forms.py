@@ -1,3 +1,5 @@
+from datetime import date
+
 from django import forms
 from django.utils.translation import gettext_lazy as _
 
@@ -43,6 +45,7 @@ class RegistrationForm(forms.ModelForm):
             "email",
             "sex",
             "date_of_birth",
+            "divisions",
             "weight_class",
             "disciplines",
             "is_tested",
@@ -50,8 +53,9 @@ class RegistrationForm(forms.ModelForm):
         labels = {
             "full_name": _("Full name"),
             "email": _("Email"),
-            "sex": _("Division"),
+            "sex": _("Sex"),
             "date_of_birth": _("Date of birth"),
+            "divisions": _("Divisions"),
             "weight_class": _("Weight class"),
             "disciplines": _("Disciplines"),
             "is_tested": _("Anti-doping tested"),
@@ -66,6 +70,7 @@ class RegistrationForm(forms.ModelForm):
                     "type": "date",
                 }
             ),
+            "divisions": forms.HiddenInput(attrs={"id": "id_divisions"}),
             "weight_class": forms.Select(attrs={"class": "form-select"}),
             "disciplines": forms.HiddenInput(attrs={"id": "id_disciplines"}),
             "is_tested": forms.CheckboxInput(attrs={"class": "form-check-input"}),
@@ -75,7 +80,7 @@ class RegistrationForm(forms.ModelForm):
         super().__init__(*args, **kwargs)
 
         self.fields["sex"].choices = [
-            ("", _("Select division")),
+            ("", _("Select sex")),
             *Registration.SexChoices.choices,
         ]
         self.fields["weight_class"].choices = [
@@ -121,5 +126,56 @@ class RegistrationForm(forms.ModelForm):
 
         if invalid_disciplines:
             self.add_error("disciplines", _("Invalid discipline selected."))
+
+        date_of_birth = cleaned_data.get("date_of_birth")
+        divisions = cleaned_data.get("divisions") or []
+
+        valid_divisions = {
+            choice[0] for choice in Registration.DivisionChoices.choices
+        }
+
+        invalid_divisions = [
+            division for division in divisions
+            if division not in valid_divisions
+        ]
+
+        if invalid_divisions:
+            self.add_error("divisions", _("Invalid division selected."))
+
+        if date_of_birth and divisions:
+            today = date.today()
+            age = today.year - date_of_birth.year - (
+                (today.month, today.day) < (date_of_birth.month, date_of_birth.day)
+            )
+
+            allowed_divisions = {"open"}
+
+            if 14 <= age <= 16:
+                allowed_divisions.add("teenage_1")
+            if 17 <= age <= 19:
+                allowed_divisions.add("teenage_2")
+            if 20 <= age <= 23:
+                allowed_divisions.add("junior")
+            if 40 <= age <= 49:
+                allowed_divisions.add("masters_m1")
+            if 50 <= age <= 59:
+                allowed_divisions.add("masters_m2")
+            if 60 <= age <= 69:
+                allowed_divisions.add("masters_m3")
+            if 70 <= age <= 79:
+                allowed_divisions.add("masters_m4")
+            if age >= 80:
+                allowed_divisions.add("masters_m5")
+
+            forbidden_divisions = [
+                division for division in divisions
+                if division not in allowed_divisions
+            ]
+
+            if forbidden_divisions:
+                self.add_error(
+                    "divisions",
+                    _("One or more selected divisions are not valid for the athlete age.")
+                )
 
         return cleaned_data

@@ -68,6 +68,29 @@
             {% endif %}
           </div>
 
+          <div class="mb-3" id="divisionWrapper" style="display:none;">
+            <label for="divisionSelect" class="form-label">
+              {% trans "Divisions" %}
+            </label>
+
+            <select id="divisionSelect" class="form-select">
+              <option value="">-- {% trans "Select division" %} --</option>
+              {% for value, label in division_choices %}
+                <option value="{{ value }}">{{ label }}</option>
+              {% endfor %}
+            </select>
+
+            {{ form.divisions }}
+
+            <div id="selectedDivisions" class="selected-disciplines mt-2"></div>
+
+            {% if form.divisions.errors %}
+              <div class="text-danger small mt-1">
+                {{ form.divisions.errors }}
+              </div>
+            {% endif %}
+          </div>
+
           <div class="mb-3" id="weightClassWrapper" style="display:none;">
             <label for="{{ form.weight_class.id_for_label }}" class="form-label">
               {{ form.weight_class.label }}
@@ -143,88 +166,68 @@
 
 {% block scripts %}
 <script>
-  const sexSelect = document.getElementById("id_sex");
-  const weightClassSelect = document.getElementById("id_weight_class");
-  const weightClassWrapper = document.getElementById("weightClassWrapper");
-
-  let sexChoices = null;
-  let weightChoices = null;
-
-  const weightClasses = {
-    men: [
-      ["men_52", "52 kg"],
-      ["men_56", "56 kg"],
-      ["men_60", "60 kg"],
-      ["men_67.5", "67.5 kg"],
-      ["men_75", "75 kg"],
-      ["men_82.5", "82.5 kg"],
-      ["men_90", "90 kg"],
-      ["men_100", "100 kg"],
-      ["men_110", "110 kg"],
-      ["men_125", "125 kg"],
-      ["men_140", "140 kg"],
-      ["men_140+", "140+ kg"]
-    ],
-    women: [
-      ["women_44", "44 kg"],
-      ["women_48", "48 kg"],
-      ["women_52", "52 kg"],
-      ["women_56", "56 kg"],
-      ["women_60", "60 kg"],
-      ["women_67.5", "67.5 kg"],
-      ["women_75", "75 kg"],
-      ["women_82.5", "82.5 kg"],
-      ["women_90", "90 kg"],
-      ["women_90+", "90+ kg"]
-    ]
-  };
-
-  function updateWeightClasses(selectedValue = "") {
-    const selectedSex = sexSelect.value;
-
-    const choices = [
-      {
-        value: "",
-        label: "-- {% trans 'Select weight class' %} --",
-        selected: !selectedValue,
-        disabled: true,
-      }
-    ];
-
-    if (selectedSex && weightClasses[selectedSex]) {
-      weightClasses[selectedSex].forEach(([value, label]) => {
-        choices.push({
-          value,
-          label,
-          selected: value === selectedValue,
-        });
-      });
-    }
-
-    if (weightChoices) {
-      weightChoices.clearStore();
-      weightChoices.setChoices(choices, "value", "label", true);
-      if (selectedSex) {
-        weightClassWrapper.style.display = "block";
-      } else {
-        weightClassWrapper.style.display = "none";
-      }
-    } else {
-      weightClassSelect.innerHTML = "";
-
-      choices.forEach((choice) => {
-        const option = document.createElement("option");
-        option.value = choice.value;
-        option.textContent = choice.label;
-        option.disabled = !!choice.disabled;
-        option.selected = !!choice.selected;
-
-        weightClassSelect.appendChild(option);
-      });
-    }
-  }
-
   document.addEventListener("DOMContentLoaded", () => {
+    const sexSelect = document.getElementById("id_sex");
+    const weightClassSelect = document.getElementById("id_weight_class");
+    const weightClassWrapper = document.getElementById("weightClassWrapper");
+
+    const meetDate = "{{ meet.date|date:'Y-m-d' }}";
+    const dateOfBirthInput = document.getElementById("id_date_of_birth");
+
+    const divisionSelect = document.getElementById("divisionSelect");
+    const divisionWrapper = document.getElementById("divisionWrapper");
+    const hiddenDivisionsInput = document.getElementById("id_divisions");
+    const selectedDivisionsContainer = document.getElementById("selectedDivisions");
+
+    const disciplineSelect = document.getElementById("disciplineSelect");
+    const hiddenDisciplinesInput = document.getElementById("id_disciplines");
+    const selectedDisciplinesContainer = document.getElementById("selectedDisciplines");
+
+    let sexChoices = null;
+    let weightChoices = null;
+    let divisionChoices = null;
+    let disciplineChoices = null;
+
+    const weightClasses = {
+      men: [
+        ["men_52", "52 kg"],
+        ["men_56", "56 kg"],
+        ["men_60", "60 kg"],
+        ["men_67.5", "67.5 kg"],
+        ["men_75", "75 kg"],
+        ["men_82.5", "82.5 kg"],
+        ["men_90", "90 kg"],
+        ["men_100", "100 kg"],
+        ["men_110", "110 kg"],
+        ["men_125", "125 kg"],
+        ["men_140", "140 kg"],
+        ["men_140+", "140+ kg"]
+      ],
+      women: [
+        ["women_44", "44 kg"],
+        ["women_48", "48 kg"],
+        ["women_52", "52 kg"],
+        ["women_56", "56 kg"],
+        ["women_60", "60 kg"],
+        ["women_67.5", "67.5 kg"],
+        ["women_75", "75 kg"],
+        ["women_82.5", "82.5 kg"],
+        ["women_90", "90 kg"],
+        ["women_90+", "90+ kg"]
+      ]
+    };
+
+    let selectedDisciplines = [];
+    let selectedDivisions = [];
+
+    const divisionLabels = {};
+
+    Array.from(divisionSelect.options).forEach((option) => {
+      if (option.value) {
+        divisionLabels[option.value] = option.textContent;
+      }
+    });
+
     if (typeof Choices !== "undefined") {
       sexChoices = new Choices("#id_sex", {
         searchEnabled: false,
@@ -239,26 +242,63 @@
         shouldSort: false,
         allowHTML: false,
       });
+
+      divisionChoices = new Choices("#divisionSelect", {
+        searchEnabled: false,
+        itemSelectText: "",
+        shouldSort: false,
+        allowHTML: false,
+      });
+
+      disciplineChoices = new Choices("#disciplineSelect", {
+        searchEnabled: false,
+        itemSelectText: "",
+        shouldSort: false,
+        allowHTML: false,
+      });
     }
 
-    updateWeightClasses(weightClassSelect.dataset.selected || "");
+    function updateWeightClasses(selectedValue = "") {
+      const selectedSex = sexSelect.value;
 
-    sexSelect.addEventListener("change", () => {
-      updateWeightClasses();
-    });
+      const choices = [
+        {
+          value: "",
+          label: "-- {% trans 'Select weight class' %} --",
+          selected: !selectedValue,
+          disabled: true,
+        }
+      ];
 
-    const disciplineSelect = document.getElementById("disciplineSelect");
-    const hiddenDisciplinesInput = document.getElementById("id_disciplines");
-    const selectedDisciplinesContainer = document.getElementById("selectedDisciplines");
+      if (selectedSex && weightClasses[selectedSex]) {
+        weightClasses[selectedSex].forEach(([value, label]) => {
+          choices.push({
+            value,
+            label,
+            selected: value === selectedValue,
+          });
+        });
+      }
 
-    let selectedDisciplines = [];
+      if (weightChoices) {
+        weightChoices.clearStore();
+        weightChoices.setChoices(choices, "value", "label", true);
+      } else {
+        weightClassSelect.innerHTML = "";
 
-    const disciplineChoices = new Choices("#disciplineSelect", {
-      searchEnabled: false,
-      itemSelectText: "",
-      shouldSort: false,
-      allowHTML: false,
-    });
+        choices.forEach((choice) => {
+          const option = document.createElement("option");
+          option.value = choice.value;
+          option.textContent = choice.label;
+          option.disabled = !!choice.disabled;
+          option.selected = !!choice.selected;
+
+          weightClassSelect.appendChild(option);
+        });
+      }
+
+      weightClassWrapper.style.display = selectedSex ? "block" : "none";
+    }
 
     function renderSelectedDisciplines() {
       selectedDisciplinesContainer.innerHTML = "";
@@ -280,10 +320,7 @@
       );
     }
 
-    disciplineSelect.addEventListener("change", function () {
-      const value = this.value;
-      const label = this.options[this.selectedIndex].text;
-
+    function addDiscipline(value, label) {
       if (!value) return;
 
       const alreadySelected = selectedDisciplines.some(
@@ -294,8 +331,180 @@
         selectedDisciplines.push({ value, label });
         renderSelectedDisciplines();
       }
+    }
 
-      disciplineChoices.setChoiceByValue("");
+    function renderSelectedDivisions() {
+      selectedDivisionsContainer.innerHTML = "";
+
+      selectedDivisions.forEach((division) => {
+        const badge = document.createElement("span");
+        badge.className = "selected-discipline-badge";
+
+        badge.innerHTML = `
+          ${division.label}
+          <button type="button" class="remove-division" data-value="${division.value}">×</button>
+        `;
+
+        selectedDivisionsContainer.appendChild(badge);
+      });
+
+      hiddenDivisionsInput.value = JSON.stringify(
+        selectedDivisions.map((division) => division.value)
+      );
+    }
+
+    function addDivision(value, label) {
+      if (!value) return;
+
+      const alreadySelected = selectedDivisions.some(
+        (division) => division.value === value
+      );
+
+      if (!alreadySelected) {
+        selectedDivisions.push({ value, label });
+        renderSelectedDivisions();
+      }
+    }
+
+    function calculateAgeAtMeet(dateOfBirth, meetDate) {
+      const birthDate = new Date(dateOfBirth);
+      const competitionDate = new Date(meetDate);
+
+      let age = competitionDate.getFullYear() - birthDate.getFullYear();
+
+      const hasBirthdayPassed =
+        competitionDate.getMonth() > birthDate.getMonth() ||
+        (
+          competitionDate.getMonth() === birthDate.getMonth() &&
+          competitionDate.getDate() >= birthDate.getDate()
+        );
+
+      if (!hasBirthdayPassed) {
+        age -= 1;
+      }
+
+      return age;
+    }
+
+    function getSuggestedDivision(age) {
+      if (age >= 14 && age <= 16) return "teenage_1";
+      if (age >= 17 && age <= 19) return "teenage_2";
+      if (age >= 20 && age <= 23) return "junior";
+      if (age >= 24 && age <= 39) return "open";
+      if (age >= 40 && age <= 49) return "masters_m1";
+      if (age >= 50 && age <= 59) return "masters_m2";
+      if (age >= 60 && age <= 69) return "masters_m3";
+      if (age >= 70 && age <= 79) return "masters_m4";
+      if (age >= 80) return "masters_m5";
+
+      return "";
+    }
+
+    function getAllowedDivisions(age) {
+      const allowed = ["open"];
+
+      if (age >= 14 && age <= 16) allowed.push("teenage_1");
+      if (age >= 17 && age <= 19) allowed.push("teenage_2");
+      if (age >= 20 && age <= 23) allowed.push("junior");
+      if (age >= 40 && age <= 49) allowed.push("masters_m1");
+      if (age >= 50 && age <= 59) allowed.push("masters_m2");
+      if (age >= 60 && age <= 69) allowed.push("masters_m3");
+      if (age >= 70 && age <= 79) allowed.push("masters_m4");
+      if (age >= 80) allowed.push("masters_m5");
+
+      return allowed;
+    }
+
+    function filterDivisionChoices(age) {
+      const allowedDivisions = getAllowedDivisions(age);
+
+      selectedDivisions = selectedDivisions.filter((division) =>
+        allowedDivisions.includes(division.value)
+      );
+
+      renderSelectedDivisions();
+
+      const filteredChoices = [
+        {
+          value: "",
+          label: "-- {% trans 'Select division' %} --",
+          selected: true,
+          disabled: true,
+        }
+      ];
+
+      Array.from(divisionSelect.options).forEach((option) => {
+        if (!option.value) return;
+
+        if (allowedDivisions.includes(option.value)) {
+          filteredChoices.push({
+            value: option.value,
+            label: divisionLabels[option.value],
+          });
+        }
+      });
+
+      if (divisionChoices) {
+        divisionChoices.clearStore();
+        divisionChoices.setChoices(filteredChoices, "value", "label", true);
+        divisionChoices.setChoiceByValue("");
+      }
+    }
+
+    function updateDivisionFromDateOfBirth() {
+      const dobValue = dateOfBirthInput.value;
+
+      if (!dobValue) return;
+
+      const birthDate = new Date(dobValue);
+
+      if (
+        Number.isNaN(birthDate.getTime()) ||
+        birthDate.getFullYear() < 1900
+      ) {
+        return;
+      }
+
+      divisionWrapper.style.display = "block";
+
+      const age = calculateAgeAtMeet(dobValue, meetDate);
+
+      if (age < 0 || age > 120) {
+        return;
+      }
+
+      filterDivisionChoices(age);
+
+      selectedDivisions = selectedDivisions.filter(
+        (division) => division.value === "open"
+      );
+
+      renderSelectedDivisions();
+
+      const suggestedDivision = getSuggestedDivision(age);
+
+      if (!suggestedDivision) return;
+
+      const label = divisionLabels[suggestedDivision] || suggestedDivision;
+
+      addDivision(suggestedDivision, label);
+    }
+
+    updateWeightClasses(weightClassSelect.dataset.selected || "");
+
+    sexSelect.addEventListener("change", () => {
+      updateWeightClasses();
+    });
+
+    disciplineSelect.addEventListener("change", function () {
+      const value = this.value;
+      const label = this.options[this.selectedIndex].text;
+
+      addDiscipline(value, label);
+
+      if (disciplineChoices) {
+        disciplineChoices.setChoiceByValue("");
+      }
     });
 
     selectedDisciplinesContainer.addEventListener("click", function (event) {
@@ -309,6 +518,33 @@
 
       renderSelectedDisciplines();
     });
+
+    divisionSelect.addEventListener("change", function () {
+      const value = this.value;
+      const label = this.options[this.selectedIndex].text;
+
+      addDivision(value, label);
+
+      if (divisionChoices) {
+        divisionChoices.setChoiceByValue("");
+      }
+    });
+
+    selectedDivisionsContainer.addEventListener("click", function (event) {
+      if (!event.target.classList.contains("remove-division")) return;
+
+      const valueToRemove = event.target.dataset.value;
+
+      selectedDivisions = selectedDivisions.filter(
+        (division) => division.value !== valueToRemove
+      );
+
+      renderSelectedDivisions();
+    });
+
+    dateOfBirthInput.addEventListener("blur", updateDivisionFromDateOfBirth);
+    dateOfBirthInput.addEventListener("change", updateDivisionFromDateOfBirth);
+    updateDivisionFromDateOfBirth();
   });
 </script>
 {% endblock %}
