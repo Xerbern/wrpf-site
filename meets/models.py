@@ -7,6 +7,10 @@ class Meet(models.Model):
     date = models.DateField(_("Date"))
     location = models.CharField(_("Location"), max_length=200)
     registration_open = models.BooleanField(_("Registration open"), default=True)
+    payment_information = models.TextField(
+        _("Payment information"),
+        blank=True,
+    )
 
     class Meta:
         verbose_name = _("Meet")
@@ -58,7 +62,7 @@ class Registration(models.Model):
         TEENAGE_1 = "teenage_1", _("Teenage 1 (14-16)")
         TEENAGE_2 = "teenage_2", _("Teenage 2 (17-19)")
         JUNIOR = "junior", _("Junior (20-23)")
-        OPEN = "open", _("Open (24-39)")
+        OPEN = "open", _("Open")
         MASTERS_M1 = "masters_m1", _("Masters M1 (40-49)")
         MASTERS_M2 = "masters_m2", _("Masters M2 (50-59)")
         MASTERS_M3 = "masters_m3", _("Masters M3 (60-69)")

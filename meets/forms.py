@@ -68,6 +68,8 @@ class RegistrationForm(forms.ModelForm):
                 attrs={
                     "class": "form-control",
                     "type": "date",
+                    "min": "1900-01-01",
+                    "max": date.today().isoformat(),
                 }
             ),
             "divisions": forms.HiddenInput(attrs={"id": "id_divisions"}),
@@ -91,6 +93,16 @@ class RegistrationForm(forms.ModelForm):
     def clean_email(self):
         email = self.cleaned_data["email"].strip().lower()
         return email
+
+    def clean_date_of_birth(self):
+        dob = self.cleaned_data["date_of_birth"]
+
+        if dob.year < 1900 or dob > date.today():
+            raise forms.ValidationError(
+                _("Please enter a valid date of birth.")
+            )
+
+        return dob
 
     def clean(self):
         cleaned_data = super().clean()

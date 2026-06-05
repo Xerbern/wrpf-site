@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-03 22:10+0300\n"
+"POT-Creation-Date: 2026-06-05 12:45+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -27,17 +27,17 @@ msgstr "Exportă înscrierile selectate în CSV"
 msgid "Payment"
 msgstr "Plată"
 
-#: .\meets\admin.py:154 .\meets\forms.py:60 .\meets\models.py:92
+#: .\meets\admin.py:155 .\meets\forms.py:60 .\meets\models.py:96
 #: .\templates\base.html:73 .\templates\core\disciplines.html:4
 #: .\templates\emails\registration_confirmation.html:147
-#: .\templates\meets\meet_details.html:116
+#: .\templates\meets\meet_details.html:132
 msgid "Disciplines"
 msgstr "Discipline"
 
-#: .\meets\admin.py:163 .\meets\forms.py:58 .\meets\models.py:101
+#: .\meets\admin.py:164 .\meets\forms.py:58 .\meets\models.py:105
 #: .\templates\core\about.html:38
 #: .\templates\emails\registration_confirmation.html:127
-#: .\templates\meets\meet_details.html:73
+#: .\templates\meets\meet_details.html:85
 #: .\templates\meets\register_success.html:87
 #: .\templates\meets\registration_verify.html:68
 msgid "Divisions"
@@ -48,74 +48,74 @@ msgstr "Divizii"
 msgid "Competitions"
 msgstr "Competiții"
 
-#: .\meets\forms.py:10 .\meets\forms.py:27 .\meets\models.py:26
-#: .\meets\models.py:41
+#: .\meets\forms.py:10 .\meets\forms.py:27 .\meets\models.py:30
+#: .\meets\models.py:45
 msgid "52 kg"
 msgstr ""
 
-#: .\meets\forms.py:11 .\meets\forms.py:28 .\meets\models.py:27
-#: .\meets\models.py:42
+#: .\meets\forms.py:11 .\meets\forms.py:28 .\meets\models.py:31
+#: .\meets\models.py:46
 msgid "56 kg"
 msgstr ""
 
-#: .\meets\forms.py:12 .\meets\forms.py:29 .\meets\models.py:28
-#: .\meets\models.py:43
+#: .\meets\forms.py:12 .\meets\forms.py:29 .\meets\models.py:32
+#: .\meets\models.py:47
 msgid "60 kg"
 msgstr ""
 
-#: .\meets\forms.py:13 .\meets\forms.py:30 .\meets\models.py:29
-#: .\meets\models.py:44
+#: .\meets\forms.py:13 .\meets\forms.py:30 .\meets\models.py:33
+#: .\meets\models.py:48
 msgid "67.5 kg"
 msgstr ""
 
-#: .\meets\forms.py:14 .\meets\forms.py:31 .\meets\models.py:30
-#: .\meets\models.py:45
+#: .\meets\forms.py:14 .\meets\forms.py:31 .\meets\models.py:34
+#: .\meets\models.py:49
 msgid "75 kg"
 msgstr ""
 
-#: .\meets\forms.py:15 .\meets\forms.py:32 .\meets\models.py:31
-#: .\meets\models.py:46
+#: .\meets\forms.py:15 .\meets\forms.py:32 .\meets\models.py:35
+#: .\meets\models.py:50
 msgid "82.5 kg"
 msgstr ""
 
-#: .\meets\forms.py:16 .\meets\forms.py:33 .\meets\models.py:32
-#: .\meets\models.py:47
+#: .\meets\forms.py:16 .\meets\forms.py:33 .\meets\models.py:36
+#: .\meets\models.py:51
 msgid "90 kg"
 msgstr ""
 
-#: .\meets\forms.py:17 .\meets\models.py:33
+#: .\meets\forms.py:17 .\meets\models.py:37
 msgid "100 kg"
 msgstr ""
 
-#: .\meets\forms.py:18 .\meets\models.py:34
+#: .\meets\forms.py:18 .\meets\models.py:38
 msgid "110 kg"
 msgstr ""
 
-#: .\meets\forms.py:19 .\meets\models.py:35
+#: .\meets\forms.py:19 .\meets\models.py:39
 msgid "125 kg"
 msgstr ""
 
-#: .\meets\forms.py:20 .\meets\models.py:36
+#: .\meets\forms.py:20 .\meets\models.py:40
 msgid "140 kg"
 msgstr ""
 
-#: .\meets\forms.py:21 .\meets\models.py:37
+#: .\meets\forms.py:21 .\meets\models.py:41
 msgid "140+ kg"
 msgstr ""
 
-#: .\meets\forms.py:25 .\meets\models.py:39
+#: .\meets\forms.py:25 .\meets\models.py:43
 msgid "44 kg"
 msgstr ""
 
-#: .\meets\forms.py:26 .\meets\models.py:40
+#: .\meets\forms.py:26 .\meets\models.py:44
 msgid "48 kg"
 msgstr ""
 
-#: .\meets\forms.py:34 .\meets\models.py:48
+#: .\meets\forms.py:34 .\meets\models.py:52
 msgid "90+ kg"
 msgstr ""
 
-#: .\meets\forms.py:54 .\meets\models.py:74
+#: .\meets\forms.py:54 .\meets\models.py:78
 #: .\templates\emails\registration_confirmation.html:87
 #: .\templates\meets\register_success.html:67
 #: .\templates\meets\registration_verify.html:53
@@ -128,61 +128,66 @@ msgstr "Nume complet"
 msgid "Email"
 msgstr "Email"
 
-#: .\meets\forms.py:56 .\meets\models.py:77
+#: .\meets\forms.py:56 .\meets\models.py:81
 #: .\templates\emails\registration_confirmation.html:117
 #: .\templates\meets\register_success.html:82
 #: .\templates\meets\registration_verify.html:63
 msgid "Sex"
 msgstr ""
 
-#: .\meets\forms.py:57 .\meets\models.py:82
+#: .\meets\forms.py:57 .\meets\models.py:86
 #: .\templates\emails\registration_confirmation.html:107
 #: .\templates\meets\register_success.html:77
 msgid "Date of birth"
 msgstr "Data nașterii"
 
-#: .\meets\forms.py:59 .\meets\models.py:87
+#: .\meets\forms.py:59 .\meets\models.py:91
 #: .\templates\emails\registration_confirmation.html:137
 #: .\templates\meets\register_success.html:92
 #: .\templates\meets\registration_verify.html:73
 msgid "Weight class"
 msgstr "Categoria de greutate"
 
-#: .\meets\forms.py:61 .\meets\models.py:96
+#: .\meets\forms.py:61 .\meets\models.py:100
 #: .\templates\emails\registration_confirmation.html:157
 #: .\templates\meets\register_success.html:107
 #: .\templates\meets\registration_verify.html:83
 msgid "Anti-doping tested"
 msgstr "Testat anti-doping"
 
-#: .\meets\forms.py:83
+#: .\meets\forms.py:85
 msgid "Select sex"
 msgstr "Selectează sexul"
 
-#: .\meets\forms.py:87 .\templates\meets\meet_details.html:105
-#: .\templates\meets\meet_details.html:267
+#: .\meets\forms.py:89 .\templates\meets\meet_details.html:121
+#: .\templates\meets\meet_details.html:283
 msgid "Select weight class"
 msgstr "Categoria de greutate"
 
-#: .\meets\forms.py:108 .\meets\forms.py:111
+#: .\meets\forms.py:102
+msgid "Please enter a valid date of birth."
+msgstr "Vă rugăm să introduceți o dată de naștere validă."
+
+#: .\meets\forms.py:120 .\meets\forms.py:123
 msgid "Invalid weight class for the selected division."
 msgstr "Categoria de greutate nu este validă pentru divizia selectată."
 
-#: .\meets\forms.py:120
+#: .\meets\forms.py:132
 msgid "Please select at least one discipline."
-msgstr ""
+msgstr "Vă rugăm să selectați cel puțin o disciplină."
 
-#: .\meets\forms.py:128
+#: .\meets\forms.py:140
 msgid "Invalid discipline selected."
-msgstr ""
+msgstr "A fost selectată o disciplină invalidă."
 
-#: .\meets\forms.py:143
+#: .\meets\forms.py:155
 msgid "Invalid division selected."
-msgstr ""
+msgstr "A fost selectată o divizie invalidă."
 
-#: .\meets\forms.py:178
+#: .\meets\forms.py:190
 msgid "One or more selected divisions are not valid for the athlete age."
 msgstr ""
+"Una sau mai multe divizii selectate nu sunt valide pentru vârsta sportivului."
 
 #: .\meets\models.py:6 .\templates\admin\index.html:56
 msgid "Name"
@@ -204,112 +209,118 @@ msgstr "Locaţia"
 msgid "Registration open"
 msgstr "Înscrieri deschise"
 
-#: .\meets\models.py:12 .\meets\models.py:72 .\templates\admin\index.html:57
+#: .\meets\models.py:11
+msgid "Payment information"
+msgstr "Informații plată"
+
+#: .\meets\models.py:16 .\meets\models.py:76 .\templates\admin\index.html:57
 #: .\templates\emails\registration_confirmation.html:180
 #: .\templates\meets\register_success.html:124
 #: .\templates\meets\registration_verify.html:100
 msgid "Meet"
 msgstr "Competiție"
 
-#: .\meets\models.py:13
+#: .\meets\models.py:17
 msgid "Meets"
 msgstr "Competiții"
 
-#: .\meets\models.py:22
+#: .\meets\models.py:26
 msgid "Men"
 msgstr "Masculin"
 
-#: .\meets\models.py:23
+#: .\meets\models.py:27
 msgid "Women"
 msgstr "Feminin"
 
-#: .\meets\models.py:51
+#: .\meets\models.py:55
 #, fuzzy
 #| msgid "Powerlifting Competitions"
 msgid "Raw Powerlifting"
 msgstr "Competiții de powerlifting"
 
-#: .\meets\models.py:52
+#: .\meets\models.py:56
 msgid "Classic Powerlifting (Knee Wraps)"
 msgstr "Powerlifting Clasic (cu bandaje la genunchi)"
 
-#: .\meets\models.py:53 .\templates\core\disciplines.html:92
+#: .\meets\models.py:57 .\templates\core\disciplines.html:92
 msgid "Squat"
 msgstr "Genuflexiuni"
 
-#: .\meets\models.py:54 .\templates\core\disciplines.html:93
+#: .\meets\models.py:58 .\templates\core\disciplines.html:93
 msgid "Bench Press"
 msgstr "Împins la piept"
 
-#: .\meets\models.py:55 .\templates\core\disciplines.html:95
+#: .\meets\models.py:59 .\templates\core\disciplines.html:95
 msgid "Deadlift"
 msgstr "Îndreptări"
 
-#: .\meets\models.py:58
+#: .\meets\models.py:62
 msgid "Teenage 1 (14-16)"
 msgstr ""
 
-#: .\meets\models.py:59
+#: .\meets\models.py:63
 msgid "Teenage 2 (17-19)"
 msgstr ""
 
-#: .\meets\models.py:60
+#: .\meets\models.py:64
 #, fuzzy
 #| msgid "Junior"
 msgid "Junior (20-23)"
 msgstr "Junior"
 
-#: .\meets\models.py:61
-msgid "Open (24-39)"
-msgstr ""
+#: .\meets\models.py:65 .\templates\core\age_categories.html:52
+#: .\templates\meets\meet_list.html:43
+#: .\templates\meets\partials\meet_list.html:16
+msgid "Open"
+msgstr "Open"
 
-#: .\meets\models.py:62
+#: .\meets\models.py:66
 #, fuzzy
 #| msgid "Masters M1"
 msgid "Masters M1 (40-49)"
 msgstr "Masters M1"
 
-#: .\meets\models.py:63
+#: .\meets\models.py:67
 #, fuzzy
 #| msgid "Masters M2"
 msgid "Masters M2 (50-59)"
 msgstr "Masters M2"
 
-#: .\meets\models.py:64
+#: .\meets\models.py:68
 #, fuzzy
 #| msgid "Masters M3"
 msgid "Masters M3 (60-69)"
 msgstr "Masters M3"
 
-#: .\meets\models.py:65
+#: .\meets\models.py:69
 #, fuzzy
 #| msgid "Masters M4"
 msgid "Masters M4 (70-79)"
 msgstr "Masters M4"
 
-#: .\meets\models.py:66
+#: .\meets\models.py:70
 #, fuzzy
 #| msgid "Masters M5"
 msgid "Masters M5 (80+)"
 msgstr "Masters M5"
 
-#: .\meets\models.py:97
+#: .\meets\models.py:101
 msgid "Created at"
 msgstr "Creat la"
 
-#: .\meets\models.py:98
+#: .\meets\models.py:102
 msgid "Payment confirmed"
 msgstr "Plată confirmată"
 
-#: .\meets\models.py:99
+#: .\meets\models.py:103
 msgid "Payment notes"
 msgstr "Note plată"
 
-#: .\meets\models.py:107
+#: .\meets\models.py:111
 msgid "Registration"
 msgstr "Înscriere"
 
-#: .\meets\models.py:108
+#: .\meets\models.py:112
 msgid "Registrations"
 msgstr "Înscrieri"
 
@@ -619,11 +630,6 @@ msgstr "Sub-Junior"
 #: .\templates\core\age_categories.html:45
 msgid "Junior"
 msgstr "Junior"
-
-#: .\templates\core\age_categories.html:52 .\templates\meets\meet_list.html:43
-#: .\templates\meets\partials\meet_list.html:16
-msgid "Open"
-msgstr "Înscrieri deschise"
 
 #: .\templates\core\age_categories.html:59
 msgid "Masters M1"
@@ -1169,20 +1175,36 @@ msgstr "WRPF Romania Logo"
 msgid "Register"
 msgstr "Înregistrați-vă"
 
-#: .\templates\meets\meet_details.html:77
-#: .\templates\meets\meet_details.html:430
+#: .\templates\meets\meet_details.html:20
+msgid "Payment details"
+msgstr "Detalii plată"
+
+#: .\templates\meets\meet_details.html:89
+#: .\templates\meets\meet_details.html:446
 msgid "Select division"
 msgstr "Selectează divizia"
 
-#: .\templates\meets\meet_details.html:122
+#: .\templates\meets\meet_details.html:100
+msgid ""
+"Athletes are automatically assigned to the appropriate age division based on "
+"their date of birth. Eligible athletes may also enter the Open division. "
+"Each selected division is considered a separate competition entry and "
+"requires a separate entry fee."
+msgstr ""
+"Categoria de vârstă este determinată automat pe baza datei de naștere. "
+"Sportivii eligibili se pot înscrie și în categoria Open. Fiecare divizie "
+"selectată reprezintă o înscriere separată și necesită o taxă de participare "
+"distinctă."
+
+#: .\templates\meets\meet_details.html:138
 msgid "Select discipline"
 msgstr "Selectează disciplina"
 
-#: .\templates\meets\meet_details.html:156
+#: .\templates\meets\meet_details.html:172
 msgid "Submit registration"
 msgstr "Trimite înregistrarea"
 
-#: .\templates\meets\meet_details.html:160
+#: .\templates\meets\meet_details.html:176
 msgid "Registration is closed for this meet."
 msgstr "Înregistrările sunt închise pentru acest meet"
 

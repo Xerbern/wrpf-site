@@ -14,6 +14,18 @@
       {% if meet.registration_open %}
         <h3 class="mt-4">{% trans "Register" %}</h3>
 
+        {% if meet.payment_information %}
+          <details class="payment-info-box mt-4 mb-4">
+            <summary>
+              {% trans "Payment details" %}
+            </summary>
+
+            <div class="payment-info-content mt-3">
+              {{ meet.payment_information|linebreaks }}
+            </div>
+          </details>
+        {% endif %}
+
         <form method="post" action="{% url 'meet_register' meet.pk %}" class="mt-3" style="max-width:520px;">
           {% csrf_token %}
           <div style="display:none;">
@@ -83,6 +95,10 @@
             {{ form.divisions }}
 
             <div id="selectedDivisions" class="selected-disciplines mt-2"></div>
+
+            <div id="divisionInfo" class="small text-warning mt-2">
+              {% trans "Athletes are automatically assigned to the appropriate age division based on their date of birth. Eligible athletes may also enter the Open division. Each selected division is considered a separate competition entry and requires a separate entry fee." %}
+            </div>
 
             {% if form.divisions.errors %}
               <div class="text-danger small mt-1">
