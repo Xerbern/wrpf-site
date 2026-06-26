@@ -84,8 +84,6 @@ class Registration(models.Model):
     )
     date_of_birth = models.DateField(
         _("Date of birth"),
-        null=True,
-        blank=True,
     )
     weight_class = models.CharField(
         _("Weight class"),
@@ -95,7 +93,6 @@ class Registration(models.Model):
     disciplines = models.JSONField(
         _("Disciplines"),
         default=list,
-        blank=True,
     )
     is_tested = models.BooleanField(_("Anti-doping tested"), default=False)
     created_at = models.DateTimeField(_("Created at"), auto_now_add=True)
@@ -104,7 +101,6 @@ class Registration(models.Model):
     divisions = models.JSONField(
         _("Divisions"),
         default=list,
-        blank=True,
     )
 
     class Meta:

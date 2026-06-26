@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-05 12:45+0300\n"
+"POT-Creation-Date: 2026-06-26 11:09+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -27,14 +27,14 @@ msgstr "Exportă înscrierile selectate în CSV"
 msgid "Payment"
 msgstr "Plată"
 
-#: .\meets\admin.py:155 .\meets\forms.py:60 .\meets\models.py:96
+#: .\meets\admin.py:155 .\meets\forms.py:60 .\meets\models.py:94
 #: .\templates\base.html:73 .\templates\core\disciplines.html:4
 #: .\templates\emails\registration_confirmation.html:147
 #: .\templates\meets\meet_details.html:132
 msgid "Disciplines"
 msgstr "Discipline"
 
-#: .\meets\admin.py:164 .\meets\forms.py:58 .\meets\models.py:105
+#: .\meets\admin.py:164 .\meets\forms.py:58 .\meets\models.py:102
 #: .\templates\core\about.html:38
 #: .\templates\emails\registration_confirmation.html:127
 #: .\templates\meets\meet_details.html:85
@@ -141,14 +141,14 @@ msgstr ""
 msgid "Date of birth"
 msgstr "Data nașterii"
 
-#: .\meets\forms.py:59 .\meets\models.py:91
+#: .\meets\forms.py:59 .\meets\models.py:89
 #: .\templates\emails\registration_confirmation.html:137
 #: .\templates\meets\register_success.html:92
 #: .\templates\meets\registration_verify.html:73
 msgid "Weight class"
 msgstr "Categoria de greutate"
 
-#: .\meets\forms.py:61 .\meets\models.py:100
+#: .\meets\forms.py:61 .\meets\models.py:97
 #: .\templates\emails\registration_confirmation.html:157
 #: .\templates\meets\register_success.html:107
 #: .\templates\meets\registration_verify.html:83
@@ -165,26 +165,38 @@ msgid "Select weight class"
 msgstr "Categoria de greutate"
 
 #: .\meets\forms.py:102
+#, fuzzy
+#| msgid "Please enter a valid date of birth."
+msgid "Please enter your date of birth."
+msgstr "Vă rugăm să introduceți o dată de naștere validă."
+
+#: .\meets\forms.py:107
 msgid "Please enter a valid date of birth."
 msgstr "Vă rugăm să introduceți o dată de naștere validă."
 
-#: .\meets\forms.py:120 .\meets\forms.py:123
+#: .\meets\forms.py:125 .\meets\forms.py:128
 msgid "Invalid weight class for the selected division."
 msgstr "Categoria de greutate nu este validă pentru divizia selectată."
 
-#: .\meets\forms.py:132
+#: .\meets\forms.py:137
 msgid "Please select at least one discipline."
 msgstr "Vă rugăm să selectați cel puțin o disciplină."
 
-#: .\meets\forms.py:140
+#: .\meets\forms.py:145
 msgid "Invalid discipline selected."
 msgstr "A fost selectată o disciplină invalidă."
 
-#: .\meets\forms.py:155
+#: .\meets\forms.py:157
+#, fuzzy
+#| msgid "Please select at least one discipline."
+msgid "Please select at least one division."
+msgstr "Vă rugăm să selectați cel puțin o divizie."
+
+#: .\meets\forms.py:166
 msgid "Invalid division selected."
 msgstr "A fost selectată o divizie invalidă."
 
-#: .\meets\forms.py:190
+#: .\meets\forms.py:201
 msgid "One or more selected divisions are not valid for the athlete age."
 msgstr ""
 "Una sau mai multe divizii selectate nu sunt valide pentru vârsta sportivului."
@@ -304,23 +316,23 @@ msgstr "Masters M4"
 msgid "Masters M5 (80+)"
 msgstr "Masters M5"
 
-#: .\meets\models.py:101
+#: .\meets\models.py:98
 msgid "Created at"
 msgstr "Creat la"
 
-#: .\meets\models.py:102
+#: .\meets\models.py:99
 msgid "Payment confirmed"
 msgstr "Plată confirmată"
 
-#: .\meets\models.py:103
+#: .\meets\models.py:100
 msgid "Payment notes"
 msgstr "Note plată"
 
-#: .\meets\models.py:111
+#: .\meets\models.py:107
 msgid "Registration"
 msgstr "Înscriere"
 
-#: .\meets\models.py:112
+#: .\meets\models.py:108
 msgid "Registrations"
 msgstr "Înscrieri"
 
@@ -1825,7 +1837,7 @@ msgstr ""
 
 #: .\venv\Lib\site-packages\django\forms\fields.py:95
 msgid "This field is required."
-msgstr ""
+msgstr "Acest câmp este obligatoriu"
 
 #: .\venv\Lib\site-packages\django\forms\fields.py:315
 msgid "Enter a whole number."

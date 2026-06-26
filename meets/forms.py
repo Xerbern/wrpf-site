@@ -97,6 +97,11 @@ class RegistrationForm(forms.ModelForm):
     def clean_date_of_birth(self):
         dob = self.cleaned_data["date_of_birth"]
 
+        if not dob:
+            raise forms.ValidationError(
+                _("Please enter your date of birth.")
+            )
+
         if dob.year < 1900 or dob > date.today():
             raise forms.ValidationError(
                 _("Please enter a valid date of birth.")
@@ -146,6 +151,12 @@ class RegistrationForm(forms.ModelForm):
             choice[0] for choice in Registration.DivisionChoices.choices
         }
 
+        if not divisions:
+            self.add_error(
+                "divisions",
+                _("Please select at least one division.")
+            )
+
         invalid_divisions = [
             division for division in divisions
             if division not in valid_divisions
@@ -154,7 +165,7 @@ class RegistrationForm(forms.ModelForm):
         if invalid_divisions:
             self.add_error("divisions", _("Invalid division selected."))
 
-        if date_of_birth and divisions:
+        if date_of_birth:
             today = date.today()
             age = today.year - date_of_birth.year - (
                 (today.month, today.day) < (date_of_birth.month, date_of_birth.day)
